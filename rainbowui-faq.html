@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Alex Wang">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/1/1</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <style>
+        /*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+        
+        html,
+        body {
+            overflow-x: hidden;
+            /* Prevent scroll on narrow devices */
+        }
+        
+        body {
+            padding-top: 70px;
+            font-family: arial, "黑體", "微軟正黑體";
+            font-size: 11px;
+            background: url(http://i.imgur.com/yurWQ3g.png) 0 100% fixed no-repeat;
+            background-size: 200%;
+        }
+        
+        strong {
+            color: #dd4132;
+        }
+        /*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+        
+        @media screen and (max-width: 479px) {
+            .search-form {
+                position: absolute;
+                margin-top: 60px;
+                top: 0;
+                left: 15px;
+                width: 30%;
+            }
+        }
+        
+        @media screen and (max-width: 767px) {
+            .row-offcanvas {
+                position: relative;
+                -webkit-transition: all .25s ease-out;
+                -o-transition: all .25s ease-out;
+                transition: all .25s ease-out;
+            }
+            .row-offcanvas-right {
+                right: 0;
+            }
+            .row-offcanvas-left {
+                left: 0;
+            }
+            .row-offcanvas-right .sidebar-offcanvas {
+                right: -50%;
+                /* 6 columns */
+            }
+            .row-offcanvas-left .sidebar-offcanvas {
+                left: -50%;
+                /* 6 columns */
+            }
+            .row-offcanvas-right.active {
+                right: 50%;
+                /* 6 columns */
+            }
+            .row-offcanvas-left.active {
+                left: 50%;
+                /* 6 columns */
+            }
+            .sidebar-offcanvas {
+                position: absolute;
+                top: 0;
+                width: 50%;
+                /* 6 columns */
+            }
+            .search-form {
+                position: fixed;
+                top: 0;
+                right: 15px;
+                width: 30%;
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            #sidebar .nav {
+                position: fixed;
+                top: 70px;
+                width: 150px;
+            }
+        }
+        
+        .navbar-default {
+            background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+            background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b3ffffff', GradientType=1);
+        }
+        
+        .footer {
+            padding-top: 10em;
+        }
+        
+        .footer .text-muted {
+            color: black;
+        }
+        
+        .footer a {
+            color: #4B0082;
+        }
+        
+        .nav-tabs {
+            border-bottom: none;
+        }
+        
+        .nav-tabs li {
+            width: 64px;
+            height: 64px;
+            text-align: center;
+        }
+        
+        .nav-tabs .glyphicon {
+            font-size: 1.5em;
+        }
+        
+        .nav-tabs>li>a {
+            border-radius: 4px;
+            white-space: nowrap;
+            text-align: center;
+            color: #4B0082;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover,
+        .nav-tabs>li>a:hover {
+            border: none;
+            color: deeppink;
+            background-color: rgba(255, 255, 255, .5);
+        }
+        
+        .btn.btn-primary {
+            background: #4B0082;
+        }
+        
+        .fb-btn {
+            /*background: #3a5795;
+			color: #fff;*/
+        }
+        
+        .jumbotron {
+            margin-bottom: 5px;
+            /*background-color: #CCFFFF;*/
+            background: -moz-linear-gradient(-45deg, rgba(240, 249, 255, 0.3) 0%, rgba(220, 242, 255, 0.8) 37%, rgba(203, 235, 255, 0.85) 70%, rgba(161, 219, 255, 0.9) 100%);
+            background: -webkit-linear-gradient(-45deg, rgba(240, 249, 255, 0.3) 0%, rgba(220, 242, 255, 0.8) 37%, rgba(203, 235, 255, 0.85) 70%, rgba(161, 219, 255, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.3) 0%, rgba(220, 242, 255, 0.8) 37%, rgba(203, 235, 255, 0.85) 70%, rgba(161, 219, 255, 0.9) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4df0f9ff', endColorstr='#e6a1dbff', GradientType=1);
+        }
+        
+        .jumbotron h2 {
+            font-size: 5em;
+            padding-left: 1.5em;
+            padding-bottom: 0.5em;
+            text-indent: -1.5em;
+            letter-spacing: -5px;
+        }
+        
+        .jumbotron p {
+            font-size: 1.7em;
+            padding-left: 4.2em;
+        }
+        
+        .jumbotron h2+p {
+            text-indent: -1.2em;
+        }
+        
+        .jumbotron li {
+            font-size: 1.7em
+        }
+        
+        .jumbotron ol,
+        .jumbotron ul {
+            margin-left: 6em;
+        }
+        
+        .ui-accordion .ui-accordion-header {
+            font-size: 2em;
+            font-family: arial, "黑體", "微軟正黑體";
+        }
+        
+        .ui-accordion .ui-accordion-icons {
+            padding-left: 3.2em;
+            text-indent: -1.9em;
+        }
+        
+        .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+            top: 1em;
+        }
+        
+        .ui-state-default,
+        .ui-widget-content .ui-state-default,
+        .ui-widget-header .ui-state-default {
+            background-image: none;
+            background-color: rgba(255, 255, 255, .7);
+        }
+        
+        .ui-state-default:hover,
+        .ui-widget-content .ui-state-default:hover,
+        .ui-widget-header .ui-state-default:hover,
+        .ui-state-active,
+        .ui-widget-content .ui-state-active,
+        .ui-widget-header .ui-state-active {
+            background-image: none;
+            background-color: #98ddde;
+            color: #333;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+            font-weight: bold;
+            border-color: #fff;
+        }
+        
+        .ui-accordion .ui-accordion-content {
+            font-size: 1.5em;
+            font-family: arial, "黑體", "微軟正黑體";
+            line-height: 1.7em;
+            color: #333;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+            border-color: #fff;
+            background-color: rgb(255, 255, 220);
+            background-image: none;
+            padding: 1em 3em 3em 4.4em;
+        }
+        
+        .ui-accordion .ui-accordion-content p:first-child {
+            text-indent: -1.25em;
+        }
+        
+        .ui-accordion .ui-accordion-content ol,
+        .ui-accordion .ui-accordion-content ul {
+            margin-left: -0.5em;
+        }
+        
+        .ui-accordion .ui-accordion-content a {
+            color: #23527c;
+        }
+        
+        .search-form {}
+        
+        .search-form .form-group {
+            margin-bottom: 0;
+            margin-top: 8px;
+        }
+        
+        .search-text {
+            padding-right: 40px;
+            float: left;
+        }
+        
+        .search-btn {
+            color: #4B0082;
+            background: none;
+            border: none;
+            border-left: 1px solid #ccc;
+            margin-left: -35px;
+            margin-top: 7px;
+            padding: 3px 10px;
+        }
+        
+        .search-btn:hover {
+            color: deeppink;
+        }
+        
+        .keyword {
+            color: #f7786b;
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .group .keyword {
+            border-bottom: 1px dashed deeppink;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 nav">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">【彩虹ui 】FAQ 常見問題與解答</a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-2 nav">
+                    <form id="search-form" class="search-form" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control search-text" placeholder="搜尋">
+                        </div>
+                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <div class="col-xs-12 col-sm-10 btn-nav">
+                <p class="pull-right visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="fa fa-bars fa-2x"></i></button>
+                </p>
+
+                <div>
+
+
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- 安裝的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane active" id="安裝">
+                            <!-- Collapse content -->
+
+                            <div class="jumbotron">
+                                <h2>Q1: 我是第一次使用彩虹ui  整合包，該如何安裝?</h2>
+                                <p>A: 很簡單，只要依照下面的步驟來安裝即可:
+                                    <ol>
+                                        <li>移除舊插件: 將遊戲安裝資料夾 World of Warcraft > Interface 底下的 <strong>AddOns</strong> 資料夾刪除。</li>
+                                        <li>移除舊設定: 將遊戲安裝資料夾 World of Warcraft 底下的 <strong>WTF</strong> 資料夾刪除。</li>
+                                        <li>下載安裝: <a href="https://goo.gl/kuaG94" target="_blank">到這裡下載最新的插件包檔案</a>，解壓縮，將裡面 AddOns 資料夾移動到 World of Warcraft > Interface 底下。</li>
+                                        <li>進入遊戲開始暢玩。</li>
+                                    </ol>
+                                </p>
+                                <p><em>無論之前是否有安裝過插件或其他整合包，都建議依照上述的步驟刪除 AddOns 和 WTF 資料夾，做個乾淨的安裝，避免新舊插件互相衝突，影響遊玩體驗。</em></p>
+                            </div>
+                            <div id="accordion-setup" class="accordion">
+                                <div class="group">
+                                    <h3>Q2: 之前是使用別的整合包，現在想改用彩虹，該怎麼做?</h3>
+                                    <div>
+                                        <p>A: 請依照 Q1 第一次使用的安裝步驟來做即可。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q3: 如何更新彩虹ui  ?</h3>
+                                    <div>
+                                        <p>A: 彩虹ui 每個月都會更新，讓插件保持在最新的版本，提供新的好用功能。強烈建議只要有更新，都請一定要更新。</p>
+
+                                        <p>若現在已經在使用彩虹，每次有更新時，只需要重新下載，將解壓縮出來的 AddOns 資料夾，直接覆蓋 World of Warcraft > Interface 底下已有的 AddOns 資料夾，便能完成更新。</p>
+                                        <p><em>也請特別留意每次的更新資訊，都會有新增的插件和功能介紹哦! </em></p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q4: 更新插件是否會影響原本的已經設定好的插件?</h3>
+                                    <div>
+                                        <p>A: 請放心，重新下載更新插件檔案，不會影響原有的設定。只有按下插件內的 "重置" 按鈕，或是刪除 WTF 資料夾，才會影響原有的設定檔。</p>
+                                    </div>
+                                </div>
+
+                                <div class="group">
+                                    <h3>Q5: 下載安裝了插件，卻沒有出現?</h3>
+                                    <div>
+                                        <p>A: 請再次確認遊戲安裝資料夾是正確的，從Battle.net遊戲啟動器，選擇設定 > 遊戲安裝/更新，可以看到遊戲安裝資料夾的位置。</p>
+
+                                        <p>有些電腦中會有兩份 World of Warcraft，插件檔案要放在遊戲啟動器所指定的那一個底下才會出現。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q6: 安裝整合包後，發生很多錯誤怎麼辦?</h3>
+                                    <div>
+                                        <p>A: 請先將 AddOns 和 WTF 資料夾重新命名後，再重新安裝插件。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q7: 我想將彩虹ui 與其他整合包和單體插件一起使用，該怎麼做?</h3>
+                                    <div>
+                                        <p>A: 將彩虹ui 整合包中的 AddOns 資料夾，直接覆蓋原本的 AddOns 即可。單體插件則是放在 AddOns 資料夾裡面。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q8: 彩虹ui 與其他整合包和單體插件一起使用時，發生錯誤怎麼辦?</h3>
+                                    <div>
+                                        <p>A: 請依照下面的順序來排除錯誤:</p>
+                                        <ol>
+                                            <li>不要同時載入兩個功能或用途相同的插件，以避免插件互相衝突。例如有兩種(或以上的)背包插件、團隊框架、聊天增強、施法條...，選擇其中一個載入就好。</li>
+                                            <li>將 WTF 資料夾重新命名，重置所有插件的設定。</li>
+                                            <li>將 AddOns 資料夾重新命名，先重新安裝一個整合包，執行遊戲確定沒有問題後，再將另一個整合包中的插件 (或單體插件) ，把**需要使用的插件**一個一個單獨複製到 AddOns 資料夾裡面，每複製一個後，先執行遊戲確定沒有問題，再複製另一個。</li>
+                                        </ol>
+                                        <p><em>*請特別注意，基本上 AddOns 裡面每一個資料夾是一個插件，但有些插件會有多資料夾，例如DBM開頭的資料夾都是屬於DBM插件，要一併複製過去。*</em></p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q9: 使用彩虹ui 整合包後，是否可以與 Curse Client 一起使用?</h3>
+                                    <div>
+                                        <p>A: 可以，整合包可以和 Curse Client 一起使用，第一次一起使用時，Curse Client 會詢問是否要接受通知並且更新插件? 請全部都按 ACCEPT (接受) ，然後在接下來的對話框中，先按 "是"，再按 "否"。</p>
+                                        <p>之後若 Curse 提供的插件有比電腦中安裝的新，便可以正常升級。當整合包有更新時，再覆蓋過去即可。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q10: 是否可以單獨更新DBM? 該怎麼做?</h3>
+                                    <div>
+                                        <p>A: 可以，因為DBM更新較頻繁，在整合包還沒更新之前，隨時保持DBM在最新的版本，對於經常打團隊的玩家來說是非常重要的。</p>
+                                        <p>要單獨更新DBM，請至<a href="http://www.curse.com/addons/wow/deadly-boss-mods" target="_blank">這個DBM下載頁面</a>，按網頁右方的橘黃色按鈕 "Download Now" 便會開始下載。下載後解壓縮到 World of Warcraft\AddOns 底下，覆蓋原有的檔案即可更新完成。而且DBM已經內建中文版，請安心使用。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q11: 如何複製插件的設定給其他分身使用，不需要重新設定插件?
+                                    </h3>
+                                    <div>
+                                        <p>A: 插件的設定可以分為三種:</p>
+										<ol>
+										    <li><strong>帳號共用的設定</strong>: 這類的插件只要設定好一個角色，所有角色都會使用相同的設定。例如 DBM、Skada 戰鬥統計、功能百寶箱。</li>
+											<li><strong>有設定檔功能的插件</strong>: 有些插件提供<strong>設定檔</strong>的功能，可以直接將其他角色的設定複製過來。例如技能吧檯4、施法條增強、Adi智能背包。</li>
+											<li><strong>需要個別設定的插件</strong>: 不是帳號共用、也沒有設定檔功能的插件，就必須一個一個角色單獨設定。</li>
+										</ol>
+										<p>若要將插件設定複製到別台電腦，或另一個帳號時，帳號共用的插件設定在<code>Warcraft\WTF\Account\帳號ID\SavedVariables</code> 資料夾，每個角色的插件設定在 <code>Warcraft\WTF\Account\帳號ID\伺服器\角色ID\SavedVariables</code>資料夾。<strong>請將帳號ID底下的 SavedVariables 複製到另一個帳號ID底下，角色ID 底下的 SavedVariables 複製到另一個角色ID底下。</strong>這樣做可以複製大部分的插件設定，雖然無法保證完全一模一樣，但可以大幅減少重新設定的時間。</p>
+										<p>不論使用哪種方式，要重新設定之前，先看看插件是否為帳號共用，以及是否有設定檔的功能。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 綜合的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="綜合">
+                            <!-- Collapse content -->
+
+                            <div class="jumbotron">
+                                <h2>Q1: 如何開啟自動修理裝備和自動販賣垃圾的功能?</h2>
+                                <p>A: 小地圖按鈕展開，有個綠色球球的按鈕，點一下開啟功能百寶箱。左方選擇 "自動"，右方將自動修理裝備和自動販賣垃圾打勾，然後按下右下角的重新載入按鈕。
+
+                                    <p>功能百寶箱中還有許多方便的功能設定，建議花一點時間來看看。只要設定好一次，所有角色都適用。
+                            </div>
+                            <div id="accordion-general" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 如何調整滑鼠提示說明顯示的位置?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/freebtip</code> 後會出現位置展示方塊，就是滑鼠提示說明顯示的位置。移動方塊來調整位置，完成後再輸入 <code>/freebtip</code> 。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 如何讓滑鼠提示說明跟著滑鼠移動?
+                                    </h3>
+                                    <div>
+                                        <p>A: 使用記事本或純文字編輯器開啟 World of Warcraft\Interface\AddOns\FreebTip 資料夾內的檔案 tip.lua，將下面這行:
+                                            <br /><code>cursor = false,</code>
+                                            <p>改為:
+                                                <br /><code>cursor = true,</code></p>
+                                        </p>
+                                        <p>更改後請重新載入，或重新啟動遊戲。若更改後滑鼠提示只會在畫面最右方上下移動，請點小地圖按鈕的綠色小圓球，在 <strong>功能百寶箱</strong> 中將 <strong>介面 > 管理滑鼠提示</strong> 取消打勾。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                    Q4: 如何更改鼠提示說明的大小和字體?
+                                </h3>
+                                    <div>
+                                        <p>A: 使用記事本或純文字編輯器開啟 World of Warcraft\Interface\AddOns\FreebTip 資料夾內的檔案 tip.lua，將下面這行:
+                                            <br /><code>scale = 1.1,</code>
+                                            <p>改為:
+                                                <br /><code>scale = 1,</code> 或其他數字。</p>
+                                        </p>
+                                        <p>要更改字體，請將中文字型檔案複製到 World of Warcraft\Interface\AddOns\FreebTip\media 資料夾內，改為名 expressway.ttf，取代原本的字型檔案即可。</p>
+                                        <p>更改後請重新啟動遊戲 (重新載入無效)。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q5: 如何恢復原本的任務對話框?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選、不要載入 <strong>[任務] 劇情</strong> 即可。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q6: 如何使用裝備比較的功能?
+                                    </h3>
+                                    <div>
+                                        <p>A: 遊戲有內建裝備比較的功能，只要滑鼠滑過裝備物品時，按住 Shift 鍵不放，便能和自己身上的裝備做比較。
+
+                                        </p>
+                                        <p>如果想要不用按 Shift 鍵，總是會自動比較裝備，請輸入:
+                                            <br><code>/console set alwaysCompareItems 1</code>
+
+                                        </p>
+                                        <p>取消自動比較裝備請輸入:
+                                            <br><code>/console set alwaysCompareItems 0</code>
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q7: 如何關閉裝備外型預覽?
+                                    </h3>
+                                    <div>
+                                        <p>A: 從<strong>Esc &gt; 介面 &gt; 插件 &gt; 塑形 &gt; 小提示</strong>，可以調整預覽窗格的大小。
+                                        </p>
+                                        <p>或是在插件列表中不要載入 <strong>[塑形] 設計師</strong>，將裝備預覽相關功能整個關閉。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q8: 如何使用材料銀行?</h3>
+                                    <div>
+                                        <p>A: 打開銀行時，點銀行視窗右上角的小按鈕 <strong>D</strong> 會將背包中的將材料都存放至材料銀行。點小按鈕 <strong>R</strong> 會切換到材料銀行視窗，再點一次會切換回一般銀行。</p>
+                                        <p>自動存放材料: 在背包或銀行視窗中沒有物品的地方點一下滑鼠右鍵，開啟背包設定。勾選<strong>存放材料</strong>的話，每次打開銀行時，就會自動將背包中的將材料都存放至材料銀行。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q9: 可以使用沒有分類的整合背包嗎？
+                                    </h3>
+                                    <div>
+                                        <p>A: 當然可以，請自行下載安裝你喜愛的背包插件，例如: <a href="http://www.curse.com/addons/wow/bagnon" target="_blank">Bagnon</a>。
+
+                                        </p>
+                                        <p>然後在 Esc &gt; 插件，列表中不要載入 <strong>[背包] Adi智能背包</strong> 即可。
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q10: 觀察別人時常有問題、發生錯誤，該如何解決？</h3>
+                                    <div>
+                                        <p>A: 請分別試試看下面幾種方法，通常選擇其中一種就能解決:
+                                            <ol>
+                                                <li>插件列表中不要載入 <strong>[裝備] 觀察問題修正</strong>。</li>
+                                                <li>插件列表中要勾選載入 <strong>[裝備] 觀察問題修正</strong>。</li>
+                                                <li>插件列表中不要載入 <strong>[裝備] 出處</strong>。</li>
+                                                <li>插件列表中不要載入 <strong>[團隊] EXRT團隊工具包</strong>。</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q11: 如何關閉自動推薦裝備建議的物品?
+                                    </h3>
+                                    <div>
+                                        <p>A: 這是 Dugi 任務高手的功能之一，適合新玩家或不確定該如何選擇裝備時使用。<br /><strong>右鍵點DG小圓鈕 &gt; 裝備設定 &gt; 自動裝備智慧套裝</strong>，取消打勾。可以關閉這個功能。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q12: 任務目標追蹤清單如何移動位置?
+                                    </h3>
+                                    <div>
+                                        <p>A: 新的任務目標追蹤清單無法直接拖曳移動，必須從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整<strong>垂直位置</strong>和<strong>水平位置</strong>的數值來移動位置。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q13: 追蹤任務後在畫面右方看不到任務清單?
+                                    </h3>
+                                    <div>
+                                        <p>A: 應該是任務目標清單被收合起來了。請在畫面上仔細找找『<strong>12/15任務 - 0每日</strong>』這幾個字，數字不同沒關係，在這幾個字的右方，有個+號的小方塊按鈕，點一下便可以將任務目標清單展開了。</p>
+										<p>若點一下還是沒有將任務目標清單展開，請按 M 打開世界地圖，按住 Shift 鍵點任務標題，將任務加入目標清單來追蹤。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q14: 看不到獎勵目標區域的進度?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請將滑鼠游標停留在任務目標追蹤清單上，滾動滑鼠滾輪，捲動清單後是否能夠看到。</p>
+										<p>或是從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整<strong>最大高度</strong>的數值。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q15: 任務物品會變成一個大大的按鈕在畫面中央，如何取消?
+                                    </h3>
+                                    <div>
+                                        <p>A: 這是新的 <strong>[任務] 目標清單增強</strong> 插件的功能，會將距離最近的任務的物品，變成類似德拉諾要塞技能的額外快捷鍵按鈕，方便解任務時使用。</p>
+										<p>若要取消這個功能，從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，將<strong>啟用現用物品按鈕</strong>取消打勾。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q16: 任務目標追蹤清單中只會顯示兩個任務，該如何解決？
+                                    </h3>
+                                    <div>
+                                        <p>A: 這個狀況通常是在移動過任務追蹤清單的位置後會發生，因為移動時也自動調整了任務追蹤清單框架高度的緣故。
+
+                                        </p>
+                                        <p>解決方法為: 在插件列表中載入 <strong>[任務] 目標清單增強</strong>，然後從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>調整<strong>垂直位置</strong>、<strong>水平位置</strong>和<strong>最大高度</strong>的數值來移動位置和大小。
+										<p>副本挑戰模式無法看到擊殺數量或時間條，也可以使用上述的方法解決。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 畫面的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="畫面">
+                            <!-- Collapse content -->
+
+                            <div class="jumbotron">
+                                <h2>Q1: 安裝成功惹!! 但遊戲畫面中間有奇怪的東西擋住?</h2>
+                                <p>A: 如果你不確定那是哪個插件造成的，建議在 <strong>Esc &gt; 插件</strong>，列表中將 <strong>[職業]</strong>、<strong>[進階]</strong> 和 <strong>[團隊]</strong> 分類的插件都<strong>取消勾選，不要載入</strong>。等確定要使用時再打勾載入。
+                            </div>
+
+                            <div id="accordion-screen" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 打團隊時，BOSS的血條擋到我的畫面了?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 /suf 開啟 SUF單位框架的設定，選擇"一般"&gt;取消勾選"鎖定框架"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選"鎖定框架"即可。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q3: 視窗文字好小，該如何放大?</h3>
+                                    <div>
+                                        <p>A: 有幾種方式可以放大遊戲內的文字:
+                                            <ol>
+                                                <li><strong>整體放大</strong>: 按 Esc &gt; 系統 &gt; 進階 &gt; 將使用者介面縮放打勾，然後拖曳滑桿。這種放大方式，會將整個遊戲介面放大，包括對話視窗和快捷列按鈕。</li>
+                                                <li><strong>只放大視窗</strong>: 滑鼠滑到視窗標題列上，按住 Ctrl 鍵不放，滾動滑鼠滾輪，可以縮放視窗，也包括視窗中的文字。不論是角色資訊、任務對話框、信件、商人、世界地圖，都可以使用這種方式來放大。拖曳視窗標題，還可以移動位置哦!</li>
+                                                <li><strong>只放大任務內容和信件文字</strong>: 小地圖按鈕展開，點綠色小圓球，開啟功能百寶箱。選擇文字，右方可以單獨調整任務內容和信件文字的大小。</li>
+                                            </ol>
+                                        </p>
+                                        <p>另外，也建議將遊戲字體改為較容易閱讀的字型，<a href="http://forum.gamer.com.tw/C.php?bsn=05219&snA=499186" target="_blank">更改遊戲字體的方法請參考這裡。</a></p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q4: 介面設定中的鏡頭最遠距離是灰色的，無法調整?</h3>
+                                    <div>
+                                        <p>A: "鏡頭最遠距離" 的設定已由功能百寶箱插件來替代，如果你想要自己控制，小地圖按鈕展開，點綠色小圓球開啟功能百寶箱，選擇 "系統"，將 "加大鏡頭最遠距離" 取消打勾，然後按下 "重新載入"。</p>
+                                        <p>如果玩遊戲時畫面鏡頭一直自動拉到最遠，無法調整回來時，也可依照上述的方法，將功能百寶箱中的 "加大鏡頭最遠距離" 取消打勾，便能解決這個問題。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 頭像的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="頭像">
+                            <!-- Collapse content -->
+
+                            <div class="jumbotron">
+                                <h2>Q1: 頭像框架的字太小了，都看不到，該如何放大?</h2>
+                                <p>A: 輸入 /suf 開啟 SUF單位框架的設定，先選擇要調整大小的框架，例如"玩家"或"目標"。然後在右方選擇"框架"，可以調整寬和高，或是直接更改縮放比例。若只要更改文字大小，請在右方選擇"文字/標籤"。
+
+                                    <p>也可以一次更改多個框架的大小，左方先選擇"總體"，右方勾選多個要更改的框架後，再選擇"框架"標籤頁來調整比例。
+                            </div>
+
+                            <div id="accordion-frame" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 /suf 開啟設定，左方選擇 "隱藏遊戲內建框架"，右方的 "隱藏增益效果" 不要打勾。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
+
+                                            <br><code>/click TotemFrameTotem1 RightButton</code>
+
+                                        </p>
+                                        <p>也可以將施放玄牛雕像和取消玄牛雕像合成一個巨集，巨集內容如下:
+                                            <br><code>/施放 召喚玄牛雕像</code>
+                                            <br><code>/click TotemFrameTotem1 RightButton</code>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q4: 如何移動人物頭像框架的位置?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/suf</code> 開啟 SUF單位框架的設定，選擇"一般"&gt;取消勾選"鎖定框架"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選"鎖定框架"即可。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q5: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
+                                    <div>
+                                        <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。再輸入一次 <code>/focus</code> 會取消專注目標。</p>
+                                        <p>若需要經常設定專注目標，可以新增一個巨集，內容輸入 <code>/focus</code>，然後將巨集拉到快捷列。之後只要選取對象，再按快捷列上的巨集，便能設定專注目標。</p>
+                                        <p>或是<a href="https://goo.gl/kV7c5v" target="_blank">參考這篇點擊施法的範例</a>來設定成: 按 Shift+滑鼠右鍵 點人物，設為專注目標。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q6: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/頭像</code>，選擇<strong>啟用單位 &gt; 隊伍</strong>，取消打勾就可以了。 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 快捷列的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="快捷列">
+                            <!-- Collapse content -->
+
+                            <div class="jumbotron">
+                                <h2>Q1: 找不到經驗條和功能選單列按鈕?</h2>
+                                <p>A: 輸入 /bt4 開啟技能吧檯4 (Bartender4) 的設定，左方選擇"經驗條"(或"微型選單")，右方勾選"已開啟"。然後點一下技能吧檯4的小地圖按鈕，將"經驗條"(或"微型選單")移動到自己喜愛的位置。
+                            </div>
+
+                            <div id="accordion-actionbar" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 技能列上沒有顯示快捷鍵，如何讓它出現?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請試試下面幾個方法，通常其中一種可以解決問題:
+                                        </p>
+                                        <ol>
+                                            <li>輸入 <code>/bt4</code>，在每個快捷列的設定中，不要勾選 "隱藏熱鍵"。
+                                            </li>
+                                            <li>輸入 <code>/bt4</code>，按右上角的 "按鍵綁定" 按鈕，來設定熱鍵。
+                                            </li>
+                                            <li>輸入 <code>/bt4</code>，選擇設定檔 &gt; 重置設定檔。</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 我只有出現一個 (兩個或三個) 快捷列，如何開啟更多的快捷列?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/bt4</code> 開啟技能吧檯4 (Bartender4) 的設定，左方選擇"快捷列3"(或"快捷列4~10")，右方勾選"已開啟"。然後點一下技能吧檯4的小地圖按鈕，將快捷列移動到自己喜愛的位置。也可以分別設定每個快捷列的按鈕數目、大小縮放、顯示隱藏...。
+                                        </p>
+                                        <p>請看 <a href="https://goo.gl/q8gDys" target="_blank">技能吧檯4 的圖文教學</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q4: 調整快捷列後畫面亂掉了，如何恢復成原本的樣子?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請依照下列步驟來重置快捷列:
+                                            <ol>
+                                                <li>輸入 <code>/bt4</code> 開啟技能吧檯4的設定介面。
+                                                </li>
+                                                <li>左方選擇 "預設"，右方的下拉選單選擇 "彩虹ui " 或其他預設樣式。
+                                                </li>
+                                                <li>請依照自己的等級和需求，勾選是否要顯示經驗條和聲望條。
+                                                </li>
+                                                <li>按下 "套用預設" 按鈕。</li>
+                                            </ol>
+
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q5: 如何鎖定快捷列按鈕，以避免不小心拖曳移動到?</h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/bt4</code> ，設定視窗上方的 "按鈕鎖定" 打勾。鎖定之後，要按住 Shift 鍵不放，才能拖曳快捷列按鈕。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q6: 技能圖示上面有兩個倒數數字重疊在一起，如何只顯示一個?</h3>
+                                    <div>
+                                        <p>A: 這是由於遊戲內建的冷卻時間和插件提供的冷卻時間功能，同時顯示造成的。請依照下面的步驟來關閉遊戲內建的冷卻時間。
+                                            <ol>
+                                                <li>Esc > 插件，將 <strong>[戰鬥]冷卻時間</strong> 取消打勾，不要載入。</li>
+                                                <li>Esc > 介面 > 快捷列 > 冷卻時間 取消打勾。</li>
+                                                <li>Esc > 插件，將 <strong>[戰鬥]冷卻時間</strong> 打勾載入。</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 聊天的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="聊天">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>Q1: 如何移動聊天視窗的位置和大小?</h2>
+                                <p>A: 移動快捷列位置後，通常也會想要調整聊天視窗。滑鼠滑過聊天視窗時，會出現"綜合"標籤頁，將滑鼠移動到"綜合"上面按右鍵，選擇"解鎖視窗"，就可以移動拖曳聊天視窗，在視窗的邊框上拖曳滑鼠可以調整大小。完成後再將滑鼠移動到"綜合"上面按右鍵，選擇"鎖定視窗"即可。
+                            </div>
+
+                            <div id="accordion-chat" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 如何叫出好友名單?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>O</strong>。或是按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 停用按鈕</strong>，不要勾選右方的"<strong>停用按鈕</strong>"，就會顯示好友名單的按鈕。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 點聊天視窗中物品連結沒有反應，在玩家名字上點右鍵也沒有選單，如何恢復?
+                                    </h3>
+                                    <div>
+                                        <p>A: 聊天視窗的 "<strong>綜合</strong>" 標籤頁上<strong>點滑鼠右鍵</strong>選擇 "<strong>開啟互動</strong>"。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q4: 如何調整聊天視窗的背景和邊框?
+                                    </h3>
+                                    <div>
+                                        <p>按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 背景/邊框</strong>，右方可以設定每個聊天視窗的背景和邊框。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q5: 聊天的文字輸入框如何移動到下方?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 輸入框美化</strong>，右方的 "<strong>依附到</strong>" 選擇 "<strong>下</strong>"。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q6: 無法更改聊天文字和背景顏色，該怎麼做?
+                                    </h3>
+                                    <div>
+                                        <p>A: <strong>[介面] 顏色選擇器進階版</strong> 目前和聊天視窗不相容。
+										</p>
+										<p>
+										要更改聊天視窗的背景和文字顏色時，請先在<strong>Esc &gt; 插件</strong>，將 <strong>[介面] 顏色選擇器進階版</strong> 取消打勾，不要載入。再更改聊天視窗的顏色。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q7: 如何在聊天視窗中不要顯示公會成員的等級通知?
+                                    </h3>
+                                    <div>
+                                        <p>A: 從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 升級</strong>，將<strong>公會</strong>，取消打勾就可以了。
+										</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 地圖的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="地圖">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>Q1: 如何顯示座標?</h2>
+                                <p>A: 可以在小地圖、大地圖和遊戲畫面中顯示座標:
+
+                                    <ol>
+                                        <li><strong>小地圖座標</strong>: Esc > 介面 > 插件 > 小地圖 > 座標 > 啟用，打勾。
+
+                                            <li><strong>大地圖座標</strong>: 小地圖按鈕展開，有個綠色圓球的按鈕，點一下開啟功能百寶箱。左方選擇 "介面"，右方將 "世界地圖功能增強" 打勾，然後按下右下角的重新載入按鈕。會在大地圖左上方會顯示滑鼠位置的座標。
+
+                                                <li><strong>遊戲畫面中的座標</strong>: 在功能百寶箱左方選擇 "介面"， 右方將 "顯示座標" 打勾，然後按下右下角的重新載入按鈕。再點一下同一個選項右方的齒輪，將 "顯示座標框架" 打勾。會在遊戲畫面中顯示人物位置的座標，數字很大，適合邊走路邊找東西時使用。這時候按住Shift+滑鼠右鍵點擊小地圖的綠色圓球，可以隨時切換座標開關。
+                                                    <ol>
+                            </div>
+
+                            <div id="accordion-map" class="accordion">
+                                <div class="group">
+                                    <h3>Q2: 如何放大大地圖?</h3>
+                                    <div>
+                                        <p>A: 有幾種方式可以將世界地圖 (大地圖) 放大觀看:
+
+                                        </p>
+                                        <ol>
+                                            <li>用滑鼠滾輪在大地圖上滾動，可以縮放地圖。 放大後可以用拖曳的方式移動地圖內容 (不是拖曳視窗)。
+
+                                            </li>
+                                            <li>按住 Ctrl 鍵不放， 在大地圖的 "視窗標題" 上滾動滑鼠滾輪，可以縮放整個視窗。拖曳視窗標題也可以移動視窗。
+
+                                            </li>
+                                            <li>點大地圖視窗右上角的箭頭按鈕 (叉叉旁邊那個)，可以將地圖放大到全螢幕。再按一次箭頭按鈕可恢復成一般大小。</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                                                Q3: 如何在地圖上顯示寶藏位置?
+                                                            </h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 插件，在插件列表中勾選載入下面這兩個插件即可:
+                                        </p>
+                                        <ul>
+                                            <li>[地圖] 地圖標記
+                                            </li>
+                                            <li>[地圖] 地圖標記-德拉諾寶藏</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                                                Q4: 為什找不到地圖標記的稀有怪? 骷髏頭的顏色代表甚麼意思?
+                                                            </h3>
+                                    <div>
+                                        <p>A: 骷髏頭都是代表稀有怪，藍色骷髏頭的稀有怪會掉裝備、紫色會掉座騎、綠色會掉玩具和寵物。有顏色的骷髏頭都只是代表稀有怪的重生點，尚未出現。<strong>只有白色骷髏頭表示稀有怪已經出現，快去打吧！</strong></p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                                                Q5: 小地圖顯示一大塊綠色，是被腐化了嗎?
+                                                            </h3>
+                                    <div>
+                                        <p>A: 是因為性感小地圖這個插件的新舊設定檔互相衝突，導致材質貼圖不正確。解決方式為:
+
+                                        </p>
+                                        <ol>
+                                            <li>按 Esc &gt; 介面 &gt; 插件 &gt; 小地圖 &gt; 重置設定檔。 然後重新啟動遊戲。
+
+                                            </li>
+                                            <li>若上述的方法仍然無效，請先退出遊戲，然後將遊戲安裝資料夾 World of Warcraft 底下的 WTF 資料夾重新命名 (或刪除)，再進入遊戲。請特別注意，這個動作會重置所有插件的設定。</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 戰鬥的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="戰鬥">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>Q1: 敵人頭上的血條如何顯示血量?</h2>
+                                <p>A: Esc > 介面 > 插件 > 名條:傷害輸出(或坦克/治療者) > 書籤 > 血條檢視 > 敵方狀態文字 > 生命值總量&百分比。</p>
+                            </div>
+
+                            <div id="accordion-combat" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 如何保持脫離戰鬥後血條也不會消失?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請檢查幾個地方的設定:
+
+                                        </p>
+                                        <ol>
+                                            <li>Esc &gt; 介面 &gt; 插件 &gt; 名條 &gt; 敵方名條 &gt; 選擇不要自動切換。
+
+                                            </li>
+                                            <li>Esc &gt; 介面 &gt; 插件 &gt; 名條:傷害輸出(或坦克/治療者) &gt; 非戰鬥中總是使用名條檢視 不要打勾。
+
+                                            </li>
+                                            <li>點小地圖按鈕的綠色小圓球，開啟功能百寶箱，框架 &gt; 戰鬥名條/血條 不要打勾。</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 如何更改傷害數字的字體?
+                                    </h3>
+                                    <div>
+                                        <p>A: 把喜愛的字體檔案放到 World of Warcraft\Interface\AddOns\FontDamageChanger\FONTGOESHERE 資料夾中，然後將字體檔案重新命名為 FDCFONT.TTF，再進入遊戲。
+
+                                        </p>
+                                        <p>詳細請參考這篇<a href="https://goo.gl/6nlp34" target="_blank">美化傷害字體插件使用教學</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q4: 傷害數字如何恢復成原本的樣子? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選 [戰鬥] 美化傷害字體即可。
+                                        </p>
+                                    </div>
+                                </div>
+								 <div class="group">
+                                    <h3>
+                                        Q5: 傷害數字被血條擋住了，如何調整位置? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 在插件列表裡面載入 <strong>[進階]MSBT捲動戰鬥文字</strong>，然後從<strong>Esc&gt;介面&gt;插件&gt;戰鬥-文字&gt;開啟設定&gt;滾動區域&gt;設定滾動區域</strong>，來調整傷害數字的位置。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q6: 請問傷害統計，如何同時顯示傷害和治療?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 傷害-統計 &gt; 建立新視窗，幫新視窗輸入一個名稱後按確定，便可以將一個視窗顯示傷害輸出、一個視窗顯示治療量了。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q7: 聽說 TMW技能監控提醒 (TellMeWhen) 的功能很強大，該如何設定使用?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請看<a href="https://goo.gl/rDjmRh" target="_blank">TMW技能監控提醒的圖文教學</a>。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q8: 鳥D技能監控如何移動和縮放大小?</h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/boomy unlock</code> 可以移動位置，輸入 <code>/boomy lock</code> 可以鎖定位置。</p>
+                                        <p>輸入 <code>/boomy scale 0.69</code> 可以縮放大小，其中 0.69 可以改為任何數字，1 是ㄧ般大小、2 是兩倍大小，以此類推，可以有小數點。</p>
+                                        <p>輸入 <code>/boomy reset</code> 可以重置設定。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q9: 鳥D日月能條如何移動和縮放大小?</h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 德魯伊。這裡有設定選項可以移動和縮放大小。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q10: 施法條如何移動和縮放大小?</h3>
+                                    <div>
+                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 施法條。按下 "切換施法條鎖定" 按鈕後可以移動大小。</p>
+                                        <p>左方選單再選擇玩家、目標、專注目標...等，可以分別設定各種施法條的縮放大小和外觀樣式。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q11: 計時條如何移動和縮放大小?</h3>
+                                    <div>
+                                        <p>A: 計時條有兩種:
+                                            <ol>
+                                                <li><strong>一般時候的增益/減益效果計時條</strong>: 按 Esc &gt; 介面 &gt; 插件 &gt; 施法條 &gt; 增益效果。這裡有設定選項可以移動和縮放大小。</li>
+                                                <li><strong>副本首領的特殊技能計時條</strong>: 輸入 <code>/dbm</code> &gt; 選項 &gt; 計時條樣式。來設定。</li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q12: 如何開啟DBM的語音警告，打副本首領時會有夏一可甜美的聲音提示?</h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/dbm</code> &gt; 選項 &gt; 語音警告，右邊第四個下拉選單 "設置語音警告的語音包" 選擇 "Yike Xia (夏一可)"。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q13: 請問彩虹裡有伊斯卡助手嗎?</h3>
+                                    <div>
+                                        <p>A: 有的。在插件列表中載入 <strong>[團隊] ExRT團隊工具包</strong>，然後把小地圖按鈕展開，點 <strong>R</strong> 的小圓鈕，選擇 <strong>首領戰鬥助手</strong> &gt; <strong>暗影領主伊斯卡</strong>。</p>
+                                        <p>框框中會列出所有隊友，格子亮起來的時候，點一下就可以傳球。整個框架右上角的小三角箭頭點一下，可以顯示名字，和一些設定選項。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 還原的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="還原">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>Q1: 插件設定弄亂了，該如何恢復?</h2>
+                                <p>A: 要恢復單一插件的設定，請按 Esc > 介面 > 插件，找到該插件的設定畫面後，選擇 設定檔 > 重置設定檔。
+
+                                    <p>要重置所有插件的設定，恢復成剛安裝好的樣子， 請將遊戲安裝資料夾 World of Warcraft 底下的 WTF 資料夾重新命名 (或刪除) 。然後重新啟動遊戲。
+
+                                        <p>如果是插件檔案弄亂了， 請將遊戲安裝資料夾 World of Warcraft > Interface 底下的 AddOns 資料夾重新命名 (或刪除)， 然後重新將整合包中的 AddOns 資料夾，複製到 World of Warcraft > Interface 底下 。
+                            </div>
+
+                            <div id="accordion-reset"></div>
+
+                        </div>
+
+                        <!-- 其他的FAQ內容 -->
+                        <div role="tabpanel" class="tab-pane" id="其他">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>Q1: 如何更改遊戲字體?</h2>
+                                <p>A: <a href="http://forum.gamer.com.tw/C.php?bsn=05219&snA=499186" target="_blank">請參考巴哈的這篇文章</a>
+                            </div>
+
+                            <div id="accordion-others" class="accordion">
+                                <div class="group">
+                                    <h3>
+                                        Q2: 使用插件後感覺遊戲畫面變得比較卡?
+                                    </h3>
+                                    <div>
+                                        <p>A: 使用過多的插件有可能會影響遊戲效能，發生這種情況時，建議只載入用的到的插件就好。請按 Esc &gt; 插件，勾選要使用的插件，用不到的插件請不要勾選。</p>
+                                        <p>電腦散熱不佳會嚴重影響遊戲效能，畫面卡卡常常是因為顯示卡過熱，CPU過熱則會導致電腦自動關機。建議定期清潔電腦內的灰塵和風扇、降低室內溫度或改善電腦的散熱系統。</p>
+                                        <p>不要載入下面這三個插件，試試看是否有改善；</p>
+                                        <ul>
+                                            <li><strong>[戰鬥] Tidy名條</strong></li>
+                                            <li><strong>[戰鬥] 冷卻時間</strong></li>
+                                            <li><strong>[進階] TMW技能提醒</strong></li>
+                                        </ul>
+                                        <p>詳細說明請看： <a href="https://goo.gl/cfZ0f2" target="_blank">影響遊戲效能前三名的插件</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q3: 是否會介紹其他好用的插件和教學?
+                                    </h3>
+                                    <div>
+                                        <p>A: 會的!! 不定期會和大家分享好用的插件，以及使用教學，都會發佈在粉絲團，並且會收錄在<a href="https://goo.gl/jCu3L8" target="_blank">彩虹ui 推薦 - 單體插件 - 心得 - 攻略</a>。
+
+                                        </p>
+                                        <p>如果你有覺得哪個插件很好用，非常歡迎留言，一同交流和分享。
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!--其他FAQ內容結束-->
+                        <!--搜尋結果的內容-->
+                        <div role="tabpanel" class="tab-pane" id="search-result">
+                            <!-- Collapse content -->
+                            <div class="jumbotron">
+                                <h2>搜尋: <em class="keyword"></em></h2>
+                                <p>共找到 <span class="serach-result-num">0</span> 個相關問題與解答</p>
+                            </div>
+
+                            <div id="accordion-search" class="accordion"></div>
+                        </div>
+                        <!--搜尋結果的內容結束-->
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!--/.col-xs-12.col-sm-9-->
+
+            <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
+                <div class="row">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#安裝" aria-controls="安裝" role="tab" data-toggle="tab"><i class="fa fa-download fa-2x"></i><br />安裝</a></li>
+                        <li role="presentation"><a href="#綜合" aria-controls="綜合" role="tab" data-toggle="tab"><i class="fa fa-gear fa-2x"></i><br />綜合</a></li>
+                        <li role="presentation"><a href="#畫面" aria-controls="畫面" role="tab" data-toggle="tab"><i class="fa fa-television fa-2x"></i><br />畫面</a></li>
+                        <li role="presentation"><a href="#頭像" aria-controls="頭像" role="tab" data-toggle="tab"><i class="fa fa-github-alt fa-2x"></i><br />頭像</a></li>
+                        <li role="presentation"><a href="#快捷列" aria-controls="快捷列" role="tab" data-toggle="tab"><i class="fa fa-tasks fa-2x"></i><br />快捷列</a></li>
+                        <li role="presentation"><a href="#聊天" aria-controls="聊天" role="tab" data-toggle="tab"><i class="fa fa-commenting fa-2x"></i><br />聊天</a></li>
+                        <li role="presentation"><a href="#地圖" aria-controls="地圖" role="tab" data-toggle="tab"><i class="fa fa-map-marker fa-2x"></i><br />地圖</a></li>
+                        <li role="presentation"><a href="#戰鬥 " aria-controls="戰鬥 " role="tab" data-toggle="tab"><i class="fa fa-paw fa-2x"></i><br />戰鬥 </a></li>
+                        <li role="presentation"><a href="#還原" aria-controls="還原" role="tab" data-toggle="tab"><i class="fa fa-undo fa-2x"></i><br />還原</a></li>
+                        <li role="presentation"><a href="#其他" aria-controls="其他" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />其他</a></li>
+                        <li role="presentation"><a href="https://www.facebook.com/rainbowui" target="_blank" class="fb-btn"><i class="fa fa-facebook-official fa-2x"></i><br />粉絲團</a></li>
+                        <li role="presentation"><a href="https://www.facebook.com/notes/1166344070060781" target="_blank" class="fb-btn"><i class="fa fa-gamepad fa-2x"></i><br />教學</a></li>
+                        <li role="presentation" class="hide"><a href="#search-result" aria-controls="search-result" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />搜尋</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.sidebar-offcanvas-->
+        </div>
+        <!--/row-->
+
+    </div>
+    <!-- /container -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted text-center">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" /></a>
+                <br />《魔獸世界®》 商標由暴雪娛樂持有，本著作是由<a href="https://www.facebook.com/rainbowui" target="_blank">彩虹ui </a>製作，
+                <br />本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            //IE Fix for "jumpy" fixed bacground
+            //by https://coderwall.com/p/hlqqia/ie-fix-for-jumpy-fixed-bacground
+            if (navigator.userAgent.match(/Trident\/7\./)) { // if IE
+                $('body').on("mousewheel", function () {
+                    // remove default behavior
+                    event.preventDefault();
+
+                    //scroll without smoothing
+                    var wheelDelta = event.wheelDelta;
+                    var currentScrollPosition = window.pageYOffset;
+                    window.scrollTo(0, currentScrollPosition - wheelDelta);
+                });
+            }
+
+            //滑動選單開關按鈕
+            $('[data-toggle="offcanvas"]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+
+                //顯示隱藏搜尋框
+                if ($('.row-offcanvas').hasClass('active')) {
+                    setTimeout(function () {
+                        $('.search-form').show('fade');
+                    }, 200);
+
+                } else {
+                    $('.search-form').hide('fade');
+                }
+
+            });
+
+            //按下選單按鈕時，回到頁面頂端
+            //如果是滑動選單狀態，則關閉滑動選單。
+            var gotoTopAndHideMenu = function () {
+
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "fast");
+
+                if ($('.row-offcanvas').hasClass('active')) {
+                    $('.row-offcanvas').toggleClass('active');
+                }
+            };
+
+            $(".nav.nav-tabs").on('click', gotoTopAndHideMenu);
+
+
+            //視窗大小改變時，顯示隱藏搜尋框
+            $(window).resize(function () {
+                if ($('.visible-xs').css('display') == 'none') {
+                    $('.search-form').show();
+                } else if ($('.row-offcanvas').hasClass('active')) {
+                    $('.search-form').show();
+                } else {
+                    $('.search-form').hide();
+                }
+            });
+
+            //jQuery UI accordion
+            $('.accordion').accordion({
+                active: false,
+                animate: 'easeOutQuad',
+                collapsible: true,
+                header: "> div > h3",
+                heightStyle: 'content'
+            });
+
+            /* 可以拖曳和重新排列問題
+            .sortable({
+                axis: "y",
+                handle: "h3",
+                stop: function (event, ui) {
+                    // IE doesn't register the blur when sorting
+                    // so trigger focusout handlers to remove .ui-state-focus
+                    ui.item.children("h3").triggerHandler("focusout");
+
+                    // Refresh accordion to handle new order
+                    $(this).accordion("refresh");
+                }
+            });
+            */
+
+            //展開問題內容時，若無法顯示完整的內容，則捲動頁面。
+            $(".accordion").on("accordionactivate", function (e, ui) {
+
+                //console.log(ui.newPanel);
+
+                //先檢查是否有新的內容展開，而不是把同一個內容收起。
+                if (ui.newPanel.offset()) {
+
+                    var openedContent = ui.newPanel;
+                    var viewportHeight = $(window).height();
+
+                    //console.log("content top = " + openedContent.offset().top);
+                    //console.log("outerHeight = " + openedContent.outerHeight(true));
+                    //console.log("body top = " + $(window).scrollTop());
+                    //console.log("viewportHeight = " + viewportHeight);
+
+                    //計算新展開的內容，底部座標是否超出瀏覽器畫面。
+                    var contentOffsetBtn = openedContent.offset().top + openedContent.outerHeight() - $(window).scrollTop() - $(window).height();
+                    //計算新展開的內容，頂部座標是否超出瀏覽器畫面。
+                    var contentOffsetTop = openedContent.offset().top - $(window).scrollTop() - 150;
+
+                    //console.log("contentOffset = " + contentOffset);
+
+                    //超出的話就捲動頁面
+                    if (contentOffsetBtn > 0 || contentOffsetTop < 0) {
+                        $("html, body").animate({
+                            scrollTop: openedContent.offset().top - 150
+                        }, {
+                            duration: 500,
+                            easing: 'easeOutQuart'
+                        });
+                    }
+                }
+
+            });
+
+            //outerHTML jQuery Plugin
+            //by: https://css-tricks.com/snippets/jquery/outerhtml-jquery-plugin/
+            $.fn.outerHTML = function () {
+
+                // IE, Chrome & Safari will comply with the non-standard outerHTML, all others (FF) will have a fall-back for cloning
+                return (!this.length) ? this : (this[0].outerHTML || (
+                    function (el) {
+                        var div = document.createElement('div');
+                        div.appendChild(el.cloneNode(true));
+                        var contents = div.innerHTML;
+                        div = null;
+                        return contents;
+                    })(this[0]));
+
+            }
+
+            //搜尋
+            $('#search-form').submit(function (e) {
+                e.preventDefault();
+                gotoTopAndHideMenu();
+
+                //取得搜尋關鍵字
+                var nResult = $('#accordion-search');
+                var sKey = $('.search-text').val();
+                var htmlResult = "";
+                var i = 0;
+
+                //檢查關鍵字
+                if (sKey.trim() == '') {
+                    $('.search-text').prop('placeholder', '請輸入關鍵字');
+                    return;
+                }
+
+                //重置搜尋結果
+                $('#accordion-search').html('');
+
+
+                //搜尋每一個標籤頁的Q1問題
+                $('.jumbotron').each(function (index) {
+                    if (index < $('.jumbotron').length - 1 && $(this).text().indexOf(sKey) >= 0) {
+                        i++;
+                        var div = $(this).clone();
+                        htmlResult += '<div class="group"><h3>';
+                        htmlResult += div.find('h2').text().replace(/Q[0-9]+:/, 'Q' + i + ':');
+                        div.find('h2').remove();
+                        htmlResult += '</h3><div>';
+                        htmlResult += div.html();
+                        htmlResult += '</div></div>';
+                        div = null;
+                    }
+                });
+
+                //搜尋每一個Q2以後的問題
+                $('.group').each(function () {
+                    if ($(this).text().indexOf(sKey) >= 0) {
+                        //nResult.append($(this).clone());
+                        i++;
+                        htmlResult += $(this).outerHTML().replace(/Q[0-9]+:/, 'Q' + i + ':');
+                    }
+                });
+
+                //顯示關鍵字
+                $('.keyword').text(sKey);
+
+                //關鍵字變色
+                htmlResult = htmlResult.replace(new RegExp(sKey, 'g'), '<em class="keyword">' + sKey + '</em>');
+
+                //顯示搜尋結果面板
+                $('a[href="#search-result"]').tab('show');
+
+                //顯示結果
+                $('#accordion-search').html(htmlResult);
+                $('.serach-result-num').text(i);
+                $('#accordion-search').accordion('refresh');
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
