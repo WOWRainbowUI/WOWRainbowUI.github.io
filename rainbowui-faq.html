@@ -9,7 +9,7 @@
     <meta name="author" content="Alex Wang">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包</title>
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/9</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -39,6 +39,9 @@
         strong {
             color: #dd4132;
         }
+		a, a:link, a:visited {
+			text-decoration: underline;
+		}
         /*
  * Off Canvas
  * --------------------------------------------------
@@ -138,6 +141,10 @@
         .nav-tabs .glyphicon {
             font-size: 1.5em;
         }
+		
+		.nav-tabs a, .nav-tabs a:link, .nav-tabs a:hover, .nav-tabs a:visited {
+			text-decoration: none;
+		}
         
         .nav-tabs>li>a {
             border-radius: 4px;
@@ -296,10 +303,6 @@
         .group .keyword {
             border-bottom: 1px dashed deeppink;
         }
-		
-		#disqus_thread {
-			padding-top: 3em;
-		}
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -355,21 +358,13 @@
 
                             <div class="jumbotron">
                                 <h2>Q1: 我是第一次使用彩虹ui  整合包，該如何安裝?</h2>
-                                <p>A: 很簡單，只要依照下面的步驟來安裝即可:
-                                    <ol>
-                                        <li>移除舊插件: 將遊戲安裝資料夾 World of Warcraft > Interface 裡面的 <strong>AddOns</strong> 資料夾刪除。</li>
-                                        <li>移除舊設定: 將遊戲安裝資料夾 World of Warcraft 裡面的 <strong>WTF</strong> 資料夾刪除。</li>
-                                        <li>下載安裝: <a href="https://goo.gl/kuaG94" target="_blank">到這裡下載最新的插件包檔案</a>，解壓縮，將解壓縮後 AddOns 資料夾剪下，到 World of Warcraft &gt; Interface 裡面，貼上。</li>
-                                        <li>進入遊戲開始暢玩。</li>
-                                    </ol>
-                                </p>
-                                <p><em>無論之前是否有安裝過插件或其他整合包，都建議依照上述的步驟刪除 AddOns 和 WTF 資料夾，做個乾淨安裝，避免新舊插件互相衝突，影響遊玩體驗。</em></p>
+                                <p>A: 請詳細閱讀我們精心製作的<a href="https://rainbowui.wordpress.com/rainbow-ui-pack-wow-addons-installation-guide/" target="_blank">彩虹ui整合包安裝說明</a>，依照裡面的步驟來安裝。</p>
                             </div>
                             <div id="accordion-setup" class="accordion">
                                 <div class="group">
                                     <h3>Q2: 之前是使用別的整合包，現在想改用彩虹，該怎麼做?</h3>
                                     <div>
-                                        <p>A: 請依照 Q1 第一次使用的安裝步驟來做即可。</p>
+                                        <p>A: 請詳細閱讀我們精心製作的<a href="https://rainbowui.wordpress.com/rainbow-ui-pack-wow-addons-installation-guide/" target="_blank">彩虹ui整合包安裝說明</a>，依照裡面的步驟來安裝即可。</p>
                                     </div>
                                 </div>
                                 <div class="group">
@@ -377,41 +372,41 @@
                                     <div>
                                         <p>A: 彩虹ui 每個月都會更新，讓插件保持在最新的版本，提供新的好用功能。強烈建議只要有更新，都請一定要更新。</p>
 
-                                        <p>若現在已經在使用彩虹，每次有更新時，只需要重新下載、解壓縮，將解壓縮後 AddOns 資料夾剪下，到 World of Warcraft &gt; Interface 裡面，貼上，覆蓋取代原有的檔案，便能完成更新。</p>
-                                        <p><em>也請特別留意每次的更新資訊，都會有新增的插件和功能介紹哦! </em></p>
+                                        <p>若現在已經在使用彩虹，每次有更新時，只需要重新下載，將解壓縮出來的 <strong>AddOns</strong> 資料夾，直接覆蓋取代 <strong>World of Warcraft &gt; Interface</strong> 底下已有的 <strong>AddOns</strong> 資料夾，便能完成更新。</p>
+                                        <p><em>**也請特別留意每次的<a href="https://rainbowui.wordpress.com/tag/%E5%BD%A9%E8%99%B9ui-%E6%9B%B4%E6%96%B0%E8%B3%87%E8%A8%8A/" target="_blank">更新資訊</a>，都會有新增的插件和功能介紹哦! </em></p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q4: 更新插件是否會影響原本的已經設定好的插件?</h3>
                                     <div>
-                                        <p>A: 請放心，重新下載更新插件檔案，不會影響原有的設定。只有按下插件內的<strong>重置</strong>按鈕，或是刪除 <strong>WTF</strong> 資料夾，才會影響原有的設定檔。</p>
+                                        <p>A: 請放心，重新下載更新插件檔案，不會影響原有的設定。只有按下插件內的 "重置" 按鈕、建立新的設定檔，或是刪除 WTF 資料夾，才會影響原有的設定檔。</p>
                                     </div>
                                 </div>
 
                                 <div class="group">
                                     <h3>Q5: 下載安裝了插件，卻沒有出現?</h3>
                                     <div>
-                                        <p>A: 請依照下面的步驟順序來檢查:</p>
-										<ol><li>再次確認遊戲安裝資料夾是正確的，從Battle.net遊戲啟動器，選擇<strong>設定 &gt; 遊戲安裝/更新</strong>，可以看到遊戲安裝資料夾的位置。
+                                        <p>A: 請檢查: 
+											<ul>
+												<li>再次確認遊戲安裝資料夾是正確的，從Battle.net遊戲啟動器，選擇<strong>設定 &gt; 遊戲安裝/更新</strong>，可以看到遊戲安裝資料夾的位置。</li>
+												<li>有些電腦中會有<strong>兩份</strong> World of Warcraft，插件檔案要放在遊戲啟動器所指定的那一個底下才會出現。</li>
+												<li>Interface 資料夾裡面只有一個 AddOns 資料夾，不會有其他檔案和資料夾。</li>
+											</ul>
+										</p>
 
-                                        <p>有些電腦中會有兩份 World of Warcraft，插件檔案要放在遊戲啟動器所指定的那一個裡面才會出現。</p></li>
-										<li>World of Warcraft &gt; Interface 資料夾裡面，只會有一個 Addons 資料夾，不會有其他檔案和資料夾。</li>
-										<li>World of Warcraft &gt; Interface &gt; Addons 資料夾裡面，會有很多資料夾，但是 "不會有" 另一個 Addons 資料夾。</li>
-										</ol>
-										<p>若2和3有多出的資料夾，表示下載解壓縮後將檔案放錯位置了，請將 World of Warcraft &gt; Interface 裡面的內容全部刪除清空，再將下載解壓縮後的 Addons 這一個資料夾剪下，到 World of Warcraft &gt; Interface 裡面貼上。</p>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q6: 安裝整合包後，發生很多錯誤怎麼辦?</h3>
                                     <div>
-                                        <p>A: 請將 AddOns 和 WTF 資料夾刪除後，再重新安裝插件。</p>
+                                        <p>A: 請先將 <strong>AddOns</strong> 和 <strong>WTF</strong> 資料夾刪除後，再重新安裝插件。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q7: 我想將彩虹ui 與其他整合包和單體插件一起使用，該怎麼做?</h3>
                                     <div>
-                                        <p>A: 將彩虹ui 整合包中的 AddOns 資料夾，直接覆蓋取代原本的 AddOns 即可。</p>
-										<p>單體插件解壓縮後的資料夾則是放在 AddOns 資料夾裡面。</p>
+                                        <p>A: 將彩虹ui 整合包中的 AddOns 資料夾，直接覆蓋原本的 AddOns 即可。單體插件則是放在 AddOns 資料夾裡面。</p>
                                     </div>
                                 </div>
                                 <div class="group">
@@ -419,25 +414,31 @@
                                     <div>
                                         <p>A: 請依照下面的順序來排除錯誤:</p>
                                         <ol>
-                                            <li>不要同時載入兩個功能或用途相同的插件，以避免插件互相衝突。例如有兩種(或以上的)背包插件、團隊框架、聊天增強、施法條...，選擇其中一個載入就好。</li>
+                                            <li>不要同時載入兩個功能或用途相同的插件，以避免插件互相衝突。例如有兩種（或以上的）背包插件、團隊框架、聊天增強、施法條...，選擇其中一個載入就好。</li>
                                             <li>將 WTF 資料夾刪除，重置所有插件的設定。</li>
-                                            <li>將 AddOns 資料夾重新命名，先重新安裝一個整合包，執行遊戲確定沒有問題後，再將另一個整合包中的插件 (或單體插件) ，把<strong>需要使用的插件</strong>一個一個單獨複製到 AddOns 資料夾裡面，每複製一個後，先執行遊戲確定沒有問題，再複製另一個。</li>
+                                            <li>將 AddOns 資料夾刪除，先重新安裝一個整合包，執行遊戲確定沒有問題後，再將另一個整合包中的插件 （或單體插件），把<strong>需要使用的插件</strong>一個一個單獨複製到 AddOns 資料夾裡面，每複製一個後，先執行遊戲確定沒有問題，再複製另一個。</li>
                                         </ol>
-                                        <p><em>*請特別注意，基本上 AddOns 裡面每一個資料夾是一個插件，但有些插件會有多資料夾，例如DBM開頭的資料夾都是屬於DBM插件，要一起複製過去。*</em></p>
+                                        <p><em>**請特別注意，通常 AddOns 裡面每一個資料夾是一個插件，但有些插件會有多資料夾，例如DBM開頭的資料夾都是屬於DBM插件，要一起複製。</em></p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q9: 使用彩虹ui 整合包後，是否可以與 Curse Client 一起使用?</h3>
                                     <div>
-                                        <p>A: 可以，整合包可以和 Curse Client 一起使用，第一次一起使用時，Curse Client 會詢問是否要接受通知並且更新插件? 請全部都按 <strong>ACCEPT</strong> (接受) ，然後在接下來的對話框中，先按<strong>是</strong>，再按<strong>否</strong>。表示要接收通知，但暫時先不要更新目前的插件。</p>
-                                        <p>之後若 Curse 提供的插件有比電腦中安裝的新，便可以正常升級。當整合包有更新時，再更新整合包覆蓋取代即可。</p>
+                                        <p>A: 可以，請依照下面的步驟來做: 
+											<ol>
+												<li>第一次一起使用時，Curse Client 會詢問是否要接受通知並且更新插件? 請全部都按 ACCEPT（接受），然後在接下來的對話框中，先按 "是"、再按 "是"。</li>
+												<li>等 Curse Client 將所有插件都下載完成後，把 AddOns 資料夾刪除，再重新安裝一次最新版的彩虹ui 整合包。</li>
+												<li>之後便能使用 Curse Client 來正常更新插件。當整合包有新版本時，再覆蓋過去即可。</li>
+											</ol>
+										</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q10: 是否可以單獨更新DBM? 該怎麼做?</h3>
                                     <div>
                                         <p>A: 可以，因為DBM更新較頻繁，在整合包還沒更新之前，隨時保持DBM在最新的版本，對於經常打團隊的玩家來說是非常重要的。</p>
-                                        <p>要單獨更新DBM，請至<a href="http://www.curse.com/addons/wow/deadly-boss-mods" target="_blank">Curse的DBM頁面</a>，按網頁右方的橘黃色按鈕 <strong>Download Now</strong> 便會開始下載。下載後解壓縮到 World of Warcraft &gt; AddOns 底下，覆蓋原有的檔案即可更新完成。而且DBM已經內建中文版，請安心使用。</p>
+                                        <p>要單獨更新DBM，請至 <a href="http://www.kerobbs.net/thread-22629-1-1.html" target="_blank">奇樂</a> 或 <a href="http://www.curse.com/addons/wow/deadly-boss-mods" target="_blank">Curse</a> 下載DBM。下載後解壓縮到 World of Warcraft &gt; Interface &gt; AddOns 裡面，覆蓋原有的檔案即可更新完成。而且DBM已經內建中文版，請安心使用。</p>
+										<p><em><strong>**已經下載安裝的最新的DBM正式版本後，仍然提示要更新，便可不用理會。</strong></em></p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -445,10 +446,10 @@
                                         Q11: 如何複製插件的設定給其他分身使用，不需要重新設定插件?
                                     </h3>
                                     <div>
-                                        <p>A: 插件的設定可以分為三種:</p>
+                                        <p>A: 插件的設定可以分為三種: </p>
 										<ol>
 										    <li><strong>帳號共用的設定</strong>: 這類的插件只要設定好一個角色，所有角色都會使用相同的設定。例如 DBM、Skada 戰鬥統計、功能百寶箱。</li>
-											<li><strong>有設定檔功能的插件</strong>: 有些插件提供<strong>設定檔</strong>的功能，可以直接將其他角色的設定複製過來。例如技能吧檯4、施法條增強、Adi智能背包。</li>
+											<li><strong>有設定檔功能的插件</strong>: 有些插件提供<strong>設定檔</strong>的功能，可以直接將其他角色的設定複製過來。例如快捷列、施法條。</li>
 											<li><strong>需要個別設定的插件</strong>: 不是帳號共用、也沒有設定檔功能的插件，就必須一個一個角色單獨設定。</li>
 										</ol>
 										<p>不論使用哪種方式，要重新設定之前，先看看插件是否為帳號共用，以及是否有設定檔的功能。</p>
@@ -456,12 +457,17 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q12: 如何複製插件的設定到其他電腦使用?
+                                        Q12: 是否可以將設定直接複製到另一台電腦，或是網咖使用?
                                     </h3>
                                     <div>
-										<p>A: 若要將插件設定複製到別台電腦，同一個Battle.net帳號，只要將<strong>WTF</strong>資料夾整個複製到另一台電腦，放在相同的位置 (遊戲安裝資料夾 World of Warcraft 裡面) 即可。</p>
-										<p>不同的Battle.net帳號，因為伺服器、角色ID都不同，建議安裝好插件後，在遊戲內重新設定插件，不要使用複製WTF的方式來複製插件的設定，不僅無效，還有可能會造成設定上的錯亂讓遊戲發生問題。</p>
-										<p>許多插件在設定中都會記錄伺服器和角色資訊。若伺服器和角色不同，光複製檔案無法套用相同的設定。</p>
+                                        <p>A: 可以，只要將 World of Warcraft 資料夾裡面的 WTF 資料夾，複製到另一台電腦的同一個位置，覆蓋取代即可。</p>
+										<p>請特別注意: 
+											<ul>
+												<li>這樣做<strong>僅限同一個Battle.net帳號</strong>，不同帳號複製 WTF 資料夾是沒有用的，因為設定檔中會記錄伺服器和角色ID。</li>
+												<li>不同帳號直接複製WTF不但沒有效果，還有可能會造成設定檔的錯亂，請在遊戲中另外設定。</li>
+												<li>在網咖開始遊戲之前，請先刪除WTF資料夾，清除別人遺留下來的設定。遊玩結束之後，也請記得刪除WTF資料夾，裡面有你的角色相關資料。</li>
+												<li>因為電腦配備不同，複製或刪除WTF資料夾後，會需要重新調整遊戲畫面的相關設定。</li>
+											</ul>										
                                     </div>
                                 </div>
                             </div>
@@ -472,53 +478,51 @@
                             <!-- Collapse content -->
 
                             <div class="jumbotron">
-                                <h2>Q1: 如何開啟自動修理裝備和自動販賣垃圾的功能?</h2>
-                                <p>A: 小地圖按鈕展開，有個綠色球球的按鈕，點一下開啟功能百寶箱。左方選擇<strong>自動</strong>，右方將<strong>自動修理裝備</strong>和<strong>自動販賣垃圾</strong>打勾，然後按下右下角的<strong>重新載入</strong>按鈕。
+                                <h2>Q1: 如何開啟或關閉自動修理裝備和自動賣垃圾的功能?</h2>
+                                <p>A: 小地圖按鈕展開，有個綠色小圓球的按鈕，點一下開啟功能百寶箱。左方選擇 "<strong>自動化</strong>"，右方將 "<strong>自動修理裝備</strong>" 和 "<strong>自動出售垃圾</strong>" 打勾（關閉是取消打勾），然後按下右下角的 "<strong>重新載入</strong>" 按鈕。</p>
 
-                                    <p>功能百寶箱中還有許多方便的功能設定，建議花一點時間來看看。只要設定好一次，所有角色都適用。
+                                    <p>**<em>功能百寶箱中還有許多方便的功能設定，建議花一點時間來看看。只要設定好一次，所有角色都適用。</em></p>
                             </div>
                             <div id="accordion-general" class="accordion">
                                 <div class="group">
                                     <h3>
-                                        Q2: 如何調整滑鼠提示說明顯示的位置?
+                                        Q2: 如何調整滑鼠指向人物或物品、技能時，出現的提示說明位置?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 <code>/freebtip</code> 後會出現位置展示方塊，就是滑鼠提示說明顯示的位置。移動方塊來調整位置，完成後再輸入 <code>/freebtip</code> 。</p>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/tip</code> 開啟滑鼠提示的設定視窗，按下 "<strong>定位</strong>" 按鈕後會出現位置展示方塊，就是滑鼠提示說明顯示的位置。拖曳移動方塊來調整位置，完成後點一下 X 關閉位置展示方塊。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q3: 如何讓滑鼠提示說明跟著滑鼠移動?
+                                        Q3: 如何讓滑鼠提示說明跟隨滑鼠移動?
                                     </h3>
                                     <div>
-                                        <p>A: 使用記事本或純文字編輯器開啟 World of Warcraft\Interface\AddOns\FreebTip 資料夾內的檔案 tip.lua，將下面這行:
-                                            <br /><code>cursor = false,</code>
-                                            <p>改為:
-                                                <br /><code>cursor = true,</code></p>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/tip</code> 開啟滑鼠提示的設定視窗，左方選擇 "<strong>框架位置</strong>"，右方的下拉選單選擇 "<strong>滑鼠跟隨</strong>"。
                                         </p>
-                                        <p>更改後請重新載入，或重新啟動遊戲。若更改後滑鼠提示只會在畫面最右方上下移動，請點小地圖按鈕的綠色小圓球，在 <strong>功能百寶箱</strong> 中將 <strong>介面 > 管理滑鼠提示</strong> 取消打勾。</p>
+										<p>總共有四種類型的滑鼠提示可以分別調整位置:
+											<ul>
+												<li>世界單位類型: 滑鼠指向遊戲內的人物角色時的提示說明。</li>
+												<li>世界提示類型: 滑鼠指向遊戲內的物體和物品時的提示說明。</li>
+												<li>框架單位類型: 滑鼠指向頭像框架、隊伍框架、團隊框架時的提示說明。</li>
+												<li>框架提示類型: 滑鼠指向快捷列按鈕、圖示、設定選項時的提示說明。</li>
+											</ul>
+										</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                    Q4: 如何更改鼠提示說明的大小和字體?
-                                </h3>
+										Q4: 如何更改鼠提示說明的文字大小?
+									</h3>
                                     <div>
-                                        <p>A: 使用記事本或純文字編輯器開啟 World of Warcraft\Interface\AddOns\FreebTip 資料夾內的檔案 tip.lua，將下面這行:
-                                            <br /><code>scale = 1.1,</code>
-                                            <p>改為:
-                                                <br /><code>scale = 1,</code> 或其他數字。</p>
-                                        </p>
-                                        <p>要更改字體，請將中文字型檔案複製到 World of Warcraft\Interface\AddOns\FreebTip\media 資料夾內，改為名 expressway.ttf，取代原本的字型檔案即可。</p>
-                                        <p>更改後請重新啟動遊戲 (重新載入無效)。</p>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/tip</code> 開啟滑鼠提示的設定視窗，左方選擇 "<strong>字型設定</strong>"，右方更改 "<strong>字型大小</strong>" 的數字。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q5: 如何恢復原本的任務對話框?
+                                        Q5: 如何恢復原本的任務內容對話框?
                                     </h3>
                                     <div>
-                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選、不要載入 <strong>[任務] 劇情</strong> 即可。
+                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選、不要載入 <strong>[任務] 故事劇情</strong> 即可。
                                         </p>
                                     </div>
                                 </div>
@@ -544,17 +548,16 @@
                                         Q7: 如何關閉裝備外型預覽?
                                     </h3>
                                     <div>
-                                        <p>A: 從<strong>Esc &gt; 介面 &gt; 插件 &gt; 塑形 &gt; 小提示</strong>，可以調整預覽窗格的大小。
-                                        </p>
-                                        <p>或是在插件列表中不要載入 <strong>[塑形] 設計師</strong>，將裝備預覽相關功能整個關閉。
+                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選、不要載入 <strong>[塑形] 外觀預覽</strong> 即可。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>Q8: 如何使用材料銀行?</h3>
                                     <div>
-                                        <p>A: 打開銀行時，點銀行視窗右上角的小按鈕 <strong>D</strong> 會將背包中的將材料都存放至材料銀行。點小按鈕 <strong>R</strong> 會切換到材料銀行視窗，再點一次會切換回一般銀行。</p>
-                                        <p>自動存放材料: 在背包或銀行視窗中沒有物品的地方點一下滑鼠右鍵，開啟背包設定。勾選<strong>存放材料</strong>的話，每次打開銀行時，就會自動將背包中的將材料都存放至材料銀行。</p>
+                                        <p>A: 打開銀行時，點銀行視窗最左上方的 "<strong>材料銀行</strong>" 會切換到材料銀行視窗。</p>
+										<p>按下 "<strong>存放所有材料</strong>" 按鈕，會將背包和銀行中的材料都存放至材料銀行。</p>
+                                        <p>在背包或銀行視窗中，分類框格內沒有物品的地方按住 <strong>Alt</strong> 鍵點一下滑鼠右鍵，開啟背包設定。勾選 "<strong>自動存放材料</strong>"，每次打開銀行時，就會自動將背包中的將材料都存放至材料銀行。</p>
                                     </div>
                                 </div>
                                 <div class="group">
@@ -562,26 +565,19 @@
                                         Q9: 可以使用沒有分類的整合背包嗎？
                                     </h3>
                                     <div>
-                                        <p>A: 當然可以，請自行下載安裝你喜愛的背包插件，例如: <a href="http://www.curse.com/addons/wow/bagnon" target="_blank">Bagnon</a>。
+                                        <p>A: 當然可以，請自行下載安裝你喜愛的背包插件，例如: <a href="https://mods.curse.com/addons/wow/baud-bag" target="_blank">Baud Bag</a>（彩虹下次改版會收錄這個整合背包插件）。
 
                                         </p>
-                                        <p>然後在 Esc &gt; 插件，列表中不要載入 <strong>[背包] Adi智能背包</strong> 即可。
+                                        <p>然後在 Esc &gt; 插件，列表中不要載入 <strong>[背包] DJ智能背包</strong> 即可。
 
 
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q10: 觀察別人時常有問題、發生錯誤，該如何解決？</h3>
+                                    <h3>Q10: 觀察別人時常有問題，該如何解決？</h3>
                                     <div>
-                                        <p>A: 請分別試試看下面幾種方法，通常選擇其中一種就能解決:
-                                            <ol>
-                                                <li>插件列表中不要載入 <strong>[裝備] 觀察問題修正</strong>。</li>
-                                                <li>插件列表中要勾選載入 <strong>[裝備] 觀察問題修正</strong>。</li>
-                                                <li>插件列表中不要載入 <strong>[裝備] 出處</strong>。</li>
-                                                <li>插件列表中不要載入 <strong>[團隊] EXRT團隊工具包</strong>。</li>
-                                            </ol>
-                                        </p>
+                                        <p>A: 暴雪已經修正了這個問題，若仍無法順利觀察，請多試幾次。</p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -589,7 +585,7 @@
                                         Q11: 如何關閉自動推薦裝備建議的物品?
                                     </h3>
                                     <div>
-                                        <p>A: 這是 Dugi 任務高手的功能之一，適合新玩家或不確定該如何選擇裝備時使用。<br /><strong>右鍵點DG小圓鈕 &gt; 裝備設定 &gt; 自動裝備智慧套裝</strong>，取消打勾。可以關閉這個功能。</p>
+                                        <p>A: 這是 Dugi 任務高手的功能之一，適合新玩家或不確定該如何選擇裝備時使用。<br /><strong>右鍵點DG小圓鈕（或是輸入 <cdoe>/任務</code>）&gt; 裝備設定 &gt; 自動裝備智慧套裝</strong>，取消打勾。可以關閉這個功能。</p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -597,17 +593,23 @@
                                         Q12: 任務目標追蹤清單如何移動位置?
                                     </h3>
                                     <div>
-                                        <p>A: 新的任務目標追蹤清單無法直接拖曳移動，必須從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整<strong>垂直位置</strong>和<strong>水平位置</strong>的數值來移動位置。</p>
+                                        <p>A: 依照你所使用的插件來做調整：
+											<ul>
+												<li><strong>遊戲內建的任務清單</strong>: 無法調整位置。</li>
+												<li>已載入 <strong>[任務]目標清單增強</strong> 插件: 從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整 "<strong>垂直位置</strong>" 和 "<strong>水平位置</strong>" 的數值來移動位置。</li>
+												<li><strong>SyncUI</strong>: 使用它的 "<strong>版面配置工具</strong>" 來調整位置。</li>
+												<li><strong>OwD UI</strong>: 在它的設定裡面按下 "<strong>移動框架</strong>"，拖曳紅色的長方形來調整位置。</li>
+											</ul>
+										</p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q13: 追蹤任務後在畫面右方看不到任務目標清單?
+                                        Q13: 追蹤任務後在畫面右方看不到任務清單?
                                     </h3>
                                     <div>
-                                        <p>A: 應該是任務目標清單被收合起來了。請在畫面上仔細找找『<strong>12/15任務 - 0每日</strong>』這幾個字，數字不同沒關係，在這幾個字的右方，有個+號的小方塊按鈕，點一下便可以將任務目標清單展開了。</p>
+                                        <p>A: 應該是任務目標清單被收合起來了。請在畫面上仔細找找『<strong>12/15任務 - 0每日</strong>』這幾個字，數字不同沒關係，在這幾個字的右方，有個+號的小方塊按鈕，點一下便可以將任務目標清單展開。</p>
 										<p>若點一下還是沒有將任務目標清單展開，請按 M 打開世界地圖，按住 Shift 鍵點任務標題，將任務加入目標清單來追蹤。</p>
-										<p><em>*如果有同時使用 SyncUI 或 OwD UI，請依照該插件介紹頁面中的說明來修改，便能使用任務目標清單。</em></p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -615,9 +617,9 @@
                                         Q14: 看不到獎勵目標區域的進度?
                                     </h3>
                                     <div>
-                                        <p>A: 請將滑鼠游標停留在任務目標追蹤清單上，滾動滑鼠滾輪，捲動清單後是否能夠看到。</p>
-										<p>或是從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整<strong>最大高度</strong>的數值。</p>
-										<p><em>*請特別注意，當你走到獎勵目標區域時，畫面中央會出現 "獎勵目標" 幾個大字的時候，才會有進度條，沒有出現這幾個字時不會有進度條。</em></p>
+                                        <p>A: 請將滑鼠游標停留在任務目標清單上，滾動滑鼠滾輪，將清單往下捲動。</p>
+										<p>或是從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，調整 "<strong>最大高度</strong>" 的數值。</p>
+										<p>或是取消追蹤一些任務，進度在下方被擠出去了。</p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -625,8 +627,8 @@
                                         Q15: 任務物品會變成一個大大的按鈕在畫面中央，如何取消?
                                     </h3>
                                     <div>
-                                        <p>A: 這是新的 <strong>[任務] 目標清單增強</strong> 插件的功能，會將距離最近的任務的物品，變成類似德拉諾要塞技能的額外快捷鍵按鈕，方便解任務時使用。</p>
-										<p>若要取消這個功能，從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，將<strong>啟用大型物品按鈕</strong>取消打勾。</p>
+                                        <p>A: 這是 <strong>[任務] 目標清單增強</strong> 插件的功能，會將距離最近的任務的物品，變成類似德拉諾要塞技能的額外快捷鍵按鈕，方便解任務時使用。</p>
+										<p>若要取消這個功能，從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>，將 "<strong>啟用大型物品按鈕</strong>" 取消打勾。</p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -637,7 +639,7 @@
                                         <p>A: 這個狀況通常是在移動過任務追蹤清單的位置後會發生，因為移動時也自動調整了任務追蹤清單框架高度的緣故。
 
                                         </p>
-                                        <p>解決方法為: 在插件列表中載入 <strong>[任務] 目標清單增強</strong>，然後從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>調整<strong>垂直位置</strong>、<strong>水平位置</strong>和<strong>最大高度</strong>的數值來移動位置和大小。
+                                        <p>解決方法為: 在插件列表中載入 <strong>[任務] 目標清單增強</strong>，然後從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>調整 "<strong>垂直位置</strong>"、"<strong>水平位置</strong>" 和 "<strong>最大高度</strong>" 的數值來移動位置和大小。
 										<p>副本挑戰模式無法看到擊殺數量或時間條，也可以使用上述的方法解決。</p>
                                     </div>
                                 </div>
@@ -656,10 +658,10 @@
                             <div id="accordion-screen" class="accordion">
                                 <div class="group">
                                     <h3>
-                                        Q2: BOSS的血條擋到我的畫面了?
+                                        Q2: 打團隊時，BOSS的血條擋到我的畫面了?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，左方選擇<strong>一般</strong> ，右方取消勾選<strong>鎖定框架</strong>，就可以自由移動BOSS框架和各種人物角色框架了。移動完再按下<strong>鎖定框架</strong>即可。
+                                        <p>A: 輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，選擇 "<strong>一般</strong>" &gt;取消勾選 "<strong>鎖定框架</strong>"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選 "<strong>鎖定框架</strong>" 即可。
                                         </p>
                                     </div>
                                 </div>
@@ -668,9 +670,9 @@
                                     <div>
                                         <p>A: 有幾種方式可以放大遊戲內的文字:
                                             <ol>
-                                                <li><strong>整體放大</strong>: 按 Esc &gt; 系統 &gt; 進階 &gt; 將使用者介面縮放打勾，然後拖曳滑桿。這種放大方式，會將整個遊戲介面放大，包括對話視窗和快捷列按鈕。</li>
-                                                <li><strong>只放大視窗</strong>: 滑鼠滑到視窗標題列上，按住 Ctrl 鍵不放，滾動滑鼠滾輪，可以縮放視窗，也包括視窗中的文字。不論是角色資訊、任務對話框、信件、商人、世界地圖，都可以使用這種方式來放大。拖曳視窗標題，還可以移動位置哦!</li>
-                                                <li><strong>只放大任務內容和信件文字</strong>: 小地圖按鈕展開，點綠色小圓球，開啟功能百寶箱。選擇文字，右方可以單獨調整任務內容和信件文字的大小。</li>
+                                                <li><strong>整體放大</strong>: 按 <strong>Esc &gt; 系統 &gt; 進階 &gt; 將 "使用者介面縮放" 打勾</strong>，然後拖曳滑桿。這種放大方式，會將整個遊戲介面放大，包括對話視窗和快捷列按鈕。</li>
+                                                <li><strong>放大視窗</strong>: 滑鼠滑到視窗標題列上，按住 <strong>Ctrl</strong> 鍵不放，滾動滑鼠滾輪，可以縮放視窗，也包括視窗中的文字。不論是角色資訊、任務對話框、信件、商人、世界地圖，都可以使用這種方式來放大。拖曳視窗標題，還可以移動位置哦!</li>
+                                                <li><strong>放大任務內容和信件文字</strong>: 小地圖按鈕展開，點綠色小圓球，開啟功能百寶箱。左方選擇 "<strong>文字訊息</strong>"，右方將 "<strong>重設郵件文字</strong>" 或 "<strong>重設任務文字</strong>" 打勾，按下 "<strong>重新載入</strong>" 後，再點剛剛的選項旁的小齒輪進去調整文字大小。</li>
                                             </ol>
                                         </p>
                                         <p>另外，也建議將遊戲字體改為較容易閱讀的字型，<a href="http://forum.gamer.com.tw/C.php?bsn=05219&snA=499186" target="_blank">更改遊戲字體的方法請參考這裡。</a></p>
@@ -679,8 +681,14 @@
                                 <div class="group">
                                     <h3>Q4: 介面設定中的鏡頭最遠距離是灰色的，無法調整?</h3>
                                     <div>
-                                        <p>A: <strong>鏡頭最遠距離</strong> 的設定已由功能百寶箱插件來替代，如果你想要自己控制，小地圖按鈕展開，點綠色小圓球開啟功能百寶箱，選擇<strong>系統</strong>，將<strong>加大鏡頭最遠距離</strong>取消打勾，然後按下<strong>重新載入</strong>。</p>
-                                        <p>如果玩遊戲時畫面鏡頭一直自動拉到最遠，無法調整回來時，請依照上述的方法，將功能百寶箱中的<strong>加大鏡頭最遠距離</strong>取消打勾，便能解決這個問題。</p>
+                                        <p>A: "鏡頭最遠距離" 的設定已由功能百寶箱插件來取代，如果你想要自己控制，小地圖按鈕展開，點綠色小圓球開啟功能百寶箱，左方選擇 "<strong>系統設置</strong>"，右方將 "<strong>加大鏡頭最遠距離</strong>" 取消打勾，然後按下 "<strong>重新載入</strong>"。</p>
+                                        <p>如果玩遊戲時畫面鏡頭一直自動拉到最遠，無法調整回來時，也可依照上述的方法，將功能百寶箱中的 "<strong>加大鏡頭最遠距離</strong>" 取消打勾，便能解決這個問題。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q5: 如何加大鏡頭最遠距離，讓視角可以拉得更遠?</h3>
+                                    <div>
+                                        <p>A: 暴雪即將修正這個問題，在這之前安裝 <a href="https://mods.curse.com/addons/wow/maxcam" target="_blank">MaxCam</a> 插件能夠讓視角可以拉得更遠。</p>
                                     </div>
                                 </div>
                             </div>
@@ -691,39 +699,25 @@
                             <!-- Collapse content -->
 
                             <div class="jumbotron">
-                                <h2>Q1: 頭像血條是否可以移動到快捷列上方，或其他位置?</h2>
-                                <p>A: 頭像血條框架可以移動到任何位置。輸入 <code>/頭像</code>，左方選擇<strong>一般</strong>，右方將<strong>鎖定框架</strong>取消打勾，便可以開始拖曳移動，可以移動任何頭像血條框架了，包括BOSS血條。移動完再按下<strong>鎖定框架</strong>即可。</p>
-								<p>移動自己的頭像時，隊伍也會跟著移動。要單獨移動自己的頭像，左方選擇<strong>隊伍</strong>，視窗右上方再選擇<strong>框架</strong>標籤頁，將<strong>定位到</strong>改為<strong>螢幕</strong>，便能夠只移動自己的頭像。</p>
-								<p>要單獨移動目標頭像也是一樣，左方選擇<strong>目標</strong>，視窗右上方再選擇<strong>框架</strong>標籤頁，將<strong>定位到</strong>改為<strong>螢幕</strong>。</p>
+                                <h2>Q1: 頭像框架的字太小了，都看不到，該如何放大?</h2>
+                                <p>A: 輸入 /suf 開啟 SUF單位框架的設定，先選擇要調整大小的框架，例如"玩家"或"目標"。然後在右方選擇"框架"，可以調整寬和高，或是直接更改縮放比例。若只要更改文字大小，請在右方選擇"文字/標籤"。
+
+                                    <p>也可以一次更改多個框架的大小，左方先選擇"總體"，右方勾選多個要更改的框架後，再選擇"框架"標籤頁來調整比例。
                             </div>
 
                             <div id="accordion-frame" class="accordion">
-								<div class="group">
-                                    <h3>Q2: 在團隊中如何不要顯示5人隊伍的框架? </h3>
-                                    <div>
-                                        <p>A: 輸入 <code>/頭像</code>，左方選擇<strong>隊伍</strong>，視窗右上方再選擇<strong>隊伍</strong>標籤頁，將<strong>任何團隊中隱藏</strong>打勾。 </p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>Q3: 頭像框架的字太小了，都看不到，該如何放大?</h3>
-                                    <div>
-                                        <p>A: 輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，先選擇要調整大小的框架，例如<strong>玩家</strong>或<strong>目標</strong>。然後在右方選擇<strong>框架</strong>，可以調整寬和高，或是直接更改縮放比例。若只要更改文字大小，請在右方選擇<strong>文字/標籤</strong>。</p>
-
-										<p>也可以一次更改多個框架的大小，左方先選擇<strong>總體</strong>，右方勾選多個要更改的框架後，再選擇<strong>框架</strong>標籤頁來調整比例。</p>
-                                    </div>
-                                </div>
                                 <div class="group">
                                     <h3>
-                                        Q4: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                        Q2: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 <code>/頭像</code> 開啟設定，左方選擇<strong>隱藏遊戲內建框架</strong>，右方的<strong>隱藏增益效果</strong>不要打勾。
+                                        <p>A: 輸入 /suf 開啟設定，左方選擇 "隱藏遊戲內建框架"，右方的 "隱藏增益效果" 不要打勾。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q5: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                        Q3: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
                                     </h3>
                                     <div>
                                         <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
@@ -738,11 +732,26 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q6: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
+                                    <h3>
+                                        Q4: 如何移動人物頭像框架的位置?
+                                    </h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/suf</code> 開啟 SUF單位框架的設定，選擇"一般"&gt;取消勾選"鎖定框架"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選"鎖定框架"即可。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>Q5: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
                                     <div>
                                         <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。再輸入一次 <code>/focus</code> 會取消專注目標。</p>
                                         <p>若需要經常設定專注目標，可以新增一個巨集，內容輸入 <code>/focus</code>，然後將巨集拉到快捷列。之後只要選取對象，再按快捷列上的巨集，便能設定專注目標。</p>
                                         <p>或是<a href="https://goo.gl/kV7c5v" target="_blank">參考這篇點擊施法的範例</a>來設定成: 按 Shift+滑鼠右鍵 點人物，設為專注目標。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q6: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
+                                    <div>
+                                        <p>A: 輸入 <code>/頭像</code>，選擇<strong>啟用單位 &gt; 隊伍</strong>，取消打勾就可以了。 </p>
                                     </div>
                                 </div>
                             </div>
@@ -1132,7 +1141,7 @@
                                             <li><strong>[戰鬥] 冷卻時間</strong></li>
                                             <li><strong>[進階] TMW技能提醒</strong></li>
                                         </ul>
-                                        <p>詳細說明請看： <a href="https://goo.gl/cfZ0f2" target="_blank">影響遊戲效能前三名的插件</a>
+                                        <p>詳細說明請看:  <a href="https://goo.gl/cfZ0f2" target="_blank">影響遊戲效能前三名的插件</a>
                                         </p>
                                     </div>
                                 </div>
@@ -1166,30 +1175,9 @@
                         <!--搜尋結果的內容結束-->
 
                     </div>
-					<!--Tab內容結束-->
 
                 </div>
-				<!--載入Disqus留言板-->
-<div id="disqus_thread"></div> 
-<script> 
-/** 
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. 
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables 
-*/ 
-/* 
-var disqus_config = function () { this.page.url = "http://wowrainbowui.github.io/rainbowui-faq.html"; // Replace PAGE_URL with your page's canonical URL variable 
-this.page.identifier = "faq"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable 
-}; 
-*/ 
-(function() { // DON'T EDIT BELOW THIS LINE 
-var d = document, s = d.createElement('script'); 
-s.src = '//rainbowui.disqus.com/embed.js'; 
-s.setAttribute('data-timestamp', +new Date()); 
-(d.head || d.body).appendChild(s); 
-})(); 
-</script> 
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-<!--載入Disqus留言板結束-->	
+
 
             </div>
             <!--/.col-xs-12.col-sm-9-->
@@ -1215,10 +1203,8 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
             </div>
             <!--/.sidebar-offcanvas-->
-			
         </div>
         <!--/row-->
-			
 
     </div>
     <!-- /container -->
@@ -1226,7 +1212,6 @@ s.setAttribute('data-timestamp', +new Date());
 
     <footer class="footer">
         <div class="container">
-
             <p class="text-muted text-center">
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" /></a>
                 <br />《魔獸世界®》 商標由暴雪娛樂持有，本著作是由<a href="https://www.facebook.com/rainbowui" target="_blank">彩虹ui </a>製作，
@@ -1441,7 +1426,6 @@ s.setAttribute('data-timestamp', +new Date());
 
         });
     </script>
-	<script id="dsq-count-scr" src="//rainbowui.disqus.com/count.js" async></script>
 </body>
 
 </html>
