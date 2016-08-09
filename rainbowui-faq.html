@@ -562,7 +562,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q9: 可以使用沒有分類的整合背包嗎？
+                                        Q9: 可以使用沒有分類的整合背包嗎? 
                                     </h3>
                                     <div>
                                         <p>A: 當然可以，請自行下載安裝你喜愛的背包插件，例如: <a href="https://mods.curse.com/addons/wow/baud-bag" target="_blank">Baud Bag</a>（彩虹下次改版會收錄這個整合背包插件）。
@@ -575,7 +575,7 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q10: 觀察別人時常有問題，該如何解決？</h3>
+                                    <h3>Q10: 觀察別人時常有問題，該如何解決? </h3>
                                     <div>
                                         <p>A: 暴雪已經修正了這個問題，若仍無法順利觀察，請多試幾次。</p>
                                     </div>
@@ -633,7 +633,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q16: 任務目標追蹤清單中只會顯示兩個任務，該如何解決？
+                                        Q16: 任務目標追蹤清單中只會顯示兩個任務，該如何解決? 
                                     </h3>
                                     <div>
                                         <p>A: 這個狀況通常是在移動過任務追蹤清單的位置後會發生，因為移動時也自動調整了任務追蹤清單框架高度的緣故。
@@ -641,6 +641,15 @@
                                         </p>
                                         <p>解決方法為: 在插件列表中載入 <strong>[任務] 目標清單增強</strong>，然後從<strong>Esc &gt; 介面 &gt; 插件 &gt; 任務-目標清單</strong>調整 "<strong>垂直位置</strong>"、"<strong>水平位置</strong>" 和 "<strong>最大高度</strong>" 的數值來移動位置和大小。
 										<p>副本挑戰模式無法看到擊殺數量或時間條，也可以使用上述的方法解決。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q17: 為什麼舊地圖的稀有怪不會自動通知? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 因為暴雪更改了遊戲機制，所有稀有怪警報插件都無法自動偵測舊地圖的稀有怪，只有潘達利亞、德拉諾和破碎群島的稀有怪才會自動通知。</p>
+                                        <p>如果你想要抓舊地圖的稀有寵物和坐騎，可以參考這篇<a href="http://forum.gamer.com.tw/B.php?bsn=05219&subbsn=16" target="_blank">【心得】巨集輕鬆抓靈獸、稀有寵物和坐騎</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -699,25 +708,81 @@
                             <!-- Collapse content -->
 
                             <div class="jumbotron">
-                                <h2>Q1: 頭像框架的字太小了，都看不到，該如何放大?</h2>
-                                <p>A: 輸入 /suf 開啟 SUF單位框架的設定，先選擇要調整大小的框架，例如"玩家"或"目標"。然後在右方選擇"框架"，可以調整寬和高，或是直接更改縮放比例。若只要更改文字大小，請在右方選擇"文字/標籤"。
-
-                                    <p>也可以一次更改多個框架的大小，左方先選擇"總體"，右方勾選多個要更改的框架後，再選擇"框架"標籤頁來調整比例。
+                                <h2>Q1: 如何移動左上方人物頭像血條的位置?</h2>
+                                <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，選擇 <strong>"一般" &gt; 取消勾選 "鎖定框架"</strong>，就可以自由移動BOSS框架和各種人物角色框架了。移動完再按下 "<strong>鎖定框架</strong>" 即可。<p>
+								<p>移動玩家頭像時，隊伍和目標框架也會跟著一起移動。若要分開各別移動位置， 取消勾選 "<strong>鎖定框架</strong>" 後，按下畫面中間的 "<strong>脫離框架</strong>" 按鈕，便可以各別移動。</p>
                             </div>
 
                             <div id="accordion-frame" class="accordion">
-                                <div class="group">
+								<div class="group">
                                     <h3>
-                                        Q2: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                        Q2: 如何放大頭像血條?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 /suf 開啟設定，左方選擇 "隱藏遊戲內建框架"，右方的 "隱藏增益效果" 不要打勾。
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，先選擇要調整大小的框架，例如 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，然後在右方選擇 "<strong>框架</strong>" 可以調整寬和高，或是直接更改縮放比例。</p>
+
+										<p>也可以一次更改多個框架的大小，左方先選擇 "<strong>總體</strong>"，右方勾選多個要更改的框架後，再選擇 "<strong>框架</strong>" 標籤頁來調整比例。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q3: 如何更改頭像血條顯示的文字內容和文字大小? 改成百分比或血量。
+                                    </h3>
+                                    <div>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，先選擇要調整大小的框架，例如 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，然後在右方選擇 "<strong>文字/標籤</strong>"，選擇 "<strong>生命條</strong>"（或 "<strong>綜合能量條</strong>"），再調整文字大小，和勾選 "<strong>左邊/右邊文字</strong>" 要顯示的內容。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q4: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
+                                    <div>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隊伍</strong>"，右方再選擇 "<strong>隊伍</strong>"，然後將 "<strong>任何團隊中隱藏</strong>" 打勾 </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q5: 目標頭像血條下方的 DOT 如何顯示時間?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階]冷卻時間</strong>。</p>
+										<p><em>**特別注意: <strong>[進階]冷卻時間</strong> 插件需要比較耗CPU資源，如過不是非常必要，或電腦較慢，建議不要載入使用。可以改看怪頭上血條的 DOT 時間，並且開啟遊戲內建的冷卻時間來使用（從 Esc &gt; 介面 &gt; 快捷列 &gt; 顯示冷卻時間）。</em></p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q6: 如何移動和放大右上角的增益/減益效果圖示?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請先另外安裝 <a href="https://mods.curse.com/addons/wow/phanxbuffs" target="_blank">PhanxBuffs</a> 這個插件來移動和縮放增益/減益效果圖示，彩虹ui 下次改版將會收錄這個插件。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q3: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                        Q7: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隱藏遊戲內建框架</strong>"，右方的 "<strong>隱藏增益效果</strong>" 不要打勾。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q8: 右上角的增益效果不會顯示時間了，該如何顯示出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 請依照下面的步驟來做:
+											<ol>
+												<li>退出遊戲，使用記事本編輯 World of Warcraft\WTF\Account\帳號\config-cache.wtf</li>
+												<li>在最後面加上一行</br><code>SET buffDurations "1"</code></li>
+												<li>存檔，再進入遊戲。</li>
+											</ol>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q9: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
                                     </h3>
                                     <div>
                                         <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
@@ -732,28 +797,15 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>
-                                        Q4: 如何移動人物頭像框架的位置?
-                                    </h3>
+                                    <h3>Q10: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
                                     <div>
-                                        <p>A: 輸入 <code>/suf</code> 開啟 SUF單位框架的設定，選擇"一般"&gt;取消勾選"鎖定框架"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選"鎖定框架"即可。
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>Q5: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
-                                    <div>
-                                        <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。再輸入一次 <code>/focus</code> 會取消專注目標。</p>
+                                        <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。</p>
+										<p>要取消專注目標時，先不要選取任何目標，再輸入 <code>/focus</code> 便會取消專注目標。</p>
                                         <p>若需要經常設定專注目標，可以新增一個巨集，內容輸入 <code>/focus</code>，然後將巨集拉到快捷列。之後只要選取對象，再按快捷列上的巨集，便能設定專注目標。</p>
                                         <p>或是<a href="https://goo.gl/kV7c5v" target="_blank">參考這篇點擊施法的範例</a>來設定成: 按 Shift+滑鼠右鍵 點人物，設為專注目標。</p>
                                     </div>
                                 </div>
-								<div class="group">
-                                    <h3>Q6: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
-                                    <div>
-                                        <p>A: 輸入 <code>/頭像</code>，選擇<strong>啟用單位 &gt; 隊伍</strong>，取消打勾就可以了。 </p>
-                                    </div>
-                                </div>
+								
                             </div>
                         </div>
 
@@ -762,8 +814,9 @@
                             <!-- Collapse content -->
 
                             <div class="jumbotron">
-                                <h2>Q1: 找不到經驗條和功能選單列按鈕?</h2>
-                                <p>A: 輸入 /bt4 開啟技能吧檯4 (Bartender4) 的設定，左方選擇"經驗條"(或"微型選單")，右方勾選"已開啟"。然後點一下技能吧檯4的小地圖按鈕，將"經驗條"(或"微型選單")移動到自己喜愛的位置。
+                                <h2>Q1: 安裝好彩虹ui 後快捷列按鈕變得很亂，該如何調整?</h2>
+                                <p>A: 點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>" 便能夠調整設定快捷列。</p>
+								<p>請參閱這篇<a href="https://rainbowui.wordpress.com/2016/07/19/%E4%BB%8B%E9%9D%A2-%E5%BF%AB%E6%8D%B7%E5%88%97-dominos-%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%B4%B9%E5%92%8C%E7%94%A8%E6%B3%95/" target="_blank">快捷列的詳細用法介紹</a>，瞭解如何調整快捷列的位置，以及重新排列技能圖示。</p>
                             </div>
 
                             <div id="accordion-actionbar" class="accordion">
@@ -772,63 +825,61 @@
                                         Q2: 技能列上沒有顯示快捷鍵，如何讓它出現?
                                     </h3>
                                     <div>
-                                        <p>A: 請試試下面幾個方法，通常其中一種可以解決問題:
-                                        </p>
-                                        <ol>
-                                            <li>輸入 <code>/bt4</code>，在每個快捷列的設定中，不要勾選 "隱藏熱鍵"。
-                                            </li>
-                                            <li>輸入 <code>/bt4</code>，按右上角的 "按鍵綁定" 按鈕，來設定熱鍵。
-                                            </li>
-                                            <li>輸入 <code>/bt4</code>，選擇設定檔 &gt; 重置設定檔。</li>
-                                        </ol>
+                                        <p>A: <strong>Shift+左鍵</strong> 點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>按鍵設定模式</strong>" 便能夠重新設定快捷鍵。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q3: 為何無法移動快捷列上的技能圖示?</h3>
+                                    <div>
+                                        <p>A: 因為快捷列上的技能被鎖定了，這是為了避免戰鬥時不小心移動技能。</p>
+										<p>這時只要<strong>按住 Shift 鍵不放</strong>便能夠拖曳移動技能圖示，或是從 <strong>Esc &gt; 介面 &gt; 快捷列</strong>，將 "<strong>鎖定快捷列</strong>" 取消打勾。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q4: 找不到經驗條和功能選單列按鈕?
+                                    </h3>
+                                    <div>
+                                        <p>A: 經驗條、聲望條和神兵之力列重疊在畫面的最上方，點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>" 調整它們的位置，不要重疊。<p>
+										<p>功能選單列按鈕在畫面的最左下角，背包按鈕在畫面的最右下角，預設為半透明，滑鼠停留在上面時才會完全顯示。若不喜歡這個位置，或不要淡出，都可以在 "<strong>版面配置模式</strong>" 中調整。<p>
+										<p>操作方式請參閱<a href="https://rainbowui.wordpress.com/2016/07/19/%E4%BB%8B%E9%9D%A2-%E5%BF%AB%E6%8D%B7%E5%88%97-dominos-%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%B4%B9%E5%92%8C%E7%94%A8%E6%B3%95/" target="_blank">快捷列的詳細用法介紹。</a></p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q3: 我只有出現一個 (兩個或三個) 快捷列，如何開啟更多的快捷列?
+                                        Q5: 我只有出現三個 (或六個) 快捷列，如何開啟更多的快捷列?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 <code>/bt4</code> 開啟技能吧檯4 (Bartender4) 的設定，左方選擇"快捷列3"(或"快捷列4~10")，右方勾選"已開啟"。然後點一下技能吧檯4的小地圖按鈕，將快捷列移動到自己喜愛的位置。也可以分別設定每個快捷列的按鈕數目、大小縮放、顯示隱藏...。
+                                        <p>A: 點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>"，在灰色的半透明方塊上面按滑鼠中鍵，可以切換顯示/隱藏快捷列。
                                         </p>
-                                        <p>請看 <a href="https://goo.gl/q8gDys" target="_blank">技能吧檯4 的圖文教學</a>
+                                    </div>
+                                </div>
+								 <div class="group">
+                                    <h3>
+                                        Q6: 如何使用其他角色調整好的快捷列，不用重新設定?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 快捷列</strong>，右方選擇 <strong>設定檔</strong>，再選擇其他角色的職業或名稱的設定檔。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q4: 調整快捷列後畫面亂掉了，如何恢復成原本的樣子?
+                                        Q7: 調整快捷列後畫面亂掉了，如何恢復成原本的樣子?
                                     </h3>
                                     <div>
-                                        <p>A: 請依照下列步驟來重置快捷列:
-                                            <ol>
-                                                <li>輸入 <code>/bt4</code> 開啟技能吧檯4的設定介面。
-                                                </li>
-                                                <li>左方選擇 "預設"，右方的下拉選單選擇 "彩虹ui " 或其他預設樣式。
-                                                </li>
-                                                <li>請依照自己的等級和需求，勾選是否要顯示經驗條和聲望條。
-                                                </li>
-                                                <li>按下 "套用預設" 按鈕。</li>
-                                            </ol>
-
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 快捷列</strong>，右方選擇 <strong>設定檔 &gt; 重置設定檔</strong>。
                                         </p>
-
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q5: 如何鎖定快捷列按鈕，以避免不小心拖曳移動到?</h3>
+                                    <h3>Q8: 技能圖示上面有兩個倒數數字重疊在一起，如何只顯示一個?</h3>
                                     <div>
-                                        <p>A: 輸入 <code>/bt4</code> ，設定視窗上方的 "按鈕鎖定" 打勾。鎖定之後，要按住 Shift 鍵不放，才能拖曳快捷列按鈕。</p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>Q6: 技能圖示上面有兩個倒數數字重疊在一起，如何只顯示一個?</h3>
-                                    <div>
-                                        <p>A: 這是由於遊戲內建的冷卻時間和插件提供的冷卻時間功能，同時顯示造成的。請依照下面的步驟來關閉遊戲內建的冷卻時間。
-                                            <ol>
-                                                <li>Esc > 插件，將 <strong>[戰鬥]冷卻時間</strong> 取消打勾，不要載入。</li>
-                                                <li>Esc > 介面 > 快捷列 > 冷卻時間 取消打勾。</li>
-                                                <li>Esc > 插件，將 <strong>[戰鬥]冷卻時間</strong> 打勾載入。</li>
-                                            </ol>
+                                        <p>A: 這是由於遊戲內建的冷卻時間和插件提供的冷卻時間功能，同時顯示造成的。請關閉其中一種:
+                                            <ul>
+                                                <li>按 <strong>Esc &gt; 插件</strong>，將 <strong>[戰鬥]冷卻時間</strong> 取消打勾，不要載入。</li>
+                                                <li>或是從 <strong>Esc &gt; 介面 &gt; 快捷列 &gt; 冷卻時間</strong>，取消打勾。</li>
+                                            </ul>
                                         </p>
                                     </div>
                                 </div>
