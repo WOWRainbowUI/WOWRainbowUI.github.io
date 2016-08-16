@@ -37,10 +37,18 @@
         }
         
         strong {
-            color: #dd4132;
+            color: #FA5882;
         }
 		a, a:link, a:visited {
 			text-decoration: underline;
+		}
+		a.navbar-brand, a.navbar-brand:link, a.navbar-brand:visited {
+			text-decoration: none;
+		}
+		li em {
+			font-weight: bold;
+			font-style: normal;
+			color: #9c27b0;
 		}
         /*
  * Off Canvas
@@ -236,9 +244,9 @@
         .ui-widget-content .ui-state-active,
         .ui-widget-header .ui-state-active {
             background-image: none;
-            background-color: #98ddde;
-            color: #333;
-            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+            background-color: #9c27b0;
+            color: #fff;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
             font-weight: bold;
             border-color: #fff;
         }
@@ -448,9 +456,9 @@
                                     <div>
                                         <p>A: 插件的設定可以分為三種: </p>
 										<ol>
-										    <li><strong>帳號共用的設定</strong>: 這類的插件只要設定好一個角色，所有角色都會使用相同的設定。例如 DBM、Skada 戰鬥統計、功能百寶箱。</li>
-											<li><strong>有設定檔功能的插件</strong>: 有些插件提供<strong>設定檔</strong>的功能，可以直接將其他角色的設定複製過來。例如快捷列、施法條。</li>
-											<li><strong>需要個別設定的插件</strong>: 不是帳號共用、也沒有設定檔功能的插件，就必須一個一個角色單獨設定。</li>
+										    <li><em>帳號共用的設定</em>: 這類的插件只要設定好一個角色，所有角色都會使用相同的設定。例如 DBM、Skada 戰鬥統計、功能百寶箱。</li>
+											<li><em>有設定檔功能的插件</em>: 有些插件提供<strong>設定檔</strong>的功能，可以直接將其他角色的設定複製過來。例如快捷列、施法條。</li>
+											<li><em>需要個別設定的插件</em>: 不是帳號共用、也沒有設定檔功能的插件，就必須一個一個角色單獨設定。</li>
 										</ol>
 										<p>不論使用哪種方式，要重新設定之前，先看看插件是否為帳號共用，以及是否有設定檔的功能。</p>
                                     </div>
@@ -501,10 +509,10 @@
                                         </p>
 										<p>總共有四種類型的滑鼠提示可以分別調整位置:
 											<ul>
-												<li>世界單位類型: 滑鼠指向遊戲內的人物角色時的提示說明。</li>
-												<li>世界提示類型: 滑鼠指向遊戲內的物體和物品時的提示說明。</li>
-												<li>框架單位類型: 滑鼠指向頭像框架、隊伍框架、團隊框架時的提示說明。</li>
-												<li>框架提示類型: 滑鼠指向快捷列按鈕、圖示、設定選項時的提示說明。</li>
+												<li><strong>世界單位類型</strong>: 滑鼠指向遊戲內的人物角色時的提示說明。</li>
+												<li><strong>世界提示類型</strong>: 滑鼠指向遊戲內的物體和物品時的提示說明。</li>
+												<li><strong>框架單位類型</strong>: 滑鼠指向頭像框架、隊伍框架、團隊框架時的提示說明。</li>
+												<li><strong>框架提示類型</strong>: 滑鼠指向快捷列按鈕、圖示、設定選項時的提示說明。</li>
 											</ul>
 										</p>
                                     </div>
@@ -679,9 +687,9 @@
                                     <div>
                                         <p>A: 有幾種方式可以放大遊戲內的文字:
                                             <ol>
-                                                <li><strong>整體放大</strong>: 按 <strong>Esc &gt; 系統 &gt; 進階 &gt; 將 "使用者介面縮放" 打勾</strong>，然後拖曳滑桿。這種放大方式，會將整個遊戲介面放大，包括對話視窗和快捷列按鈕。</li>
-                                                <li><strong>放大視窗</strong>: 滑鼠滑到視窗標題列上，按住 <strong>Ctrl</strong> 鍵不放，滾動滑鼠滾輪，可以縮放視窗，也包括視窗中的文字。不論是角色資訊、任務對話框、信件、商人、世界地圖，都可以使用這種方式來放大。拖曳視窗標題，還可以移動位置哦!</li>
-                                                <li><strong>放大任務內容和信件文字</strong>: 小地圖按鈕展開，點綠色小圓球，開啟功能百寶箱。左方選擇 "<strong>文字訊息</strong>"，右方將 "<strong>重設郵件文字</strong>" 或 "<strong>重設任務文字</strong>" 打勾，按下 "<strong>重新載入</strong>" 後，再點剛剛的選項旁的小齒輪進去調整文字大小。</li>
+                                                <li><em>整體放大</em>: 按 <strong>Esc &gt; 系統 &gt; 進階 &gt; 將 "使用者介面縮放" 打勾</strong>，然後拖曳滑桿。這種放大方式，會將整個遊戲介面放大，包括對話視窗和快捷列按鈕。</li>
+                                                <li><em>放大視窗</em>: 滑鼠滑到視窗標題列上，按住 <strong>Ctrl</strong> 鍵不放，滾動滑鼠滾輪，可以縮放視窗，也包括視窗中的文字。不論是角色資訊、任務對話框、信件、商人、世界地圖，都可以使用這種方式來放大。拖曳視窗標題，還可以移動位置哦!</li>
+                                                <li><em>放大任務內容和信件文字</em>: 小地圖按鈕展開，點綠色小圓球，開啟功能百寶箱。左方選擇 "<strong>文字</strong>"，右方將 "<strong>調整信件文字大小</strong>" 或 "<strong>調整信件任務大小</strong>" 打勾，按下 "<strong>重新載入</strong>" 後，再點剛剛的選項旁的小齒輪進去調整文字大小。</li>
                                             </ol>
                                         </p>
                                         <p>另外，也建議將遊戲字體改為較容易閱讀的字型，<a href="http://forum.gamer.com.tw/C.php?bsn=05219&snA=499186" target="_blank">更改遊戲字體的方法請參考這裡。</a></p>
@@ -690,14 +698,14 @@
                                 <div class="group">
                                     <h3>Q4: 介面設定中的鏡頭最遠距離是灰色的，無法調整?</h3>
                                     <div>
-                                        <p>A: "鏡頭最遠距離" 的設定已由功能百寶箱插件來取代，如果你想要自己控制，小地圖按鈕展開，點綠色小圓球開啟功能百寶箱，左方選擇 "<strong>系統設置</strong>"，右方將 "<strong>加大鏡頭最遠距離</strong>" 取消打勾，然後按下 "<strong>重新載入</strong>"。</p>
+                                        <p>A: "鏡頭最遠距離" 的設定已由功能百寶箱插件來取代，如果你想要自己控制，小地圖按鈕選單展開，點綠色小圓球開啟功能百寶箱，左方選擇 "<strong>系統</strong>"，右方將 "<strong>加大鏡頭最遠距離</strong>" 取消打勾，然後按下 "<strong>重新載入</strong>"。</p>
                                         <p>如果玩遊戲時畫面鏡頭一直自動拉到最遠，無法調整回來時，也可依照上述的方法，將功能百寶箱中的 "<strong>加大鏡頭最遠距離</strong>" 取消打勾，便能解決這個問題。</p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>Q5: 如何加大鏡頭最遠距離，讓視角可以拉得更遠?</h3>
                                     <div>
-                                        <p>A: 暴雪即將修正這個問題，在這之前安裝 <a href="https://mods.curse.com/addons/wow/maxcam" target="_blank">MaxCam</a> 插件能夠讓視角可以拉得更遠。</p>
+                                        <p>A: 下載更新<a href="http://www.kerobbs.net/thread-19580-1-2.html" target="_blank">功能百寶箱</a> ，然後將小地圖按鈕選單展開，點綠色小圓球開啟功能百寶箱，左方選擇 "<strong>系統</strong>"，右方將 "<strong>加大鏡頭最遠距離</strong>" 打勾，然後按下 "<strong>重新載入</strong>"。</p>
                                     </div>
                                 </div>
                             </div>
@@ -842,7 +850,7 @@
                                     <div>
                                         <p>A: 經驗條、聲望條和神兵之力列重疊在畫面的最上方，點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>" 調整它們的位置，不要重疊。<p>
 										<p>功能選單列按鈕在畫面的最左下角，背包按鈕在畫面的最右下角，預設為半透明，滑鼠停留在上面時才會完全顯示。若不喜歡這個位置，或不要淡出，都可以在 "<strong>版面配置模式</strong>" 中調整。<p>
-										<p>操作方式請參閱<a href="https://rainbowui.wordpress.com/2016/07/19/%E4%BB%8B%E9%9D%A2-%E5%BF%AB%E6%8D%B7%E5%88%97-dominos-%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%B4%B9%E5%92%8C%E7%94%A8%E6%B3%95/" target="_blank">快捷列的詳細用法介紹。</a></p>
+										<p>操作方式請參閱<a href="https://rainbowui.wordpress.com/2016/07/19/%E4%BB%8B%E9%9D%A2-%E5%BF%AB%E6%8D%B7%E5%88%97-dominos-%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%B4%B9%E5%92%8C%E7%94%A8%E6%B3%95/" target="_blank">快捷列的詳細用法介紹</a>。</p>
                                     </div>
                                 </div>
                                 <div class="group">
@@ -850,7 +858,7 @@
                                         Q5: 我只有出現三個 (或六個) 快捷列，如何開啟更多的快捷列?
                                     </h3>
                                     <div>
-                                        <p>A: 點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>"，在灰色的半透明方塊上面按滑鼠中鍵，可以切換顯示/隱藏快捷列。
+                                        <p>A: 點小地圖按鈕的 "<strong>快捷列</strong>" 按鈕，進入 "<strong>版面配置模式</strong>"，在灰色的半透明方塊上面按<strong>滑鼠中鍵</strong>，可以切換顯示/隱藏快捷列。
                                         </p>
                                     </div>
                                 </div>
@@ -891,7 +899,7 @@
                             <!-- Collapse content -->
                             <div class="jumbotron">
                                 <h2>Q1: 如何移動聊天視窗的位置和大小?</h2>
-                                <p>A: 移動快捷列位置後，通常也會想要調整聊天視窗。滑鼠滑過聊天視窗時，會出現"綜合"標籤頁，將滑鼠移動到"綜合"上面按右鍵，選擇"解鎖視窗"，就可以移動拖曳聊天視窗，在視窗的邊框上拖曳滑鼠可以調整大小。完成後再將滑鼠移動到"綜合"上面按右鍵，選擇"鎖定視窗"即可。
+                                <p>A: 移動快捷列位置後，通常也會想要調整聊天視窗。滑鼠滑過聊天視窗時，會出現 "<strong>綜合</strong>" 標籤頁，將滑鼠移動到 "<strong>綜合</strong>" 上面<strong>點滑鼠右鍵</strong>，選擇 "<strong>解鎖視窗</strong>"，就可以移動拖曳聊天視窗，在視窗的邊框上拖曳滑鼠可以調整大小。完成後再將滑鼠移動到 "<strong>綜合</strong>" 上面按右鍵，選擇 "<strong>鎖定視窗</strong>" 即可。
                             </div>
 
                             <div id="accordion-chat" class="accordion">
@@ -900,7 +908,7 @@
                                         Q2: 如何叫出好友名單?
                                     </h3>
                                     <div>
-                                        <p>A: 按 <strong>O</strong>。或是按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 停用按鈕</strong>，不要勾選右方的"<strong>停用按鈕</strong>"，就會顯示好友名單的按鈕。
+                                        <p>A: 按 <strong>O</strong>。或是按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 隱藏按鈕</strong>，取消勾選右方的"<strong>開啟</strong>"，然後輸入 <code>/reload</code> 重新載入，就會顯示好友名單的按鈕。
                                         </p>
                                     </div>
                                 </div>
@@ -909,37 +917,37 @@
                                         Q3: 點聊天視窗中物品連結沒有反應，在玩家名字上點右鍵也沒有選單，如何恢復?
                                     </h3>
                                     <div>
-                                        <p>A: 聊天視窗的 "<strong>綜合</strong>" 標籤頁上<strong>點滑鼠右鍵</strong>選擇 "<strong>開啟互動</strong>"。
+                                        <p>A: 在聊天視窗的 "<strong>綜合</strong>" 標籤頁上<strong>點滑鼠右鍵</strong>選擇 "<strong>開啟互動</strong>"。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q4: 如何調整聊天視窗的背景和邊框?
+                                        Q4: 如何調整聊天視窗的背景顏色?
                                     </h3>
                                     <div>
-                                        <p>按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 背景/邊框</strong>，右方可以設定每個聊天視窗的背景和邊框。
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>
-                                        Q5: 聊天的文字輸入框如何移動到下方?
-                                    </h3>
-                                    <div>
-                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 輸入框美化</strong>，右方的 "<strong>依附到</strong>" 選擇 "<strong>下</strong>"。
+                                        <p>A: 在聊天視窗的 "<strong>綜合</strong>" 標籤頁上<strong>點滑鼠右鍵</strong>選擇 "<strong>底色</strong>"。
                                         </p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q6: 無法更改聊天文字和背景顏色，該怎麼做?
+                                        Q5: 如何放大聊天視窗的文字?
                                     </h3>
                                     <div>
-                                        <p>A: <strong>[介面] 顏色選擇器進階版</strong> 目前和聊天視窗不相容。
+                                        <p>A: 在聊天視窗的 "<strong>綜合</strong>" 標籤頁上<strong>點滑鼠右鍵</strong>選擇 "<strong>文字大小</strong>"。
 										</p>
-										<p>
-										要更改聊天視窗的背景和文字顏色時，請先在<strong>Esc &gt; 插件</strong>，將 <strong>[介面] 顏色選擇器進階版</strong> 取消打勾，不要載入。再更改聊天視窗的顏色。
+										
+										<p>如果還是覺得不夠大，按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 字型</strong>，調整右方的"<strong>字體大小</strong>"。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q6: 聊天的文字輸入框如何移動到下方?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 聊天 &gt; 輸入框</strong>，取消勾選右方的"<strong>開啟</strong>"，然後輸入 <code>/reload</code> 重新載入。
                                         </p>
                                     </div>
                                 </div>
@@ -948,7 +956,7 @@
                                         Q7: 如何在聊天視窗中不要顯示公會成員的等級通知?
                                     </h3>
                                     <div>
-                                        <p>A: 從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 升級</strong>，將<strong>公會</strong>，取消打勾就可以了。
+                                        <p>A: 從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 升級</strong>，右方將<strong>公會</strong>，取消打勾就可以了。
 										</p>
                                     </div>
                                 </div>
@@ -963,64 +971,58 @@
                                 <p>A: 可以在小地圖、大地圖和遊戲畫面中顯示座標:
 
                                     <ol>
-                                        <li><strong>小地圖座標</strong>: Esc > 介面 > 插件 > 小地圖 > 座標 > 啟用，打勾。
+                                        <li><em>小地圖座標</em>: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 小地圖 &gt; 座標 &gt; 啟用</strong>，打勾。
 
-                                            <li><strong>大地圖座標</strong>: 小地圖按鈕展開，有個綠色圓球的按鈕，點一下開啟功能百寶箱。左方選擇 "介面"，右方將 "世界地圖功能增強" 打勾，然後按下右下角的重新載入按鈕。會在大地圖左上方會顯示滑鼠位置的座標。
+                                            <li><em>大地圖座標</em>: 小地圖按鈕展開，有個綠色圓球的按鈕，點一下開啟功能百寶箱。左方選擇  "<strong>介面</strong>"，右方將 "<strong>世界地圖功能增強</strong>" 打勾，然後按下右下角的 "<strong>重新載入</strong>" 按鈕。會在世界地圖左上方會顯示滑鼠位置的座標。
 
-                                                <li><strong>遊戲畫面中的座標</strong>: 在功能百寶箱左方選擇 "介面"， 右方將 "顯示座標" 打勾，然後按下右下角的重新載入按鈕。再點一下同一個選項右方的齒輪，將 "顯示座標框架" 打勾。會在遊戲畫面中顯示人物位置的座標，數字很大，適合邊走路邊找東西時使用。這時候按住Shift+滑鼠右鍵點擊小地圖的綠色圓球，可以隨時切換座標開關。
+                                                <li><em>遊戲畫面中的座標</em>: 在功能百寶箱左方選擇 "<strong>介面</strong>"， 右方將 "<strong>顯示座標</strong>" 打勾，然後按下右下角的 "<strong>重新載入</strong>" 按鈕。再點一下同一個選項右方的齒輪，將 "<strong>顯示座標框架</strong>" 打勾。會在遊戲畫面中顯示人物位置的座標，數字很大，適合邊走路邊找東西時使用。這時候<strong>按住Shift+滑鼠右鍵點擊小地圖的綠色圓球</strong>，可以隨時切換座標開關。
                                                     <ol>
                             </div>
 
                             <div id="accordion-map" class="accordion">
                                 <div class="group">
-                                    <h3>Q2: 如何放大大地圖?</h3>
+                                    <h3>Q2: 如何放大世界地圖?</h3>
                                     <div>
                                         <p>A: 有幾種方式可以將世界地圖 (大地圖) 放大觀看:
 
                                         </p>
                                         <ol>
-                                            <li>用滑鼠滾輪在大地圖上滾動，可以縮放地圖。 放大後可以用拖曳的方式移動地圖內容 (不是拖曳視窗)。
+                                            <li><strong>用滑鼠滾輪在大地圖上滾動</strong>，可以縮放地圖。 放大後可以用拖曳的方式移動地圖內容 (不是拖曳視窗)。
 
                                             </li>
-                                            <li>按住 Ctrl 鍵不放， 在大地圖的 "視窗標題" 上滾動滑鼠滾輪，可以縮放整個視窗。拖曳視窗標題也可以移動視窗。
+                                            <li><strong>按住 Ctrl 鍵不放， 在大地圖的 "視窗標題" 上滾動滑鼠滾輪</strong>，可以縮放整個視窗。拖曳視窗標題也可以移動視窗。
 
                                             </li>
-                                            <li>點大地圖視窗右上角的箭頭按鈕 (叉叉旁邊那個)，可以將地圖放大到全螢幕。再按一次箭頭按鈕可恢復成一般大小。</li>
+                                            <li><strong>點大地圖視窗右上角的箭頭按鈕</strong> (叉叉旁邊那個)，可以將地圖放大到全螢幕。再按一次箭頭按鈕可恢復成一般大小。</li>
                                         </ol>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>
-                                                                Q3: 如何在地圖上顯示寶藏位置?
-                                                            </h3>
+                                    <h3>Q3: 如何在地圖上顯示寶藏位置?</h3>
                                     <div>
-                                        <p>A: 按 Esc &gt; 插件，在插件列表中勾選載入下面這兩個插件即可:
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中勾選載入下面這幾個插件即可:
                                         </p>
                                         <ul>
-                                            <li>[地圖] 地圖標記
-                                            </li>
-                                            <li>[地圖] 地圖標記-德拉諾寶藏</li>
+                                            <li><strong>[地圖] 地圖標記</strong></li>
+                                            <li><strong>[地圖] 地圖標記-德拉諾寶藏</strong></li>
+											<li><strong>[地圖] 地圖標記-破碎群島寶藏</strong></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>
-                                                                Q4: 為什找不到地圖標記的稀有怪? 骷髏頭的顏色代表甚麼意思?
-                                                            </h3>
+                                    <h3>Q4: 為什找不到地圖標記的稀有怪? 骷髏頭的顏色代表甚麼意思?</h3>
                                     <div>
                                         <p>A: 骷髏頭都是代表稀有怪，藍色骷髏頭的稀有怪會掉裝備、紫色會掉座騎、綠色會掉玩具和寵物。有顏色的骷髏頭都只是代表稀有怪的重生點，尚未出現。<strong>只有白色骷髏頭表示稀有怪已經出現，快去打吧！</strong></p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>
-                                                                Q5: 小地圖顯示一大塊綠色，是被腐化了嗎?
-                                                            </h3>
+                                    <h3>Q5: 小地圖顯示一大塊綠色，是被古爾丹腐化了嗎?</h3>
                                     <div>
                                         <p>A: 是因為性感小地圖這個插件的新舊設定檔互相衝突，導致材質貼圖不正確。解決方式為:
 
                                         </p>
                                         <ol>
-                                            <li>按 Esc &gt; 介面 &gt; 插件 &gt; 小地圖 &gt; 重置設定檔。 然後重新啟動遊戲。
+                                            <li>按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 小地圖 &gt; 重置設定檔</strong>。 然後重新啟動遊戲。
 
                                             </li>
                                             <li>若上述的方法仍然無效，請先退出遊戲，然後將遊戲安裝資料夾 World of Warcraft 底下的 WTF 資料夾重新命名 (或刪除)，再進入遊戲。請特別注意，這個動作會重置所有插件的設定。</li>
