@@ -9,7 +9,7 @@
     <meta name="author" content="Alex Wang">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/9</title>
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/16</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -44,6 +44,9 @@
 		}
 		a.navbar-brand, a.navbar-brand:link, a.navbar-brand:visited {
 			text-decoration: none;
+		}
+		li {
+			margin-bottom: 0.5em;
 		}
 		li em {
 			font-weight: bold;
@@ -442,11 +445,11 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q10: 是否可以單獨更新DBM? 該怎麼做?</h3>
+                                    <h3>Q10: DBM 一直顯示過期，如何更新 DBM?</h3>
                                     <div>
-                                        <p>A: 可以，因為DBM更新較頻繁，在整合包還沒更新之前，隨時保持DBM在最新的版本，對於經常打團隊的玩家來說是非常重要的。</p>
-                                        <p>要單獨更新DBM，請至 <a href="http://www.kerobbs.net/thread-22629-1-1.html" target="_blank">奇樂</a> 或 <a href="http://www.curse.com/addons/wow/deadly-boss-mods" target="_blank">Curse</a> 下載DBM。下載後解壓縮到 World of Warcraft &gt; Interface &gt; AddOns 裡面，覆蓋原有的檔案即可更新完成。而且DBM已經內建中文版，請安心使用。</p>
-										<p><em><strong>**已經下載安裝的最新的DBM正式版本後，仍然提示要更新，便可不用理會。</strong></em></p>
+                                        <p>A: 因為 DBM 更新較頻繁，在整合包還沒更新之前，隨時保持 DBM 在最新的版本，對於經常打團隊的玩家來說是非常重要的。</p>
+                                        <p>要單獨更新 DBM，請至 <a href="http://www.kerobbs.net/thread-22629-1-1.html" target="_blank">奇樂</a> 或 <a href="http://www.curse.com/addons/wow/deadly-boss-mods" target="_blank">Curse</a> 下載 DBM 正式版。下載後解壓縮到 <strong>World of Warcraft &gt; Interface &gt; AddOns</strong> 裡面，覆蓋原有的檔案即可更新完成。而且 DBM 已經內建中文版，請安心使用。</p>
+										<p><em><strong>**已經下載安裝的最新的 DBM 正式版本後，仍然提示要更新，便可不用理會。</strong></em></p>
                                     </div>
                                 </div>
 								<div class="group">
@@ -487,7 +490,7 @@
 
                             <div class="jumbotron">
                                 <h2>Q1: 如何開啟或關閉自動修理裝備和自動賣垃圾的功能?</h2>
-                                <p>A: 小地圖按鈕展開，有個綠色小圓球的按鈕，點一下開啟功能百寶箱。左方選擇 "<strong>自動化</strong>"，右方將 "<strong>自動修理裝備</strong>" 和 "<strong>自動出售垃圾</strong>" 打勾（關閉是取消打勾），然後按下右下角的 "<strong>重新載入</strong>" 按鈕。</p>
+                                <p>A: 小地圖按鈕展開，有個綠色小圓球的按鈕，點一下開啟功能百寶箱。左方選擇 "<strong>自動</strong>"，右方將 "<strong>自動修理裝備</strong>" 和 "<strong>自動賣出垃圾</strong>" 打勾（關閉是取消打勾），然後按下右下角的 "<strong>重新載入</strong>" 按鈕。</p>
 
                                     <p>**<em>功能百寶箱中還有許多方便的功能設定，建議花一點時間來看看。只要設定好一次，所有角色都適用。</em></p>
                             </div>
@@ -1018,7 +1021,7 @@
                                 <div class="group">
                                     <h3>Q5: 小地圖顯示一大塊綠色，是被古爾丹腐化了嗎?</h3>
                                     <div>
-                                        <p>A: 是因為性感小地圖這個插件的新舊設定檔互相衝突，導致材質貼圖不正確。解決方式為:
+                                        <p>A: 是因為<s>古爾丹和伊利丹性決鬥</s>性感小地圖插件的新舊設定檔互相衝突，導致材質貼圖不正確。解決方式為:
 
                                         </p>
                                         <ol>
@@ -1036,121 +1039,161 @@
                         <div role="tabpanel" class="tab-pane" id="戰鬥">
                             <!-- Collapse content -->
                             <div class="jumbotron">
-                                <h2>Q1: 敵人頭上的血條如何顯示血量?</h2>
-                                <p>A: Esc > 介面 > 插件 > 名條:傷害輸出(或坦克/治療者) > 書籤 > 血條檢視 > 敵方狀態文字 > 生命值總量&百分比。</p>
+                                <h2>Q1: 如何顯示或關閉血條?</h2>
+                                <p>A: 按 <strong>V</strong> 或 <strong>Ctrl+V</strong>。</p>
+								<p>要單獨開關友方或敵方的血條，按 <strong>Esc &gt; 按鍵設定 &gt; 選擇目標</strong>，看看右方 "<strong>顯示敵方名條</strong>" 和 "<strong>顯示友方名條</strong>" 的快速鍵是什麼，按下那個快速鍵來切換顯示血條。如果沒有快速鍵，可以幫它設定一個。</p>
                             </div>
 
                             <div id="accordion-combat" class="accordion">
+								<div class="group">
+                                    <h3>
+                                        Q2: 敵人頭上的血條如何顯示血量?
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; Tidy血條:傷害輸出(或坦克/治療者) &gt; 血條檢視 &gt; 敵方狀態文字</strong>，選擇 "<strong>血量總量&百分比"</strong>。
+                                        </p>
+										<p>如果你是使用血條增強插件 Plater，請看<a href="https://rainbowui.wordpress.com/2016/07/22/%E5%BD%A9%E8%99%B9ui-%E5%89%8D%E5%A4%95%E7%89%88%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97-%E4%B8%8A-i-will-survive/" target="_blank">這篇說明</a>。</p>
+                                    </div>
+                                </div>
                                 <div class="group">
                                     <h3>
-                                        Q2: 如何保持脫離戰鬥後血條也不會消失?
+                                        Q3: 如何保持脫離戰鬥後血條也不會消失?
                                     </h3>
                                     <div>
                                         <p>A: 請檢查幾個地方的設定:
+											<ol>
+												<li><strong>Esc &gt; 介面 &gt; 插件 &gt; Tidy血條 &gt; 敵方名條</strong>，選擇 "<strong>不要自動切換</strong>"。
 
-                                        </p>
-                                        <ol>
-                                            <li>Esc &gt; 介面 &gt; 插件 &gt; 名條 &gt; 敵方名條 &gt; 選擇不要自動切換。
+												</li>
+												<li><strong>Esc &gt; 介面 &gt; 插件 &gt; Tidy名條:傷害輸出(或坦克/治療者) &gt; 非戰鬥中總是使用名條檢視</strong>不要打勾。
 
-                                            </li>
-                                            <li>Esc &gt; 介面 &gt; 插件 &gt; 名條:傷害輸出(或坦克/治療者) &gt; 非戰鬥中總是使用名條檢視 不要打勾。
-
-                                            </li>
-                                            <li>點小地圖按鈕的綠色小圓球，開啟功能百寶箱，框架 &gt; 戰鬥名條/血條 不要打勾。</li>
-                                        </ol>
+												</li>
+												<li>點小地圖按鈕的綠色小圓球，開啟功能百寶箱，<strong>框架 &gt; 戰鬥名條/血條</strong> 不要打勾。</li>
+											</ol>
+										</p>
+										<p>**<em><strong>玩家角色腳下的血條和能量條，脫離戰鬥後一定會消失，這是遊戲本身的設計無法調整。</strong></em></p>
+										<p>如果你是使用血條增強插件 Plater，請看<a href="https://rainbowui.wordpress.com/2016/07/22/%E5%BD%A9%E8%99%B9ui-%E5%89%8D%E5%A4%95%E7%89%88%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97-%E4%B8%8A-i-will-survive/" target="_blank">這篇說明</a>。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q4: 打怪時出現在怪物身上的傷害數字怎麼不見了?
+                                    </h3>
+                                    <div>
+                                        <p>A: 這是遊戲的設定跑掉了，在聊天文字框輸入 <code>/console floatingCombatTextCombatDamage 1</code> 便可恢復。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q3: 如何更改傷害數字的字體?
+                                        Q5: 如何更改傷害數字的字型?
                                     </h3>
                                     <div>
-                                        <p>A: 把喜愛的字體檔案放到 World of Warcraft\Interface\AddOns\FontDamageChanger\FONTGOESHERE 資料夾中，然後將字體檔案重新命名為 FDCFONT.TTF，再進入遊戲。
-
+                                        <p>A: 退出遊戲，把喜愛的中文字型檔案放到 <strong>World of Warcraft &gt; Interface &gt; AddOns &gt; AnyFont</strong> 資料夾裡面，然後將字型檔案重新命名為 <strong>font.ttf</strong> 取代原有的，再進入遊戲。
                                         </p>
-                                        <p>詳細請參考這篇<a href="https://goo.gl/6nlp34" target="_blank">美化傷害字體插件使用教學</a>
+										<p>**<em>一定要使用 True Type 格式的字型，副檔名為 .ttf。使用其他格式的字型再更改副檔名無效。</em></p>
+										<p>若是使用英文字型，中文字會變成問號，例如 "經驗值" 這幾個字會變成 ???。因此強烈建議使用中文字型。</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q6: 傷害數字如何恢復成原本的字型? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中取消勾選 <strong>[戰鬥] 傷害字型</strong>，再重新啟動遊戲。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q7: 副本首領很高大，敵人頭上的血條會超出螢幕畫面，如何調整? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; CVars 參數</strong>，在右上方的搜尋框輸入 <code>nameplateLargeTopInset</code>，點兩下搜尋的結果，將數值改為 <code>.1</code> 或 <code>.08</code>。
+                                        </p>
+										<p>這時候當敵人很高大時，血條會自動降低位置，不會超出畫面。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q8: 傷害數字被血條擋住了，如何調整位置? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]MSBT捲動戰鬥文字</strong>，然後輸入 <code>/msbt</code> 開啟設定，選擇<strong>滾動區域 &gt; 設定滾動區域</strong>，來調整傷害數字的位置。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q9: 傷害統計視窗不見了，如何叫出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 在聊天的文字輸入框輸入 <code>/skada</code>。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q4: 傷害數字如何恢復成原本的樣子? 
+                                        Q10: 請問傷害統計，如何同時顯示傷害和治療?
                                     </h3>
                                     <div>
-                                        <p>A: 按 Esc &gt; 插件，在插件列表中取消勾選 [戰鬥] 美化傷害字體即可。
-                                        </p>
-                                    </div>
-                                </div>
-								 <div class="group">
-                                    <h3>
-                                        Q5: 傷害數字被血條擋住了，如何調整位置? 
-                                    </h3>
-                                    <div>
-                                        <p>A: 在插件列表裡面載入 <strong>[進階]MSBT捲動戰鬥文字</strong>，然後從<strong>Esc&gt;介面&gt;插件&gt;戰鬥-文字&gt;開啟設定&gt;滾動區域&gt;設定滾動區域</strong>，來調整傷害數字的位置。
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 傷害-統計 &gt; 建立新視窗</strong>，幫新視窗輸入一個名稱後按 "<strong>確定</strong>"，便可以將一個視窗顯示傷害輸出、一個視窗顯示治療量了。
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q6: 請問傷害統計，如何同時顯示傷害和治療?
+                                        Q11: 要如何監控技能冷卻、BUFF 和 DEBUFF?
                                     </h3>
                                     <div>
-                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 傷害-統計 &gt; 建立新視窗，幫新視窗輸入一個名稱後按確定，便可以將一個視窗顯示傷害輸出、一個視窗顯示治療量了。
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中勾選載入 <strong>[進階]WA技能提醒</strong> 和相關模組，然後參考這幾篇教學來設定監控和提醒效果:
+											<ul>
+												<li><a href="https://rainbowui.wordpress.com/2016/07/30/wa%E6%8A%80%E8%83%BD%E6%8F%90%E9%86%92-%E5%BE%9E%E7%AF%84%E6%9C%AC%E5%BB%BA%E7%AB%8B%E7%9B%A3%E6%8E%A7%E6%8A%80%E8%83%BDcddotbuff%E8%B6%85%E7%B0%A1%E5%96%AE-weakauras-2-%E8%A8%AD%E5%AE%9A/" target="_blank">WA技能提醒 – 從範本建立監控技能CD/DOT/BUFF超簡單！</a></li>
+												<li><a href="https://rainbowui.wordpress.com/2016/01/05/wow-addon-weakauras-tutorial/" target="_blank">封印解除!! 華麗旋轉魔法陣★WA技能提醒 – WeakAuras使用範例</a></li>
+												<li><a href="https://goo.gl/5vrxvJ" target="_blank">WA技能提醒 - WeakAuras 設定教學與範例</a></li>
+											</ul>
                                         </p>
                                     </div>
                                 </div>
-                                <div class="group">
+								<div class="group">
                                     <h3>
-                                        Q7: 聽說 TMW技能監控提醒 (TellMeWhen) 的功能很強大，該如何設定使用?
+                                        Q12: 彩虹ui 中是不是沒有 TMW?
                                     </h3>
                                     <div>
-                                        <p>A: 請看<a href="https://goo.gl/rDjmRh" target="_blank">TMW技能監控提醒的圖文教學</a>。
+                                        <p>A: 是的，已經改為使用效能更佳、更簡單的 WA技能提醒 - WeakAuras 2。
                                         </p>
+										<p>如果你需要使用 TMW，可以到 Curse 網站下載。</p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q8: 鳥D技能監控如何移動和縮放大小?</h3>
+                                    <h3>Q13: 施法條如何移動和縮放大小?</h3>
                                     <div>
-                                        <p>A: 輸入 <code>/boomy unlock</code> 可以移動位置，輸入 <code>/boomy lock</code> 可以鎖定位置。</p>
-                                        <p>輸入 <code>/boomy scale 0.69</code> 可以縮放大小，其中 0.69 可以改為任何數字，1 是ㄧ般大小、2 是兩倍大小，以此類推，可以有小數點。</p>
-                                        <p>輸入 <code>/boomy reset</code> 可以重置設定。</p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>Q9: 鳥D日月能條如何移動和縮放大小?</h3>
-                                    <div>
-                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 德魯伊。這裡有設定選項可以移動和縮放大小。</p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>Q10: 施法條如何移動和縮放大小?</h3>
-                                    <div>
-                                        <p>A: 按 Esc &gt; 介面 &gt; 插件 &gt; 施法條。按下 "切換施法條鎖定" 按鈕後可以移動大小。</p>
+                                        <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 施法條</strong>。按下 "<strong>切換施法條鎖定</strong>" 按鈕後可以移動大小。</p>
                                         <p>左方選單再選擇玩家、目標、專注目標...等，可以分別設定各種施法條的縮放大小和外觀樣式。</p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q11: 計時條如何移動和縮放大小?</h3>
+                                    <h3>Q14: 計時條如何移動和縮放大小?</h3>
                                     <div>
                                         <p>A: 計時條有兩種:
                                             <ol>
-                                                <li><strong>一般時候的增益/減益效果計時條</strong>: 按 Esc &gt; 介面 &gt; 插件 &gt; 施法條 &gt; 增益效果。這裡有設定選項可以移動和縮放大小。</li>
-                                                <li><strong>副本首領的特殊技能計時條</strong>: 輸入 <code>/dbm</code> &gt; 選項 &gt; 計時條樣式。來設定。</li>
+                                                <li><em>自己的增益/減益效果計時條</em>: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 施法條 &gt; 增益效果</strong>。這裡有設定選項可以移動和縮放大小。</li>
+                                                <li><em>副本首領的特殊技能計時條</em>: 輸入 <code>/dbm</code>，按 <strong>選項 &gt; 計時條樣式</strong> 來設定。</li>
                                             </ol>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q12: 如何開啟DBM的語音警告，打副本首領時會有夏一可甜美的聲音提示?</h3>
+                                    <h3>Q15: 如何開啟 DBM 的語音警告，打副本首領時會有夏一可甜美的聲音提示?</h3>
                                     <div>
-                                        <p>A: 輸入 <code>/dbm</code> &gt; 選項 &gt; 語音警告，右邊第四個下拉選單 "設置語音警告的語音包" 選擇 "Yike Xia (夏一可)"。</p>
+                                        <p>A: 輸入 <code>/dbm</code> <strong>&gt; 選項 &gt; 語音警告</strong>，右邊第四個下拉選單 "<strong>設置語音警告的語音包</strong>" 選擇 "<strong>Yike Xia (夏一可)</strong>"。</p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q13: 請問彩虹裡有伊斯卡助手嗎?</h3>
+                                    <h3>Q16: 請問彩虹裡有伊斯卡助手嗎?</h3>
                                     <div>
-                                        <p>A: 有的。在插件列表中載入 <strong>[團隊] ExRT團隊工具包</strong>，然後把小地圖按鈕展開，點 <strong>R</strong> 的小圓鈕，選擇 <strong>首領戰鬥助手</strong> &gt; <strong>暗影領主伊斯卡</strong>。</p>
-                                        <p>框框中會列出所有隊友，格子亮起來的時候，點一下就可以傳球。整個框架右上角的小三角箭頭點一下，可以顯示名字，和一些設定選項。</p>
+                                        <p>A: 有的。在插件列表中載入 <strong>[團隊] ExRT團隊工具包</strong>，然後把小地圖按鈕展開，點 <strong>R</strong> 的小圓鈕，選擇 <strong>首領戰鬥助手 &gt; 暗影領主伊斯卡</strong>。</p>
+                                        <p>框框中會列出所有隊友，當你拿到球的時候，點一下亮起來的小格子就會直接傳球。</p>
+										<p>直接拖曳框架可以移動位置，左上角有個小鎖可以鎖定和解鎖移動。右上角的小三角箭頭點一下，可以顯示名字，和一些設定選項。</p>
                                     </div>
                                 </div>
                             </div>
@@ -1161,14 +1204,35 @@
                             <!-- Collapse content -->
                             <div class="jumbotron">
                                 <h2>Q1: 插件設定弄亂了，該如何恢復?</h2>
-                                <p>A: 要恢復單一插件的設定，請按 Esc > 介面 > 插件，找到該插件的設定畫面後，選擇 設定檔 > 重置設定檔。
-
-                                    <p>要重置所有插件的設定，恢復成剛安裝好的樣子， 請將遊戲安裝資料夾 World of Warcraft 底下的 WTF 資料夾重新命名 (或刪除) 。然後重新啟動遊戲。
-
-                                        <p>如果是插件檔案弄亂了， 請將遊戲安裝資料夾 World of Warcraft > Interface 底下的 AddOns 資料夾重新命名 (或刪除)， 然後重新將整合包中的 AddOns 資料夾，複製到 World of Warcraft > Interface 底下 。
+                                <p>A: 有幾種方法，建議你都試試看，看哪一種能解決問題:
+									<ol>
+										<li><em>重置單一插件的設定</em>: 按 <strong>Esc &gt; 介面 &gt; 插件</strong>，找到該插件的設定畫面後，選擇 <strong>設定檔 &gt; 重置設定檔</strong>。</li>
+										<li><em>重置單一插件的設定 (進階)</em>: 如果在遊戲中找不到該插件的設定檔功能，可以直接刪除電腦中插件所儲存的設定檔案來重置插件，方法請看下面的 Q2。</li>
+										<li><em>重置所有插件的設定</em>: 要恢復成剛安裝好的樣子，退出遊戲，將遊戲安裝資料夾 World of Warcraft 底下的 <strong>WTF</strong> 資料夾刪除，再重新啟動遊戲。</li>
+										<li><em>重新安裝插件</em>: 請依照安裝說明，將 <strong>AddOns</strong> 和 <strong>WTF</strong> 資料夾都刪除後，再重新下載安裝。</li>
+									</ol>
+								</p>
                             </div>
 
-                            <div id="accordion-reset"></div>
+                            <div id="accordion-reset" class="accordion">
+								<div class="group">
+                                    <h3>
+                                        Q2: 如何刪除單一插件的設定檔案來重置插件?
+                                    </h3>
+                                    <div>
+                                        <p>A: 若某個插件出現問題，建議先在遊戲中使用這個插件的 <strong>設定檔</strong> 功能來重置插件。</p>
+										<p>如果插件沒有提供設定檔的功能，請依照下面的步驟，刪除插件儲存的設定檔案來重置插件:
+											<ol>
+												<li><em>找到插件的英文名稱</em>: 按 <strong>Esc &gt; 插件</strong>，在插件列表中滑鼠指向插件名稱時，出現的說明中會顯示這個插件的英文名稱，例如 [戰鬥]Tidy血條 的英文名稱是 TidyPlate。請將這個英文名稱記下來。</li>
+												<li><em>刪除帳號共通的設定檔案</em>: 退出遊戲，使用電腦的檔案管理員開啟 <strong>World of Warcraft &gt; WTF &gt; Account &gt; 帳號 &gt; SavedVariables</strong> 資料夾，刪除裡面 "插件英文名稱開頭的兩個檔案"，例如TidyXXXX。</li>
+												<li><em>刪除角色專用的設定檔案</em>: 退出遊戲，使用電腦的檔案管理員開啟 <strong>World of Warcraft &gt; WTF &gt; Account &gt; 帳號 &gt; 伺服器 &gt; 角色ID &gt; SavedVariables</strong> 資料夾，刪除裡面 "插件英文名稱開頭的兩個檔案"，例如TidyXXXX。有問題的每一個角色資料夾裡面的設定檔案都要刪除。</li>
+												<li>進入遊戲。</li>
+											</ol>
+										</p>
+										<p><em><strong>**不是每一個插件都同時會有 "帳號共通的設定檔案" 和 "角色專用的設定檔案"，有的插件兩者都有，有的只有其中一種。沒有的話就不用刪除可以忽略。</strong></em></p>
+                                    </div>
+                                </div>
+							</div>
 
                         </div>
 
@@ -1177,7 +1241,7 @@
                             <!-- Collapse content -->
                             <div class="jumbotron">
                                 <h2>Q1: 如何更改遊戲字體?</h2>
-                                <p>A: <a href="http://forum.gamer.com.tw/C.php?bsn=05219&snA=499186" target="_blank">請參考巴哈的這篇文章</a>
+                                <p>A: <a href="https://rainbowui.wordpress.com/rainbow-ui-pack-wow-addons-installation-guide/" target="_blank">請參考安裝說明中【更改遊戲字型】的部分</a>
                             </div>
 
                             <div id="accordion-others" class="accordion">
@@ -1186,16 +1250,21 @@
                                         Q2: 使用插件後感覺遊戲畫面變得比較卡?
                                     </h3>
                                     <div>
-                                        <p>A: 使用過多的插件有可能會影響遊戲效能，發生這種情況時，建議只載入用的到的插件就好。請按 Esc &gt; 插件，勾選要使用的插件，用不到的插件請不要勾選。</p>
-                                        <p>電腦散熱不佳會嚴重影響遊戲效能，畫面卡卡常常是因為顯示卡過熱，CPU過熱則會導致電腦自動關機。建議定期清潔電腦內的灰塵和風扇、降低室內溫度或改善電腦的散熱系統。</p>
-                                        <p>不要載入下面這三個插件，試試看是否有改善；</p>
+                                        <p>A: 請先檢查 <strong>Esc &gt; 系統</strong>，遊戲畫質的設定是否自動跳到 "特高" 了，將它調整回來。</p>
+										<p>同時載入過多的插件也有可能會影響遊戲效能（視每個人的電腦狀況而定），建議只要載入用的到的插件就好。按 <strong>Esc &gt; 插件</strong>，勾選要使用的插件，使用不到的插件請不要勾選。</p>
+                                        <p>特別是不要載入下面這幾個插件，試試看是否有改善:</p>
                                         <ul>
-                                            <li><strong>[戰鬥] Tidy名條</strong></li>
-                                            <li><strong>[戰鬥] 冷卻時間</strong></li>
-                                            <li><strong>[進階] TMW技能提醒</strong></li>
+                                            <li><strong>[任務] 資料庫</strong></li>
+											<li><strong>[任務] Dugi任務高手</strong></li>
+											<li><strong>[地圖] 稀有怪通告</strong></li>
+											<li><strong>[進階] 冷卻時間</strong></li>
+											<li><strong>[戰鬥] 血條增強</strong></li>
+                                            <li><strong>[戰鬥] Tidy血條</strong></li>
+											<li><strong>[戰鬥] 傷害統計</strong></li>
                                         </ul>
-                                        <p>詳細說明請看:  <a href="https://goo.gl/cfZ0f2" target="_blank">影響遊戲效能前三名的插件</a>
+                                        <p>相關說明請看:  <a href="https://goo.gl/cfZ0f2" target="_blank">影響遊戲效能前三名的插件</a>
                                         </p>
+										<p><em>**電腦散熱不佳會嚴重影響遊戲效能，畫面卡卡常常是因為顯示卡過熱，CPU過熱則會導致電腦自動關機。建議定期清潔電腦內的灰塵和風扇、降低室內溫度或改善電腦的散熱系統。</em></p>
                                     </div>
                                 </div>
                                 <div class="group">
@@ -1203,10 +1272,10 @@
                                         Q3: 是否會介紹其他好用的插件和教學?
                                     </h3>
                                     <div>
-                                        <p>A: 會的!! 不定期會和大家分享好用的插件，以及使用教學，都會發佈在粉絲團，並且會收錄在<a href="https://goo.gl/jCu3L8" target="_blank">彩虹ui 推薦 - 單體插件 - 心得 - 攻略</a>。
+                                        <p>A: 會的!! 不定期會和大家分享好用的插件和使用心得，都會發佈在粉絲團，並且會收錄在<a href="https://rainbowui.wordpress.com/" target="_blank">彩虹ui 官方網站</a>。
 
                                         </p>
-                                        <p>如果你有覺得哪個插件很好用，非常歡迎留言，一同交流和分享。
+                                        <p>如果你有覺得哪個插件很好用，請留言和我說，一同交流和分享。
                                         </p>
                                     </div>
                                 </div>
@@ -1250,7 +1319,7 @@
                         <li role="presentation"><a href="#還原" aria-controls="還原" role="tab" data-toggle="tab"><i class="fa fa-undo fa-2x"></i><br />還原</a></li>
                         <li role="presentation"><a href="#其他" aria-controls="其他" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />其他</a></li>
                         <li role="presentation"><a href="https://www.facebook.com/rainbowui" target="_blank" class="fb-btn"><i class="fa fa-facebook-official fa-2x"></i><br />粉絲團</a></li>
-                        <li role="presentation"><a href="https://www.facebook.com/notes/1166344070060781" target="_blank" class="fb-btn"><i class="fa fa-gamepad fa-2x"></i><br />教學</a></li>
+                        <li role="presentation"><a href="https://rainbowui.wordpress.com/" target="_blank" class="fb-btn"><i class="fa fa-gamepad fa-2x"></i><br />教學</a></li>
                         <li role="presentation" class="hide"><a href="#search-result" aria-controls="search-result" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />搜尋</a></li>
                     </ul>
                 </div>
