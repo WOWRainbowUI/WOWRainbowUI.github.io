@@ -9,7 +9,7 @@
     <meta name="author" content="Alex Wang">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/16</title>
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/17</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -1108,7 +1108,7 @@
                                         Q7: 副本首領很高大，敵人頭上的血條會超出螢幕畫面，如何調整? 
                                     </h3>
                                     <div>
-                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; CVars 參數</strong>，在右上方的搜尋框輸入 <code>nameplateLargeTopInset</code>，點兩下搜尋的結果，將數值改為 <code>.1</code> 或 <code>.08</code>。
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; CVars 參數</strong>，在右上方的搜尋框輸入 <code>nameplateOtherTopInset</code>，點兩下搜尋的結果，將數值改為 <code>.08</code>。
                                         </p>
 										<p>這時候當敵人很高大時，血條會自動降低位置，不會超出畫面。</p>
                                     </div>
@@ -1232,6 +1232,19 @@
 										<p><em><strong>**不是每一個插件都同時會有 "帳號共通的設定檔案" 和 "角色專用的設定檔案"，有的插件兩者都有，有的只有其中一種。沒有的話就不用刪除可以忽略。</strong></em></p>
                                     </div>
                                 </div>
+								<div class="group">
+                                    <h3>
+                                        Q3: 如何移除整合包?
+                                    </h3>
+                                    <div>
+                                        <p>A: 要完全乾淨的移除整合包和插件，只需要刪除 <strong>AddOns</strong> 和 <strong>WTF</strong> 這兩個資料夾即可。刪除後，再次進入遊戲時會自動重新產生所需要的檔案，請安心刪除。
+											<ul>
+												<li>AddOns 的位置在 <strong>World of Warcraft &gt; Interface &gt; AddOns</strong>。 </li>
+												<li>WTF 的位置在 <strong>World of Warcraft &gt; WTF</strong>。</li>
+											</ul>
+										</p>
+                                    </div>
+                                </div>
 							</div>
 
                         </div>
@@ -1240,14 +1253,24 @@
                         <div role="tabpanel" class="tab-pane" id="其他">
                             <!-- Collapse content -->
                             <div class="jumbotron">
-                                <h2>Q1: 如何更改遊戲字體?</h2>
-                                <p>A: <a href="https://rainbowui.wordpress.com/rainbow-ui-pack-wow-addons-installation-guide/" target="_blank">請參考安裝說明中【更改遊戲字型】的部分</a>
+								<h2>Q1: 遊戲時一直聽到可愛又奇怪的音效 failtality ?</h2>
+								<p>A: 這是插件發生問題的提示音效。<p>
+								<p>聽到聲音時請點小地圖按鈕的紅色小袋子，將錯誤訊息截圖，然後到彩虹ui 粉絲團的『<a href="https://www.facebook.com/events/1002432279869550/" target="_blank">有問必答活動</a>』裡面貼文，上傳圖片並且詳細描述當時的情況、執行什麼動作時聽到聲音的，才能知道是哪個插件發生問題，以及該如何解決。</p>
                             </div>
 
                             <div id="accordion-others" class="accordion">
+								<div class="group">
+                                    <h3>
+                                        Q2: 如何更改遊戲字體?
+                                    </h3>
+                                    <div>
+                                        <p>A: <a href="https://rainbowui.wordpress.com/rainbow-ui-pack-wow-addons-installation-guide/" target="_blank">請參考安裝說明中【更改遊戲字型】的部分</a>
+                                        </p>
+                                    </div>
+                                </div>
                                 <div class="group">
                                     <h3>
-                                        Q2: 使用插件後感覺遊戲畫面變得比較卡?
+                                        Q3: 使用插件後感覺遊戲畫面變得比較卡?
                                     </h3>
                                     <div>
                                         <p>A: 請先檢查 <strong>Esc &gt; 系統</strong>，遊戲畫質的設定是否自動跳到 "特高" 了，將它調整回來。</p>
@@ -1269,7 +1292,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q3: 是否會介紹其他好用的插件和教學?
+                                        Q4: 是否會介紹其他好用的插件和教學?
                                     </h3>
                                     <div>
                                         <p>A: 會的!! 不定期會和大家分享好用的插件和使用心得，都會發佈在粉絲團，並且會收錄在<a href="https://rainbowui.wordpress.com/" target="_blank">彩虹ui 官方網站</a>。
@@ -1319,7 +1342,7 @@
                         <li role="presentation"><a href="#還原" aria-controls="還原" role="tab" data-toggle="tab"><i class="fa fa-undo fa-2x"></i><br />還原</a></li>
                         <li role="presentation"><a href="#其他" aria-controls="其他" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />其他</a></li>
                         <li role="presentation"><a href="https://www.facebook.com/rainbowui" target="_blank" class="fb-btn"><i class="fa fa-facebook-official fa-2x"></i><br />粉絲團</a></li>
-                        <li role="presentation"><a href="https://rainbowui.wordpress.com/" target="_blank" class="fb-btn"><i class="fa fa-gamepad fa-2x"></i><br />教學</a></li>
+                        <li role="presentation"><a href="https://rainbowui.wordpress.com/" target="_blank" class="fb-btn"><i class="fa fa-gamepad fa-2x"></i><br />更多</a></li>
                         <li role="presentation" class="hide"><a href="#search-result" aria-controls="search-result" role="tab" data-toggle="tab"><i class="fa fa-info fa-2x"></i><br />搜尋</a></li>
                     </ul>
                 </div>
