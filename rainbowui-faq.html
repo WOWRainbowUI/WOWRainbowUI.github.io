@@ -9,7 +9,7 @@
     <meta name="author" content="Alex Wang">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/17</title>
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/21</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -751,8 +751,16 @@
                                     </div>
                                 </div>
 								<div class="group">
+                                    <h3>Q5: 組隊時，遊戲內建的隊伍和團隊框架都不見了! Esc &gt; 介面，也沒有 "團隊檔案" 的選項?</h3>
+                                    <div>
+                                        <p>A: 複製下面這段文字，在聊天打字的輸入框內貼上:</p>
+										<p><code>/run for _, v in ipairs({"Blizzard_CUFProfiles", "Blizzard_CompactRaidFrames"}) do print("~~enable~~~~") print(v) EnableAddOn(v) print(LoadAddOn(v)) print(IsAddOnLoaded(v)) end</code></p>
+										<p>然後再輸入 <code>/reload</code> 重新載入。</p>
+                                    </div>
+                                </div>
+								<div class="group">
                                     <h3>
-                                        Q5: 目標頭像血條下方的 DOT 如何顯示時間?
+                                        Q6: 目標頭像血條下方的 DOT 如何顯示時間?
                                     </h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階]冷卻時間</strong>。</p>
@@ -761,7 +769,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q6: 如何移動和放大右上角的增益/減益效果圖示?
+                                        Q7: 如何移動和放大右上角的增益/減益效果圖示?
                                     </h3>
                                     <div>
                                         <p>A: 請先另外安裝 <a href="https://mods.curse.com/addons/wow/phanxbuffs" target="_blank">PhanxBuffs</a> 這個插件來移動和縮放增益/減益效果圖示，彩虹ui 下次改版將會收錄這個插件。
@@ -770,7 +778,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q7: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                        Q8: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
                                     </h3>
                                     <div>
                                         <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隱藏遊戲內建框架</strong>"，右方的 "<strong>隱藏增益效果</strong>" 不要打勾。
@@ -779,7 +787,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q8: 右上角的增益效果不會顯示時間了，該如何顯示出來?
+                                        Q9: 右上角的增益效果不會顯示時間了，該如何顯示出來?
                                     </h3>
                                     <div>
                                         <p>A: 請依照下面的步驟來做:
@@ -793,7 +801,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q9: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                        Q10: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
                                     </h3>
                                     <div>
                                         <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
@@ -808,7 +816,7 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q10: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
+                                    <h3>Q11: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
                                     <div>
                                         <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。</p>
 										<p>要取消專注目標時，先不要選取任何目標，再輸入 <code>/focus</code> 便會取消專注目標。</p>
@@ -956,7 +964,16 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q7: 如何在聊天視窗中不要顯示公會成員的等級通知?
+                                        Q7: 如何才能使用滑鼠滾輪捲動聊天對話的內容?
+                                    </h3>
+                                    <div>
+                                        <p>輸入 <code>/console chatMouseScroll 1</code> 。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q8: 如何在聊天視窗中不要顯示公會成員的等級通知?
                                     </h3>
                                     <div>
                                         <p>A: 從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 升級</strong>，右方將<strong>公會</strong>，取消打勾就可以了。
@@ -1274,7 +1291,16 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q3: 如何移除整合包?
+                                        Q3: 如何重置遊戲本身的所有參數? 讓遊戲恢復成預設值。
+                                    </h3>
+                                    <div>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/console cvar_default</code>，然後重新啟動遊戲。
+										</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q4: 如何移除整合包?
                                     </h3>
                                     <div>
                                         <p>A: 要完全乾淨的移除整合包和插件，只需要刪除 <strong>AddOns</strong> 和 <strong>WTF</strong> 這兩個資料夾即可。刪除後，再次進入遊戲時會自動重新產生所需要的檔案，請安心刪除。
