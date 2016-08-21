@@ -1077,35 +1077,16 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q4: 打怪時出現在怪物身上的傷害數字怎麼不見了?
+                                        Q4: 使用 "堆疊血條" 時，如何調整血條之間的距離?
                                     </h3>
                                     <div>
-                                        <p>A: 這是遊戲的設定跑掉了，在聊天文字框輸入 <code>/console floatingCombatTextCombatDamage 1</code> 便可恢復。</p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>
-                                        Q5: 如何更改傷害數字的字型?
-                                    </h3>
-                                    <div>
-                                        <p>A: 退出遊戲，把喜愛的中文字型檔案放到 <strong>World of Warcraft &gt; Interface &gt; AddOns &gt; AnyFont</strong> 資料夾裡面，然後將字型檔案重新命名為 <strong>font.ttf</strong> 取代原有的，再進入遊戲。
-                                        </p>
-										<p>**<em>一定要使用 True Type 格式的字型，副檔名為 .ttf。使用其他格式的字型再更改副檔名無效。</em></p>
-										<p>若是使用英文字型，中文字會變成問號，例如 "經驗值" 這幾個字會變成 ???。因此強烈建議使用中文字型。</p>
-                                    </div>
-                                </div>
-                                <div class="group">
-                                    <h3>
-                                        Q6: 傷害數字如何恢復成原本的字型? 
-                                    </h3>
-                                    <div>
-                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中取消勾選 <strong>[戰鬥] 傷害字型</strong>，再重新啟動遊戲。
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; CVars 參數</strong>，在右上方的搜尋框輸入 <code>nameplateOverlapV</code>，點兩下搜尋的結果，將數值改為 <code>.05</code> 或其他你覺得適合的數值。
                                         </p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q7: 副本首領很高大，敵人頭上的血條會超出螢幕畫面，如何調整? 
+                                        Q5: 副本首領很高大，敵人頭上的血條會超出螢幕畫面，如何調整? 
                                     </h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; CVars 參數</strong>，在右上方的搜尋框輸入 <code>nameplateOtherTopInset</code>，點兩下搜尋的結果，將數值改為 <code>.08</code>。
@@ -1115,7 +1096,54 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q8: 傷害數字被血條擋住了，如何調整位置? 
+                                        Q6: 打怪時出現在怪物身上的傷害數字不見了，要怎麼叫出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 這是遊戲的設定跑掉了，在聊天文字框輸入 <code>/console floatingCombatTextCombatDamage 1</code> 便可恢復。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q7: 打怪和治療時，出現在自己身上的傷害和治療數字不見了，要怎麼叫出來?
+                                    </h3>
+                                    <div>
+                                        <p>A: 暴雪在軍臨天下版本移除了相關的設定選項，不過可以使用插件來找回這些設定。</p>
+										<p>按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]介面選項</strong>，然後再按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 進階 &gt; 浮動戰鬥文字</strong>，將你想要顯示的戰鬥文字打勾。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q8: 如何更改傷害數字的字型?
+                                    </h3>
+                                    <div>
+                                        <p>A: 退出遊戲，把喜愛的中文字型檔案放到 <strong>World of Warcraft &gt; Interface &gt; AddOns &gt; AnyFont</strong> 資料夾裡面，然後將字型檔案重新命名為 <strong>font.ttf</strong> 取代原有的，再進入遊戲。
+                                        </p>
+										<p>**<em>一定要使用 True Type 格式的字型，副檔名為 .ttf。使用其他格式的字型再更改副檔名無效。</em></p>
+										<p>若是使用英文字型，中文字會變成問號，例如 "經驗值" 這幾個字會變成 ???。因此強烈建議使用中文字型。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q9: 如何更改傷害數字的大小? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]MSBT捲動戰鬥文字</strong>，然後輸入 <code>/msbt</code> 開啟設定，選擇<strong>一般設定 &gt; 主要字型</strong>，來調整傷害數字的大小。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <h3>
+                                        Q10: 傷害數字如何恢復成原本的字型? 
+                                    </h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中取消勾選 <strong>[戰鬥] 傷害字型</strong>，再重新啟動遊戲。
+                                        </p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>
+                                        Q11: 傷害數字被血條擋住了，如何調整位置? 
                                     </h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表裡面載入 <strong>[進階]MSBT捲動戰鬥文字</strong>，然後輸入 <code>/msbt</code> 開啟設定，選擇<strong>滾動區域 &gt; 設定滾動區域</strong>，來調整傷害數字的位置。
@@ -1124,7 +1152,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q9: 傷害統計視窗不見了，如何叫出來?
+                                        Q12: 傷害統計視窗不見了，如何叫出來?
                                     </h3>
                                     <div>
                                         <p>A: 在聊天的文字輸入框輸入 <code>/skada</code>。
@@ -1133,7 +1161,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q10: 請問傷害統計，如何同時顯示傷害和治療?
+                                        Q13: 請問傷害統計，如何同時顯示傷害和治療?
                                     </h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 傷害-統計 &gt; 建立新視窗</strong>，幫新視窗輸入一個名稱後按 "<strong>確定</strong>"，便可以將一個視窗顯示傷害輸出、一個視窗顯示治療量了。
@@ -1142,7 +1170,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q11: 要如何監控技能冷卻、BUFF 和 DEBUFF?
+                                        Q14: 要如何監控技能冷卻、BUFF 和 DEBUFF?
                                     </h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 插件</strong>，在插件列表中勾選載入 <strong>[進階]WA技能提醒</strong> 和相關模組，然後參考這幾篇教學來設定監控和提醒效果:
@@ -1156,7 +1184,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q12: 彩虹ui 中是不是沒有 TMW?
+                                        Q15: 彩虹ui 中是不是沒有 TMW?
                                     </h3>
                                     <div>
                                         <p>A: 是的，已經改為使用效能更佳、更簡單的 WA技能提醒 - WeakAuras 2。
@@ -1165,14 +1193,14 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q13: 施法條如何移動和縮放大小?</h3>
+                                    <h3>Q16: 施法條如何移動和縮放大小?</h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 介面 &gt; 插件 &gt; 施法條</strong>。按下 "<strong>切換施法條鎖定</strong>" 按鈕後可以移動大小。</p>
                                         <p>左方選單再選擇玩家、目標、專注目標...等，可以分別設定各種施法條的縮放大小和外觀樣式。</p>
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q14: 計時條如何移動和縮放大小?</h3>
+                                    <h3>Q17: 計時條如何移動和縮放大小?</h3>
                                     <div>
                                         <p>A: 計時條有兩種:
                                             <ol>
@@ -1183,13 +1211,25 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q15: 如何開啟 DBM 的語音警告，打副本首領時會有夏一可甜美的聲音提示?</h3>
+                                    <h3>Q18: 如何開啟 DBM 的語音警告，打副本首領時會有夏一可甜美的聲音提示?</h3>
                                     <div>
                                         <p>A: 輸入 <code>/dbm</code> <strong>&gt; 選項 &gt; 語音警告</strong>，右邊第四個下拉選單 "<strong>設置語音警告的語音包</strong>" 選擇 "<strong>Yike Xia (夏一可)</strong>"。</p>
                                     </div>
                                 </div>
+								<div class="group">
+                                    <h3>Q19: 如何關閉嗜血時播放的哈味音樂?</h3>
+                                    <div>
+                                        <p>A: 按 <strong>Esc  &gt; 插件</strong>，在列表中將 <strong>[戰鬥] 哈味嗜血包2.0</strong> 取消打勾，不要載入。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q20: 如何更換嗜血時播放的音樂?</h3>
+                                    <div>
+                                        <p>A: 請看 <a href="https://rainbowui.wordpress.com/2016/07/31/enhanced-bloodlust-%E8%87%AA%E8%A3%BD%E5%85%85%E6%BB%BF%E5%93%88%E5%91%B3%E7%9A%84%E5%97%9C%E8%A1%80%E9%9F%B3%E6%95%88/" target="_blank">Enhanced Bloodlust 自製充滿哈味的嗜血音效</a>。</p>
+                                    </div>
+                                </div>
                                 <div class="group">
-                                    <h3>Q16: 請問彩虹裡有伊斯卡助手嗎?</h3>
+                                    <h3>Q21: 請問彩虹裡有伊斯卡助手嗎?</h3>
                                     <div>
                                         <p>A: 有的。在插件列表中載入 <strong>[團隊] ExRT團隊工具包</strong>，然後把小地圖按鈕展開，點 <strong>R</strong> 的小圓鈕，選擇 <strong>首領戰鬥助手 &gt; 暗影領主伊斯卡</strong>。</p>
                                         <p>框框中會列出所有隊友，當你拿到球的時候，點一下亮起來的小格子就會直接傳球。</p>
