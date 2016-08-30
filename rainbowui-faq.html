@@ -745,13 +745,19 @@
                                     </div>
                                 </div>
 								<div class="group">
-                                    <h3>Q4: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
+                                    <h3>Q4: 如何不要顯示頭像上面的傷害和治療數字?</h3>
                                     <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隊伍</strong>"，右方再選擇 "<strong>隊伍</strong>"，然後將 "<strong>任何團隊中隱藏</strong>" 打勾 </p>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，右方往下捲動，將 "<strong>啟用戰鬥文字</strong>" 取消打勾。</p>
                                     </div>
                                 </div>
 								<div class="group">
-                                    <h3>Q5: 組隊時，遊戲內建的隊伍和團隊框架都不見了! Esc &gt; 介面，也沒有 "團隊檔案" 的選項?</h3>
+                                    <h3>Q5: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
+                                    <div>
+                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隊伍</strong>"，右方再選擇 "<strong>隊伍</strong>"，然後將 "<strong>任何團隊中隱藏</strong>" 打勾。</p>
+                                    </div>
+                                </div>
+								<div class="group">
+                                    <h3>Q6: 組隊時，遊戲內建的隊伍和團隊框架都不見了! Esc &gt; 介面，也沒有 "團隊檔案" 的選項?</h3>
                                     <div>
                                         <p>A: 複製下面這段文字，在聊天打字的輸入框內貼上:</p>
 										<p><code>/run for _, v in ipairs({"Blizzard_CUFProfiles", "Blizzard_CompactRaidFrames"}) do print("~~enable~~~~") print(v) EnableAddOn(v) print(LoadAddOn(v)) print(IsAddOnLoaded(v)) end</code></p>
@@ -760,25 +766,26 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q6: 目標頭像血條下方的 DOT 如何顯示時間?
+                                        Q7: 目標頭像血條下方的 DOT 如何顯示時間?
                                     </h3>
                                     <div>
-                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階]冷卻時間</strong>。</p>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 冷卻時間</strong>。</p>
 										<p><em>**特別注意: <strong>[進階]冷卻時間</strong> 插件需要比較耗CPU資源，如過不是非常必要，或電腦較慢，建議不要載入使用。可以改看怪頭上血條的 DOT 時間，並且開啟遊戲內建的冷卻時間來使用（從 Esc &gt; 介面 &gt; 快捷列 &gt; 顯示冷卻時間）。</em></p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q7: 如何移動和放大右上角的增益/減益效果圖示?
+                                        Q8: 如何移動和放大右上角的增益/減益效果圖示?
                                     </h3>
                                     <div>
-                                        <p>A: 請先另外安裝 <a href="https://mods.curse.com/addons/wow/phanxbuffs" target="_blank">PhanxBuffs</a> 這個插件來移動和縮放增益/減益效果圖示，彩虹ui 下次改版將會收錄這個插件。
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 增益效果</strong>。
                                         </p>
+										<p>然後從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 增益效果</strong>，解鎖移動和調整圖示大小。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q8: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                        Q9: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
                                     </h3>
                                     <div>
                                         <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隱藏遊戲內建框架</strong>"，右方的 "<strong>隱藏增益效果</strong>" 不要打勾。
@@ -787,7 +794,7 @@
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q9: 右上角的增益效果不會顯示時間了，該如何顯示出來?
+                                        Q10: 右上角的增益效果不會顯示時間了，該如何顯示出來?
                                     </h3>
                                     <div>
                                         <p>A: 請依照下面的步驟來做:
@@ -801,7 +808,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q10: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                        Q11: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
                                     </h3>
                                     <div>
                                         <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
@@ -816,12 +823,10 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q11: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
+                                    <h3>Q12: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
                                     <div>
-                                        <p>A: 先將對象選取為目標，然後輸入 <code>/focus</code> 便可設定為專注目標。</p>
-										<p>要取消專注目標時，先不要選取任何目標，再輸入 <code>/focus</code> 便會取消專注目標。</p>
-                                        <p>若需要經常設定專注目標，可以新增一個巨集，內容輸入 <code>/focus</code>，然後將巨集拉到快捷列。之後只要選取對象，再按快捷列上的巨集，便能設定專注目標。</p>
-                                        <p>或是<a href="https://goo.gl/kV7c5v" target="_blank">參考這篇點擊施法的範例</a>來設定成: 按 Shift+滑鼠右鍵 點人物，設為專注目標。</p>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[團隊] 快速專注目標</strong>。</p>
+										<p>然後按住 <strong>Shift+左鍵</strong> 點遊戲中的人物，便可以快速設為專注目標。</p>
                                     </div>
                                 </div>
 								
@@ -899,7 +904,7 @@
                                     </div>
                                 </div>
 								<div class="group">
-                                    <h3>Q9: 快捷列上如何只顯示技能冷卻時間，不要顯示DOT時間?</h3>
+                                    <h3>Q9: 快捷列上如何只顯示技能冷卻時間，不要顯示 DOT 時間?</h3>
                                     <div>
                                         <p>A: 從 <strong>Esc &gt; 插件</strong>，在列表中將 <strong>[介面] 快捷列-增益時間</strong> 取消打勾，不要載入。
                                         </p>
