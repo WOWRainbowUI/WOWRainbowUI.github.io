@@ -9,7 +9,7 @@
     <meta name="author" content="Alex Wang">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/8/30</title>
+    <title>【彩虹ui】FAQ 常見問題與解答 - 魔獸世界插件整合包 2016/1/21</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -681,7 +681,7 @@
                                         Q2: 打團隊時，BOSS的血條擋到我的畫面了?
                                     </h3>
                                     <div>
-                                        <p>A: 輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，選擇 "<strong>一般</strong>" &gt;取消勾選 "<strong>鎖定框架</strong>"，就可以自由移動BOSS框架和各種人物角色框架了。移動完再勾選 "<strong>鎖定框架</strong>" 即可。
+                                        <p>A: 輸入 <code>/頭像</code> 或 <code>/stuf</code> 開啟 Stuf頭像框架的設定（若沒出現頭像的設定選項，按 Esc 關閉視窗後再輸入一次 <code>/頭像</code>），將 "<strong>拖曳移動</strong>" 和 "<strong>設定模式</strong>" 都打勾，就可以自由移動BOSS框架和各種人物角色框架了。移動完再取消勾選 "<strong>拖曳移動</strong>" 和 "<strong>設定模式</strong>" 即可。
                                         </p>
                                     </div>
                                 </div>
@@ -719,82 +719,43 @@
                             <!-- Collapse content -->
 
                             <div class="jumbotron">
-                                <h2>Q1: 如何移動左上方人物頭像血條的位置?</h2>
-                                <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟 SUF單位框架的設定，選擇 <strong>"一般" &gt; 取消勾選 "鎖定框架"</strong>，就可以自由移動BOSS框架和各種人物角色框架了。移動完再按下 "<strong>鎖定框架</strong>" 即可。<p>
-								<p>移動玩家頭像時，隊伍和目標框架也會跟著一起移動。若要分開各別移動位置， 取消勾選 "<strong>鎖定框架</strong>" 後，按下畫面中間的 "<strong>脫離框架</strong>" 按鈕，便可以各別移動。</p>
+                                <h2>Q1: 如何調整自己、目標和隊伍的頭像?</h2>
+                                <p>A: 輸入 <code>/頭像</code> 或 <code>/stuf</code> 開啟 Stuf頭像框架的設定（若沒出現頭像的設定選項，按 Esc 關閉視窗後再輸入一次 <code>/頭像</code>），將 "<strong>拖曳移動</strong>" 和 "<strong>設定模式</strong>" 都打勾，就可以自由移動和設定各種頭像框架和相關功能。設定完再取消勾選 "<strong>拖曳移動</strong>" 和 "<strong>設定模式</strong>" 即可。</p>
+								<p>更詳細的頭像設定方法請看這篇 <a href="http://wp.me/p7DTni-142" target="_blank">Stuf頭像的用法介紹</a>。</p>
                             </div>
 
-                            <div id="accordion-frame" class="accordion">
+                            <div id="accordion-frame" class="accordion">								
 								<div class="group">
-                                    <h3>
-                                        Q2: 如何放大頭像血條?
-                                    </h3>
-                                    <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，先選擇要調整大小的框架，例如 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，然後在右方選擇 "<strong>框架</strong>" 可以調整寬和高，或是直接更改縮放比例。</p>
-
-										<p>也可以一次更改多個框架的大小，左方先選擇 "<strong>總體</strong>"，右方勾選多個要更改的框架後，再選擇 "<strong>框架</strong>" 標籤頁來調整比例。
-                                        </p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>
-                                        Q3: 如何更改頭像血條顯示的文字內容和文字大小? 改成百分比或血量。
-                                    </h3>
-                                    <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，先選擇要調整大小的框架，例如 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，然後在右方選擇 "<strong>文字/標籤</strong>"，選擇 "<strong>生命條</strong>"（或 "<strong>綜合能量條</strong>"），再調整文字大小，和勾選 "<strong>左邊/右邊文字</strong>" 要顯示的內容。</p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>Q4: 如何不要顯示頭像上面的傷害和治療數字?</h3>
-                                    <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>玩家</strong>" 或 "<strong>目標</strong>"，右方往下捲動，將 "<strong>啟用戰鬥文字</strong>" 取消打勾。</p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>Q5: 如何使用團隊框架來取代5人隊伍? 不要同時顯示團隊和隊伍框架。</h3>
-                                    <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隊伍</strong>"，右方再選擇 "<strong>隊伍</strong>"，然後將 "<strong>任何團隊中隱藏</strong>" 打勾。</p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>Q6: 組隊時，遊戲內建的隊伍和團隊框架都不見了! Esc &gt; 介面，也沒有 "團隊檔案" 的選項?</h3>
+                                    <h3>Q1: 組隊時，遊戲內建的隊伍和團隊框架都不見了! Esc &gt; 介面，也沒有 "團隊檔案" 的選項?</h3>
                                     <div>
                                         <p>A: 複製下面這段文字，在聊天打字的輸入框內貼上:</p>
 										<p><code>/run for _, v in ipairs({"Blizzard_CUFProfiles", "Blizzard_CompactRaidFrames"}) do print("~~enable~~~~") print(v) EnableAddOn(v) print(LoadAddOn(v)) print(IsAddOnLoaded(v)) end</code></p>
 										<p>然後再輸入 <code>/reload</code> 重新載入。</p>
                                     </div>
-                                </div>
+                                </div>							
 								<div class="group">
                                     <h3>
-                                        Q7: 目標頭像血條下方的 DOT 如何顯示時間?
+                                        Q2: 如何移動和放大右上角的增益/減益效果圖示?
                                     </h3>
                                     <div>
-                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 冷卻時間</strong>。</p>
-										<p><em>**特別注意: <strong>[進階]冷卻時間</strong> 插件需要比較耗CPU資源，如過不是非常必要，或電腦較慢，建議不要載入使用。可以改看怪頭上血條的 DOT 時間，並且開啟遊戲內建的冷卻時間來使用（從 Esc &gt; 介面 &gt; 快捷列 &gt; 顯示冷卻時間）。</em></p>
-                                    </div>
-                                </div>
-								<div class="group">
-                                    <h3>
-                                        Q8: 如何移動和放大右上角的增益/減益效果圖示?
-                                    </h3>
-                                    <div>
-                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 增益效果</strong>。
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 增益效果-玩家</strong>。
                                         </p>
-										<p>然後從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 增益效果</strong>，解鎖移動和調整圖示大小。</p>
+										<p>然後從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 增益效果-玩家</strong>，解鎖移動和調整圖示大小。</p>
                                     </div>
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q9: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
+                                        Q3: 右上角的增益效果 BUFF圖示不見了，該如何顯示出來?
                                     </h3>
-                                    <div>
-                                        <p>A: 在聊天打字的輸入框輸入 <code>/頭像</code> 開啟設定視窗，左方選擇 "<strong>隱藏遊戲內建框架</strong>"，右方的 "<strong>隱藏增益效果</strong>" 不要打勾。
+                                     <div>
+                                        <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[進階] 增益效果-玩家</strong>。
                                         </p>
+										<p>然後從 <strong>Esc &gt; 介面 &gt; 插件 &gt; 增益效果-玩家</strong>，解鎖移動和調整圖示大小。</p>
                                     </div>
                                 </div>
 								<div class="group">
                                     <h3>
-                                        Q10: 右上角的增益效果不會顯示時間了，該如何顯示出來?
+                                        Q4: 右上角的增益效果不會顯示時間了，該如何顯示出來?
                                     </h3>
                                     <div>
                                         <p>A: 請依照下面的步驟來做:
@@ -808,7 +769,7 @@
                                 </div>
                                 <div class="group">
                                     <h3>
-                                        Q11: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
+                                        Q5: 玄牛雕像的小圖示不見了，該如何取消玄牛雕像?
                                     </h3>
                                     <div>
                                         <p>A: 請新增一個巨集，將它拉至快捷列，按一下就可以取消玄牛雕像。巨集內容如下:
@@ -823,7 +784,7 @@
                                     </div>
                                 </div>
                                 <div class="group">
-                                    <h3>Q12: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
+                                    <h3>Q6: 設定專注目標時出現被封鎖的訊息，該如何設定專注目標?</h3>
                                     <div>
                                         <p>A: 按 <strong>Esc &gt; 插件</strong>，在列表中載入 <strong>[團隊] 快速專注目標</strong>。</p>
 										<p>然後按住 <strong>Shift+左鍵</strong> 點遊戲中的人物，便可以快速設為專注目標。</p>
@@ -1340,7 +1301,7 @@
                             <div class="jumbotron">
 								<h2>Q1: 遊戲時一直聽到可愛又奇怪的音效 failtality ?</h2>
 								<p>A: 這是插件發生問題的提示音效。<p>
-								<p>聽到聲音時請點小地圖按鈕的紅色小袋子，將錯誤訊息截圖，然後到彩虹ui 粉絲團的『<a href="https://www.facebook.com/events/1638826073114337/" target="_blank">有問必答活動</a>』裡面貼文，上傳圖片並且詳細描述當時的情況、執行什麼動作時聽到聲音的，才能知道是哪個插件發生問題，以及該如何解決。</p>
+								<p>聽到聲音時請點小地圖按鈕的紅色小袋子，將錯誤訊息截圖，然後到彩虹ui 粉絲團的首頁，點右上方的 "聯絡我們"，在『有問必答活動』裡面留言，上傳圖片並且詳細描述當時的情況、執行什麼動作時聽到聲音的，才能知道是哪個插件發生問題，以及該如何解決。</p>
                             </div>
 
                             <div id="accordion-others" class="accordion">
@@ -1352,7 +1313,7 @@
                                         <p>A: 這類型的錯誤通常是執行不允許的動作，例如在戰鬥中調整設定，有可能是插件自己執行的，也有可能是錯誤收集插件誤判。	
                                         </p>
 										<p>若這個錯誤只是偶而發生一次，直接忽略就可以了，不會影響遊戲效能。</p>
-										<p>若這個錯誤是持續不斷的產生，則必須關閉發生問題的插件。請將錯誤訊息畫面截圖，到彩虹ui 粉絲團的『<a href="https://www.facebook.com/events/1638826073114337/" target="_blank">有問必答活動</a>』裡面貼文，上傳圖片並且詳細描述當時的情況、執行什麼動作時聽到聲音的，才能知道是哪個插件發生問題，以及該如何解決。</p>
+										<p>若這個錯誤是持續不斷的產生，則必須關閉發生問題的插件。請將錯誤訊息截圖，然後到彩虹ui 粉絲團的首頁，點右上方的 "聯絡我們"，在『有問必答活動』裡面留言，上傳圖片並且詳細描述當時的情況、執行什麼動作時聽到聲音的，才能知道是哪個插件發生問題，以及該如何解決。</p>
                                     </div>
                                 </div>
 								<div class="group">
