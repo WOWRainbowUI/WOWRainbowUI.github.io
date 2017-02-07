@@ -85,8 +85,8 @@
 							<div class="form-group">
 								<label for="source-code-type">選擇要擷取的文字字串類型:</label>
 								<select class="form-control" id="source-code-type">
-								  <option value="0" selected>雙引號括起來字串</option>
-								  <option value="1">單引號括起來字串</option>
+								  <option value="0" selected>雙引號括起來的字串</option>
+								  <option value="1">單引號括起來的字串</option>
 								  <option value="2">L[" "] 括起來的字串</option>
 								  <option value="3">L[' '] 括起來的字串</option>
 								</select>
@@ -103,7 +103,10 @@
 
                             <div id="output-content">
 								<p class="error no-result">沒有擷取到任何字串。</p>
-								<p class="ready success-result">擷取完成，可以下載檔案。</p>
+								<div class="ready success-result">
+									<p>擷取完成，可以下載檔案。</p>
+									<p>然後匯入 <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">Google 試算表</a>來翻譯和管理詞庫，翻譯完成後再匯出成 csv，使用下方的功能來翻譯插件。</p>
+								</div>
 							</div>
                         </form>
                     </div>
