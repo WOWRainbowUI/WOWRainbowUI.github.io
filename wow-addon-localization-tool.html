@@ -27,7 +27,7 @@
             }
             .row:last-child {
                 border-bottom: none;
-                padding-bottom: 15em;
+                padding-bottom: 5em;
             }
 			.error {
 				color: red;
@@ -61,7 +61,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#step1-gen-csv">製作詞庫</a>
                         </li>
-                        <li><a href="#step2-trans-lua">翻譯插件</a>
+                        <li><a href="#step4-trans-lua">翻譯插件</a>
                         </li>
 						<li><a href="#tool1-lua-table">轉換成LUA表格</a>
                         </li>
@@ -76,7 +76,7 @@
         <div class="container">
             <div id="step1-gen-csv" class="row">
                 <div class="col-md-8">
-                     <h1>魔獸世界插件 lua 翻譯工具 <small>v1.1</small></h1>
+                     <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0</small></h1>
                     <div class="jumbotron">
                         	<h2>1. 製作詞庫<small> - 擷取出程式碼內的文字成為csv格式的詞庫。</small></h2>
 
@@ -85,10 +85,8 @@
 							<div class="form-group">
 								<label for="source-code-type">選擇要擷取的文字字串類型:</label>
 								<select class="form-control" id="source-code-type">
-								  <option value="0" selected>雙引號括起來的字串</option>
-								  <option value="1">單引號括起來的字串</option>
-								  <option value="2">L[" "] 括起來的字串</option>
-								  <option value="3">L[' '] 括起來的字串</option>
+								  <option value="0" selected>雙引號或單引號括起來的字串</option>
+								  <option value="1">L[ ] 括起來的字串</option>
 								</select>
 							</div>
                             <div class="form-group">
@@ -103,20 +101,35 @@
 
                             <div id="output-content">
 								<p class="error no-result">沒有擷取到任何字串。</p>
-								<div class="ready success-result">
-									<p>擷取完成，可以下載檔案。</p>
-									<p>然後匯入 <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">Google 試算表</a>來翻譯和管理詞庫，翻譯完成後再匯出成 csv，使用下方的功能來翻譯插件。</p>
-								</div>
+								<p class="ready success-result">擷取完成，可以下載檔案。</p>
 							</div>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <div id="step2-trans-lua" class="row">
+			
+			<div id="step2-import-csv" class="row">
                 <div class="col-md-8">
                     <div class="jumbotron">
-                        	<h2>2. 翻譯插件<small> - 依據csv詞庫翻譯lua程式碼內的文字。</small></h2>
+                        	<h2>2. 匯入 Google 試算表<small></small></h2>
+							<p><a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">開啟 Google 試算表</a>，匯入前一個步驟所製作的 csv 檔案，以便翻譯和管理詞庫。</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="step3-export-csv" class="row">
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        	<h2>3. 匯出 csv 詞庫<small></small></h2>
+							<p><a href="https://docs.google.com/spreadsheets/u/0/" target="_blank">開啟 Google 試算表</a>，將翻譯完成後詞庫匯出成 csv 格式的檔案。</p>
+					</div>
+				</div>
+			</div>
+				
+            <div id="step4-trans-lua" class="row">
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        	<h2>4. 翻譯插件<small> - 依據csv詞庫翻譯lua程式碼內的文字。</small></h2>
 
 
                         <form id="csv-to-lua" data-toggle="validator">
@@ -135,8 +148,12 @@
                             </p>
 
                             <div id="output-content">
+								<p class="error csv-invalid">csv詞庫格式不正確。</p>
 								<p class="error no-result">沒有任何符合的字串可供翻譯。</p>
-								<p class="ready success-result">翻譯完成，可以下載檔案。</p>
+								<div class="ready success-result">
+									<p>翻譯完成，可以下載檔案。</p>
+									<p>然後便可使用翻譯後的檔案直接取代插件檔案，或是替換部分內容。</p>
+								</div>
 							</div>
                         </form>
                     </div>
@@ -181,7 +198,7 @@
 
                     <div class="jumbotron">
                         	<h2>使用說明</h2>
-                        <p>請參閱我們的線上使用說明，以獲得最新的資訊。</p>
+                        <p>請依照上面的步驟來翻譯插件，或是參閱使用說明以獲得最新資訊。</p>
                         <p><a class="btn btn-primary btn-lg" href="https://goo.gl/lH7CRn" target="_blank" role="button">前往使用說明</a>
                         </p>
                     </div>
@@ -232,10 +249,31 @@
                     $(e.target).closest("li").addClass("active")
 
                 });
+				
+				//跳脫正規表示法特殊字元的函數
+				//來源 http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+				function escapeRegExp(str) {
+					return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+				}
+
+				//javascript 字串全部搜尋取代的函數
+				//Split and Join (Functional) Implementation
+				//來源 http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+				String.prototype.replaceAll = function(search, replacement) {
+					var target = this;
+					return target.split(search).join(replacement);
+				};
+				
+				//將開頭和結尾的單引號改為雙引號的函數，以符合 csv 格式。
+				function singleToDoubleQuotes(str) {
+					if (str.substring(0, 1) == "'") {
+						str = '"' + str.substring(1, str.length - 1) + '"';
+					}
+					return str;
+				}
 
                 //將CSV轉換為JSON的函數
                 //來源 http://jsfiddle.net/sturtevant/AZFvQ/
-
                 function CSVToArray(strData, strDelimiter) {
                     // Check to see if the delimiter is defined. If not,
                     // then default to comma.
@@ -320,6 +358,10 @@
 					var s = $("#source-code").val();
 					var iType = $("#source-code-type").val();
 					
+					//隱藏完成後的訊息
+					$("#step1-gen-csv .no-result").hide();
+					$("#step1-gen-csv .success-result").hide();
+					
 					//更改按鈕文字
 					//$("#ok-to-get-strings").text("製作中...")
 					
@@ -327,31 +369,18 @@
 					var v = $(this).closest("form").validator('validate');
 					
 					if (!s || s.length <= 0 ) {
-						//$("#step1-gen-csv .no-result").show();
                         return false;
                     }
 					
-					//擷取不同的字串類型
+					//擷取字串
+					//正規表示法來源 http://blog.stevenlevithan.com/archives/match-quoted-string
 					//單引號
 					if ( iType == 1) {
-						//將 \' 改為 *"* 以便擷取正確的字串
-						s = s.replace(/\\'/g, '*"*');
-						aOutput = s.match(/'([^']*)'/g);
-					// L[" "]
-					} else if ( iType == 2) {
-						//將 \" 改為 *'* 以便擷取正確的字串
-						s = s.replace(/\\"/g, "*'*");
-						aOutput = s.match(/L\["([^"]*)"\]/g);
-					// L[' ']
-					} else if ( iType == 3) {
-						//將 \' 改為 *"* 以便擷取正確的字串
-						s = s.replace(/\\'/g, '*"*');
-						aOutput = s.match(/L\['([^']*)'\]/g);
-					//雙引號
+						// L[ ]
+						aOutput = s.match(/L\[(["'])(?:(?=(\\?))\2.)*?\1\]/g);
 					} else {
-						//將 \" 改為 *'* 以便擷取正確的字串
-						s = s.replace(/\\"/g, "*'*");
-						aOutput = s.match(/"([^"]*)"/g);
+						//雙引號或單引號
+						aOutput = s.match(/(["'])(?:(?=(\\?))\2.)*?\1/g);
 					}
                     
                     
@@ -375,24 +404,15 @@
 
                             //處理不同的字串類型
 							if ( iType == 1) {
-								//將 *"* 改回為 \'
-								s = s.replace(/\*"\*/g, "\\'");
-							} else if ( iType == 2) {
-								//去除掉 L[" "]，只擷取裡面的字串。
-								s = s.match(/"([^"]*)"/)[0];
-								//將 *'* 改回為 \"
-								s = s.replace(/\*'\*/g, '\\"');
-							} else if ( iType == 3) {
-								//去除掉 L[' ']，只擷取裡面的字串。
-								s = s.match(/'([^']*)'/)[0];
-								//將 *"* 改回為 \'
-								s = s.replace(/\*"\*/g, "\\'");
+								//去除掉 L[ ]，只擷取裡面的字串。
+								s = s.match(/(["'])(?:(?=(\\?))\2.)*?\1/g)[0];
+								s = singleToDoubleQuotes(s);
 							} else {
-								//將 *'* 改回為 \"
-								s = s.replace(/\*'\*/g, '\\"');
+								s = singleToDoubleQuotes(s);
 							}
                             
-                            //console.log(s);
+                            //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
+							//console.log(s);
 							
 							
                             //組合成 csv 格式
@@ -425,6 +445,10 @@
 					var lua = $("#source-code2").val();
                     var csv = $("#csv-ready").val();
 					
+					//隱藏完成後的訊息
+					$("#step4-trans-lua .csv-invalid").hide();
+					$("#step4-trans-lua .success-result").hide();
+					
 					//檢查表單
 					var v = $(this).closest("form").validator('validate');
 					
@@ -436,42 +460,29 @@
                     var json = JSON.parse(json);
 
                     //console.log(json.length);
-                    //console.log(json[0]["en"]);
+                    //console.log(json[0]);
+					//檢查 csv 格式
+					if (json.length == 0 || json[0] == undefined || json[0]["en"] == undefined || json[0]["tw"] == undefined) {
+						$("#step4-trans-lua .csv-invalid").show();
+						return false;
+					}
 										
 
                     for (var i = 0; i <= json.length; i++) {
 
                         if (json[i] != undefined && json[i]["tw"] != "") {
                             
-                            //sEn = '"' + json[i]["en"] + '"';
 							sEn = json[i]["en"];
-                            //跳脫正規表示法的 |, (), [], +, *字元
-                            sEn = sEn.replace(/\\/g, '\\\\');
-                            sEn = sEn.replace(/\|/g, '\\|');
-							sEn = sEn.replace(/\[/g, '\\[');
-							sEn = sEn.replace(/\]/g, '\\]');
-                            sEn = sEn.replace(/\(/g, '\\(');
-                            sEn = sEn.replace(/\)/g, '\\)');
-                            sEn = sEn.replace(/\+/g, '\\+');
-                            sEn = sEn.replace(/\*/g, '\\*');
-							
-							
-							//取代的字串前後必須由雙引號括著
+                            					
+							//取代的字串前後必須由"雙引號"括著
 							sEnQuote = '"' + sEn + '"';
                             sTwQuote = '"' + json[i]["tw"] + '"';
+							lua = lua.replaceAll(sEnQuote, sTwQuote);
 							
-                            re = new RegExp(sEnQuote, "g");
-                            //console.log(re);
-                            //console.log(sTw);
-                            //console.log(lua.match(re));
-                            lua = lua.replace(re, sTwQuote);
-							
-							//取代的字串前後必須由單引號括著
+							//取代的字串前後必須由'單引號'括著
 							sEnQuote = "'" + sEn + "'";
                             sTwQuote = "'" + json[i]["tw"] + "'";
-                            
-							re = new RegExp(sEnQuote, "g");
-                            lua = lua.replace(re, sTwQuote);
+							lua = lua.replaceAll(sEnQuote, sTwQuote);
                         }
                     }
 
@@ -481,7 +492,7 @@
                     $("#download-lua").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(lua));
 
                     $("#download-lua").show();
-					$("#step2-trans-lua .success-result").show();
+					$("#step4-trans-lua .success-result").show();
                     $("#ok-to-trans").hide();
 
 
