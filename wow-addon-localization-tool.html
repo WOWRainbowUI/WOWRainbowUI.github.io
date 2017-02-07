@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>魔獸世界插件翻譯工具</title>
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		
+        <style>
+            body {
+                padding-top: 50px;
+                font-family: arial, "黑體", "微軟正黑體";
+            }
+            .starter-template {
+                padding: 40px 15px;
+                text-align: center;
+            }
+            .row {
+                padding-top: 3em;
+                padding-bottom: 3em;
+                border-bottom: 2px dotted grey;
+            }
+            .row:last-child {
+                border-bottom: none;
+                padding-bottom: 15em;
+            }
+			.error {
+				color: red;
+				display: none;
+			}
+			.ready {
+				display: none;
+			}
+        </style>
+
+        <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
+                     <a class="navbar-brand" href="#">魔獸世界插件翻譯工具</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#step1-gen-csv">製作詞庫</a>
+                        </li>
+                        <li><a href="#step2-trans-lua">翻譯插件</a>
+                        </li>
+						<li><a href="#tool1-lua-table">轉換成LUA表格</a>
+                        </li>
+                        <li><a href="#help">說明</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+            <div id="step1-gen-csv" class="row">
+                <div class="col-md-8">
+                     <h1>魔獸世界插件 lua 翻譯工具 <small>v1.1</small></h1>
+                    <div class="jumbotron">
+                        	<h2>1. 製作詞庫<small> - 擷取出程式碼內的文字成為csv格式的詞庫。</small></h2>
+
+
+                        <form id="source-to-csv" data-toggle="validator">
+							<div class="form-group">
+								<label for="source-code-type">選擇要擷取的文字字串類型:</label>
+								<select class="form-control" id="source-code-type">
+								  <option value="0" selected>雙引號括起來字串</option>
+								  <option value="1">單引號括起來字串</option>
+								  <option value="2">L[" "] 括起來的字串</option>
+								  <option value="3">L[' '] 括起來的字串</option>
+								</select>
+							</div>
+                            <div class="form-group">
+                                <label for="source-code">貼入lua原始檔內容:</label>
+                                <textarea class="form-control" id="source-code" required></textarea>
+								<div class="help-block with-errors"></div>
+                            </div>
+							
+                            <button type="button" class="btn btn-info btn-lg" id="ok-to-get-strings">開始製作csv</button>
+                            <p><a id="download-csv" download="ui-local.csv" href="" class="btn btn-success btn-lg" role="button">下載csv檔案</a>
+                            </p>
+
+                            <div id="output-content">
+								<p class="error no-result">沒有擷取到任何字串。</p>
+								<p class="ready success-result">擷取完成，可以下載檔案。</p>
+							</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step2-trans-lua" class="row">
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        	<h2>2. 翻譯插件<small> - 依據csv詞庫翻譯lua程式碼內的文字。</small></h2>
+
+
+                        <form id="csv-to-lua" data-toggle="validator">
+                            <div class="form-group">
+                                <label for="source-code2">貼入lua原始檔內容:</label>
+                                <textarea class="form-control" id="source-code2" required></textarea>
+								<div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="csv-ready">貼入翻譯後的csv詞庫內容:</label>
+                                <textarea class="form-control" id="csv-ready" required></textarea>
+								<div class="help-block with-errors"></div>
+                            </div>
+                            <button type="button" class="btn btn-info btn-lg" id="ok-to-trans">開始翻譯lua</button>
+                            <p><a id="download-lua" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
+                            </p>
+
+                            <div id="output-content">
+								<p class="error no-result">沒有任何符合的字串可供翻譯。</p>
+								<p class="ready success-result">翻譯完成，可以下載檔案。</p>
+							</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+			
+			<div id="tool1-lua-table" class="row">
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        	<h2>工具1. 轉換成 LUA 表格<small> - 將csv詞庫轉換成lua外部語系檔。</small></h2>
+
+
+                        <form id="csv-to-lua-table" data-toggle="validator">
+                            <div class="form-group">
+                                <label for="csv-lua-table-ready">貼入翻譯後的csv詞庫內容:</label>
+                                <textarea class="form-control" id="csv-lua-table-ready" required></textarea>
+								<div class="help-block with-errors"></div>
+                            </div>
+							<div class="checkbox">
+								<label class="checkbox-inline">
+								<input type="checkbox" id="csv-lua-table-l" value="1" checked>前面加上 L
+								</label>
+								<label class="checkbox-inline">
+								<input type="checkbox" id="csv-lua-table-comma" value="1" checked>結尾加上逗號
+								</label>
+							</div>
+                            <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-table">開始轉換</button>
+                            <p><a id="download-lua-table" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
+                            </p>
+
+                            <div id="output-content">
+								<p class="error no-result">csv詞庫格式不正確，或沒有可供轉換的內容。</p>
+								<p class="ready success-result">轉換完成，可以下載檔案。</p>
+							</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="help" class="row">
+                <div class="col-md-8">
+
+                    <div class="jumbotron">
+                        	<h2>使用說明</h2>
+                        <p>請參閱我們的線上使用說明，以獲得最新的資訊。</p>
+                        <p><a class="btn btn-primary btn-lg" href="https://goo.gl/lH7CRn" target="_blank" role="button">前往使用說明</a>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="contact" class="row">
+                <div class="col-md-8">
+
+                    <div class="jumbotron">
+                        	<h2>問題與建議</h2>
+                        <p>使用上有任何問題，新功能建議或意見回饋，請到彩虹ui 粉絲團留言，我們重視每一個聲音，非常感謝!</p>
+                        <p><a class="btn btn-primary btn-lg" href="https://www.facebook.com/rainbowui" target="_blank" role="button">前往彩虹ui 粉絲團</a>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted text-center">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/tw/">
+                        <img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/tw/88x31.png" />
+                    </a>
+                    <br />《魔獸世界®》 商標由暴雪娛樂持有，插件翻譯工具是由<a href="https://www.facebook.com/rainbowui" target="_blank">彩虹ui</a>製作，
+                    <br />本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by/3.0/tw/">創用 CC 姓名標示 3.0 台灣 授權條款</a>授權。
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
+
+        <script>
+            $(function() {
+                //console.log("ready!");
+
+                //導覽列按鈕切換
+                $(".nav").click(function(e) {
+
+                    $(this).find("li").removeClass("active");
+                    $(e.target).closest("li").addClass("active")
+
+                });
+
+                //將CSV轉換為JSON的函數
+                //來源 http://jsfiddle.net/sturtevant/AZFvQ/
+
+                function CSVToArray(strData, strDelimiter) {
+                    // Check to see if the delimiter is defined. If not,
+                    // then default to comma.
+                    strDelimiter = (strDelimiter || ",");
+                    // Create a regular expression to parse the CSV values.
+                    var objPattern = new RegExp((
+                            // Delimiters.
+                            "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+                            // Quoted fields.
+                            "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+                            // Standard fields.
+                            "([^\"\\" + strDelimiter + "\\r\\n]*))"), "gi");
+                    // Create an array to hold our data. Give the array
+                    // a default empty first row.
+                    var arrData = [
+                        []
+                    ];
+                    // Create an array to hold our individual pattern
+                    // matching groups.
+                    var arrMatches = null;
+                    // Keep looping over the regular expression matches
+                    // until we can no longer find a match.
+                    while (arrMatches = objPattern.exec(strData)) {
+                        // Get the delimiter that was found.
+                        var strMatchedDelimiter = arrMatches[1];
+                        // Check to see if the given delimiter has a length
+                        // (is not the start of string) and if it matches
+                        // field delimiter. If id does not, then we know
+                        // that this delimiter is a row delimiter.
+                        if (strMatchedDelimiter.length && (strMatchedDelimiter != strDelimiter)) {
+                            // Since we have reached a new row of data,
+                            // add an empty row to our data array.
+                            arrData.push([]);
+                        }
+                        // Now that we have our delimiter out of the way,
+                        // let's check to see which kind of value we
+                        // captured (quoted or unquoted).
+                        if (arrMatches[2]) {
+                            // We found a quoted value. When we capture
+                            // this value, unescape any double quotes.
+                            var strMatchedValue = arrMatches[2].replace(
+                                new RegExp("\"\"", "g"), "\"");
+                        } else {
+                            // We found a non-quoted value.
+                            var strMatchedValue = arrMatches[3];
+                        }
+                        // Now that we have our value string, let's add
+                        // it to the data array.
+                        arrData[arrData.length - 1].push(strMatchedValue);
+                    }
+                    // Return the parsed data.
+                    return (arrData);
+                }
+
+                function CSV2JSON(csv) {
+                    var array = CSVToArray(csv);
+                    var objArray = [];
+                    for (var i = 1; i < array.length; i++) {
+                        objArray[i - 1] = {};
+                        for (var k = 0; k < array[0].length && k < array[i].length; k++) {
+                            var key = array[0][k];
+                            objArray[i - 1][key] = array[i][k]
+                        }
+                    }
+
+                    var json = JSON.stringify(objArray);
+                    var str = json.replace(/},/g, "},\r\n");
+
+                    return str;
+                }
+
+
+
+                //步驟1，取出文字成為CSV檔案
+                $("#download-csv").hide();
+                $("#ok-to-get-strings").show();
+
+                $("#ok-to-get-strings").click(function(e) {
+
+					var aOutput = "";
+					var sOutput = "en,tw\n";
+					var s = $("#source-code").val();
+					var iType = $("#source-code-type").val();
+					
+					//更改按鈕文字
+					//$("#ok-to-get-strings").text("製作中...")
+					
+					//檢查表單
+					var v = $(this).closest("form").validator('validate');
+					
+					if (!s || s.length <= 0 ) {
+						//$("#step1-gen-csv .no-result").show();
+                        return false;
+                    }
+					
+					//擷取不同的字串類型
+					//單引號
+					if ( iType == 1) {
+						//將 \' 改為 *"* 以便擷取正確的字串
+						s = s.replace(/\\'/g, '*"*');
+						aOutput = s.match(/'([^']*)'/g);
+					// L[" "]
+					} else if ( iType == 2) {
+						//將 \" 改為 *'* 以便擷取正確的字串
+						s = s.replace(/\\"/g, "*'*");
+						aOutput = s.match(/L\["([^"]*)"\]/g);
+					// L[' ']
+					} else if ( iType == 3) {
+						//將 \' 改為 *"* 以便擷取正確的字串
+						s = s.replace(/\\'/g, '*"*');
+						aOutput = s.match(/L\['([^']*)'\]/g);
+					//雙引號
+					} else {
+						//將 \" 改為 *'* 以便擷取正確的字串
+						s = s.replace(/\\"/g, "*'*");
+						aOutput = s.match(/"([^"]*)"/g);
+					}
+                    
+                    
+
+                    //console.log(aOutput);
+					
+					
+					//檢查結果
+					if (!aOutput || aOutput.length <= 0) {
+						$("#step1-gen-csv .no-result").show();
+                        return false;
+                    }
+
+                    for (var i = 0; i <= aOutput.length; i++) {
+
+                        //console.log(aOutput[i]);
+
+                        if (aOutput[i] != undefined) {
+						
+							s = aOutput[i];
+
+                            //處理不同的字串類型
+							if ( iType == 1) {
+								//將 *"* 改回為 \'
+								s = s.replace(/\*"\*/g, "\\'");
+							} else if ( iType == 2) {
+								//去除掉 L[" "]，只擷取裡面的字串。
+								s = s.match(/"([^"]*)"/)[0];
+								//將 *'* 改回為 \"
+								s = s.replace(/\*'\*/g, '\\"');
+							} else if ( iType == 3) {
+								//去除掉 L[' ']，只擷取裡面的字串。
+								s = s.match(/'([^']*)'/)[0];
+								//將 *"* 改回為 \'
+								s = s.replace(/\*"\*/g, "\\'");
+							} else {
+								//將 *'* 改回為 \"
+								s = s.replace(/\*'\*/g, '\\"');
+							}
+                            
+                            //console.log(s);
+							
+							
+                            //組合成 csv 格式
+                            sOutput += s;
+                            sOutput += ",\n";
+                        }
+
+                    }
+					
+
+                    //下載 csv
+                    $("#download-csv").attr('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(sOutput));
+
+                    $("#download-csv").show();
+					$("#step1-gen-csv .success-result").show();
+                    $("#ok-to-get-strings").hide();
+
+                    //$("#output-strings").text(sOutput);
+
+
+                });
+
+                //步驟2，翻譯lua
+                $("#download-lua").hide();
+                $("#ok-to-trans").show();
+
+                $("#ok-to-trans").click(function() {
+
+                    var sEn, sEnQuote, sTWQuote, re;
+					var lua = $("#source-code2").val();
+                    var csv = $("#csv-ready").val();
+					
+					//檢查表單
+					var v = $(this).closest("form").validator('validate');
+					
+					if (!lua || lua.length <= 0 || !csv || csv.length <= 0 ) {
+                        return false;
+                    }
+					
+                    var json = CSV2JSON(csv);
+                    var json = JSON.parse(json);
+
+                    //console.log(json.length);
+                    //console.log(json[0]["en"]);
+										
+
+                    for (var i = 0; i <= json.length; i++) {
+
+                        if (json[i] != undefined && json[i]["tw"] != "") {
+                            
+                            //sEn = '"' + json[i]["en"] + '"';
+							sEn = json[i]["en"];
+                            //跳脫正規表示法的 |, (), [], +, *字元
+                            sEn = sEn.replace(/\\/g, '\\\\');
+                            sEn = sEn.replace(/\|/g, '\\|');
+							sEn = sEn.replace(/\[/g, '\\[');
+							sEn = sEn.replace(/\]/g, '\\]');
+                            sEn = sEn.replace(/\(/g, '\\(');
+                            sEn = sEn.replace(/\)/g, '\\)');
+                            sEn = sEn.replace(/\+/g, '\\+');
+                            sEn = sEn.replace(/\*/g, '\\*');
+							
+							
+							//取代的字串前後必須由雙引號括著
+							sEnQuote = '"' + sEn + '"';
+                            sTwQuote = '"' + json[i]["tw"] + '"';
+							
+                            re = new RegExp(sEnQuote, "g");
+                            //console.log(re);
+                            //console.log(sTw);
+                            //console.log(lua.match(re));
+                            lua = lua.replace(re, sTwQuote);
+							
+							//取代的字串前後必須由單引號括著
+							sEnQuote = "'" + sEn + "'";
+                            sTwQuote = "'" + json[i]["tw"] + "'";
+                            
+							re = new RegExp(sEnQuote, "g");
+                            lua = lua.replace(re, sTwQuote);
+                        }
+                    }
+
+                    //$("#source-code").val(lua);
+
+                    //下載lua
+                    $("#download-lua").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(lua));
+
+                    $("#download-lua").show();
+					$("#step2-trans-lua .success-result").show();
+                    $("#ok-to-trans").hide();
+
+
+                });
+				
+				 //工具1，轉換成lua table
+                $("#download-lua-table").hide();
+                $("#ok-to-lua-table").show();
+
+                $("#ok-to-lua-table").click(function() {
+				
+					var sPrefix = "", sSuffix = "";
+					var csv = $("#csv-lua-table-ready").val();
+					
+					//檢查表單
+					var v = $(this).closest("form").validator('validate');
+					
+					if (!csv || csv.length <= 0 ) {
+                        return false;
+                    }
+					
+                    var json = CSV2JSON(csv);
+                    var json = JSON.parse(json);
+					var sOutput = ""; 
+
+                    //console.log(json.length);
+                    //console.log(json[0]["en"]);
+					
+					//檢查開頭和結尾是否加上文字
+					if($("#csv-lua-table-l").prop("checked")) {
+						sPrefix = "L"
+					}
+					
+					if($("#csv-lua-table-comma").prop("checked")) {
+						sSuffix = ","
+					}
+										
+					if (!json || json.length <= 0 ) {
+						$("#tool1-lua-table .no-result").show();
+                        return false;
+                    }
+                    
+					for (var i = 0; i <= json.length; i++) {
+
+                        if (json[i] != undefined && json[i]["tw"] != "") {
+							sOutput += sPrefix + '["' + json[i]["en"] + '"] = "';
+							sOutput += json[i]["tw"] + '"' + sSuffix + "\n";
+						}
+                    }
+
+
+                    //下載lua
+                    $("#download-lua-table").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(sOutput));
+
+                    $("#download-lua-table").show();
+					$("#tool1-lua-table .success-result").show();
+                    $("#ok-to-lua-table").hide();
+				
+				});
+				
+            });
+        </script>
+    </body>
+
+</html>
