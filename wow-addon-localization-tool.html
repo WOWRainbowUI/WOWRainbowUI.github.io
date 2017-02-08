@@ -81,7 +81,7 @@
     <div class="container">
         <div id="step1-gen-csv" class="row">
             <div class="col-md-8">
-                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0</small></h1>
+                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0.1</small></h1>
                 <div class="jumbotron">
                     <h2>1. 製作詞庫<small> - 擷取出程式碼內的文字成為csv格式的詞庫。</small></h2>
                     <form id="source-to-csv" data-toggle="validator">
@@ -413,7 +413,7 @@
                         //處理不同的字串類型
                         if (iType == 1) {
                             //去除掉 L[ ]，只擷取裡面的字串。
-                            s = s.match(/(["'])(?:(?=(\\?))\2.)*?\1/g)[0];
+							s = s.substring(2, s.length - 1);
                             s = singleToDoubleQuotes(s);
                         } else {
                             s = singleToDoubleQuotes(s);
