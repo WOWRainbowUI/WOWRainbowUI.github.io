@@ -84,15 +84,13 @@
                 <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0</small></h1>
                 <div class="jumbotron">
                     <h2>1. 製作詞庫<small> - 擷取出程式碼內的文字成為csv格式的詞庫。</small></h2>
-
-
                     <form id="source-to-csv" data-toggle="validator">
                         <div class="form-group">
                             <label for="source-code-type">選擇要擷取的文字字串類型:</label>
                             <select class="form-control" id="source-code-type">
-								  <option value="0" selected>雙引號或單引號括起來的字串</option>
-								  <option value="1">L[ ] 括起來的字串</option>
-								</select>
+                                <option value="0" selected>雙引號或單引號括起來的字串</option>
+                                <option value="1">L[ ] 括起來的字串</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="source-code">貼入lua原始檔內容:</label>
@@ -137,8 +135,6 @@
             <div class="col-md-8">
                 <div class="jumbotron">
                     <h2>4. 翻譯插件<small> - 依據csv詞庫翻譯lua程式碼內的文字。</small></h2>
-
-
                     <form id="csv-to-lua" data-toggle="validator">
                         <div class="form-group">
                             <label for="source-code2">貼入lua原始檔內容:</label>
@@ -191,8 +187,6 @@
             <div class="col-md-8">
                 <div class="jumbotron">
                     <h2>小工具1. 轉換成 LUA 表格<small> - 將csv詞庫轉換成lua外部語系檔。</small></h2>
-
-
                     <form id="csv-to-lua-table" data-toggle="validator">
                         <div class="form-group">
                             <label for="csv-lua-table-ready">貼入翻譯後的csv詞庫內容:</label>
@@ -201,16 +195,15 @@
                         </div>
                         <div class="checkbox">
                             <label class="checkbox-inline">
-								<input type="checkbox" id="csv-lua-table-l" value="1" checked>前面加上 L
-								</label>
+                                <input type="checkbox" id="csv-lua-table-l" value="1" checked>前面加上 L
+                            </label>
                             <label class="checkbox-inline">
-								<input type="checkbox" id="csv-lua-table-comma" value="1" checked>結尾加上逗號
-								</label>
+                                <input type="checkbox" id="csv-lua-table-comma" value="1" checked>結尾加上逗號
+                            </label>
                         </div>
                         <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-table">開始轉換</button>
                         <p><a id="download-lua-table" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
                         </p>
-
                         <div id="output-content">
                             <p class="error csv-invalid">csv詞庫格式不正確，或沒有可供轉換的內容。</p>
                             <p class="ready success-result">轉換完成，可以下載檔案。</p>
@@ -222,31 +215,24 @@
 
         <div id="help" class="row">
             <div class="col-md-8">
-
                 <div class="jumbotron">
                     <h2>使用說明</h2>
                     <p>請依照上面的步驟來翻譯插件，或是參閱使用說明以獲得最新資訊。</p>
                     <p><a class="btn btn-primary btn-lg" href="http://wp.me/p7DTni-1m6" target="_blank" role="button">前往使用說明</a>
                     </p>
                 </div>
-
-
             </div>
         </div>
 
         <div id="contact" class="row">
             <div class="col-md-8">
-
                 <div class="jumbotron">
                     <h2>問題與建議</h2>
                     <p>使用上有任何問題，新功能建議或意見回饋，請到彩虹ui 粉絲團留言，我們重視每一個聲音，非常感謝!</p>
                     <p>若你有心翻譯插件，但不懂技術操作，或是能協助維護<a href="https://docs.google.com/spreadsheets/d/1gg7Q-6a5aHhW_tlPm77jXv35IDD-4wZJw6RnzFeU9sE/edit?usp=sharing" target="_blank">這個共用詞庫</a>，請務必到粉絲團留言與我聯絡，歡迎你的加入！</p>
-
                     <p><a class="btn btn-primary btn-lg" href="https://www.facebook.com/rainbowui" target="_blank" role="button">前往彩虹ui 粉絲團</a>
                     </p>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -273,10 +259,8 @@
 
             //導覽列按鈕切換
             $(".nav").click(function(e) {
-
                 $(this).find("li").removeClass("active");
                 $(e.target).closest("li").addClass("active")
-
             });
 
             //跳脫正規表示法特殊字元的函數
@@ -412,10 +396,7 @@
                     aOutput = s.match(/(["'])(?:(?=(\\?))\2.)*?\1/g);
                 }
 
-
-
                 //console.log(aOutput);
-
 
                 //檢查結果
                 if (!aOutput || aOutput.length <= 0) {
@@ -443,14 +424,12 @@
                         //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
                         //console.log(s);
 
-
                         //組合成 csv 格式
                         sOutput += s;
                         sOutput += ",\n";
                     }
 
                 }
-
 
                 //下載 csv
                 $("#download-csv").attr('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(sOutput));
@@ -460,7 +439,6 @@
                 $("#ok-to-get-strings").hide();
 
                 //$("#output-strings").text(sOutput);
-
 
             });
 
@@ -524,7 +502,6 @@
                 $("#step4-trans-lua .success-result").show();
                 $("#ok-to-trans").hide();
 
-
             });
 
             //工具1，轉換成lua table
@@ -577,7 +554,6 @@
                         sOutput += json[i]["tw"] + '"' + sSuffix + "\n";
                     }
                 }
-
 
                 //下載lua
                 $("#download-lua-table").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(sOutput));
