@@ -41,6 +41,7 @@
         .ready {
             display: none;
         }
+
     </style>
 
     <!--[if IE]>
@@ -54,11 +55,11 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="sr-only">Toggle navigation</span>
-                         <span class="icon-bar"></span>
-                         <span class="icon-bar"></span>
-                         <span class="icon-bar"></span>
-                    </button>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="#">魔獸世界插件翻譯工具</a>
             </div>
 
@@ -413,7 +414,7 @@
                         //處理不同的字串類型
                         if (iType == 1) {
                             //去除掉 L[ ]，只擷取裡面的字串。
-							s = s.substring(2, s.length - 1);
+                            s = s.substring(2, s.length - 1);
                             s = singleToDoubleQuotes(s);
                         } else {
                             s = singleToDoubleQuotes(s);
@@ -511,10 +512,10 @@
                 var sPrefix = "",
                     sSuffix = "";
                 var csv = $("#csv-lua-table-ready").val();
-				
-				//隱藏完成後的訊息
-				$("#tool1-lua-table .csv-invalid").hide();
-				$("#tool1-lua-table .success-result").hide();
+
+                //隱藏完成後的訊息
+                $("#tool1-lua-table .csv-invalid").hide();
+                $("#tool1-lua-table .success-result").hide();
 
                 //檢查表單
                 var v = $(this).closest("form").validator('validate');
@@ -529,8 +530,8 @@
 
                 //console.log(json.length);
                 //console.log(json[0]["en"]);
-				
-				//檢查 csv 格式
+
+                //檢查 csv 格式
                 if (json.length == 0 || json[0] == undefined || json[0]["en"] == undefined || json[0]["tw"] == undefined) {
                     $("#tool1-lua-table .csv-invalid").show();
                     return false;
@@ -562,6 +563,7 @@
 
             });
         });
+
     </script>
 </body>
 
