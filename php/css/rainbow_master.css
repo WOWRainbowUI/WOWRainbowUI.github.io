@@ -1,0 +1,65 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .form-inline .form-control {
+        width: 128px;
+    }
+}
+@media (min-width: 1200px) {
+    .form-inline .form-control {
+        width: 173px;
+    }
+}
+html,
+body {
+    overflow-x: hidden;
+    /* Prevent scroll on narrow devices */
+}
+body {
+    font-family: arial, "黑體", "微軟正黑體";
+    background: url(../../img/rainbow.png) 0 100% fixed no-repeat;
+    background-size: 200%;
+}
+.navbar {
+    background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.7) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b3ffffff', GradientType=1);
+}
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+    color: rgba(0, 0, 0, .6) !important;
+    font-weight: bold !important;
+}
+.navbar-light .nav-link:hover,
+.navbar-light .dropdown-item:hover {
+    color: hotpink !important;
+}
+.keyword {
+    color: #f7786b;
+    font-weight: normal;
+    font-style: normal;
+}
+.group .keyword {
+    border-bottom: 1px dashed hotpink;
+}
+.sidebar-offcanvas .nav {
+    border: 0;
+}
+.sidebar-offcanvas .nav-link {
+    width: 64px;
+    text-align: center;
+    border: none;
+    color: rebeccapurple;
+    border-radius: 5px;
+}
+.sidebar-offcanvas .nav-link:hover {
+    background-color: rgba(255, 255, 255, .6);
+}
+.sidebar-offcanvas .nav-link.active {
+    color: white;
+    background-color: darkorange;
+}

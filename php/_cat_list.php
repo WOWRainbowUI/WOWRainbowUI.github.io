@@ -33,15 +33,19 @@ $catMap = Categories::find_by_cat_name_en('map');
 
     <body>
         <h1 class="text-center">分類</h1>
-        <?php 
-        //輸出資料
-        foreach($cats10 as $cat) {
-            echo '<span style="color:#' . $cat->color . '">[' . $cat->name . ']<br />';
-        }
-        ?>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs d-flex flex-wrap align-items-start" role="tablist">
+            <?php 
+            //輸出資料 
+            foreach($cats as $cat) { 
+            ?>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+                <li role="presentation" class="nav-item p-2"><a href="#<?php echo strtolower($cat->en) ?>" class="nav-link" aria-controls="<?php echo strtolower($cat->en) ?>" role="tab" data-toggle="tab"><i class="fa fa-download fa-2x"></i><br /><?php echo $cat->name ?></a></li>
+                <?php } ?>
+        </ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     </body>
 
     </html>
