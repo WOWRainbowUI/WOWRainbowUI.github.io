@@ -75,6 +75,8 @@
                     </li>
                     <li><a href="#tool1-lua-table">轉換成LUA表格</a>
                     </li>
+					<li><a href="#tool2-lua-add-l">加上 L[ ]</a>
+                    </li>
                     <li><a href="#help">說明</a>
                     </li>
                 </ul>
@@ -234,9 +236,12 @@
                                 <option value="L" selected>L</option>
                                 <option value="Loc ">Loc </option>
                             </select>
+							<label for="array-name-custom-lua-add-l">或自行輸入（不要加上 [ ]）:</label>
+							<input class="form-control" type="text" id="array-name-custom-lua-add-l" name="array-name-custom-lua-add-l">
                         </div>
+						<hr />
                         <div class="form-group">
-                            <label for="local-lua-add-l">貼入外部翻譯檔內容 (通常是 zh-TW.lua 中的部分內容):</label>
+                            <label for="local-lua-add-l">貼入外部翻譯檔內容（通常是 zh-TW.lua 中的部分內容）:</label>
                             <textarea class="form-control" id="local-lua-add-l" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -245,6 +250,8 @@
                             <select class="form-control" id="array-name-local-lua-add-l">
                                 <option value="L" selected>L</option>
                             </select>
+							<label for="array-name-local-custom-lua-add-l">或自行輸入（不要加上 [ ]）:</label>
+							<input class="form-control" type="text" id="array-name-local-custom-lua-add-l" name="array-name-local-custom-lua-add-l">
                         </div>
                         <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-add-l">開始轉換</button>
                         <p><a id="download-lua-add-l" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
@@ -618,8 +625,10 @@
 				var sEngWithAName = "";
                 var sLua = $("#source-code-lua-add-l").val();
                 var sANameOutput = $("#array-name-lua-add-l").val();
+                var sANameOutputCustom = $("#array-name-custom-lua-add-l").val();
 				var sLocal = $("#local-lua-add-l").val();
                 var sANameLocal = $("#array-name-local-lua-add-l").val();
+                var sANameLocalCustom = $("#array-name-local-custom-lua-add-l").val();
 
                 //隱藏完成後的訊息
                 $("#tool2-lua-add-l .csv-invalid").hide();
@@ -631,11 +640,20 @@
                 if (!sLua || sLua.length <= 0 || !sLocal || sLocal.length <= 0) {
                     return false;
                 }
+				
+				//決定變數名稱
+				if (sANameOutputCustom && sANameOutputCustom.trim().length > 0) {
+					sANameOutput = sANameOutputCustom
+				}
+				
+				if (sANameLocalCustom && sANameLocalCustom.trim().length > 0) {
+					sANameLocal = sANameLocalCustom
+				}
 
                 //擷取字串
                 //正規表示法來源 http://blog.stevenlevithan.com/archives/match-quoted-string
-                //單引號
-                aEngStrings = sLocal.match(/L\[(["'])(?:(?=(\\?))\2.)*?\1\]/g);
+				var regexp  = new RegExp(sANameLocal + '\\[([\"\'])(?:(?=(\\\\?))\\2.)*?\\1\\]', 'g');
+                aEngStrings = sLocal.match(regexp);
 				
 				//檢查結果
                 if (!aEngStrings || aEngStrings.length <= 0) {
