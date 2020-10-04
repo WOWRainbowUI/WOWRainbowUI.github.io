@@ -41,6 +41,10 @@
         .ready {
             display: none;
         }
+		h2 small {
+			display: block;
+			margin-top: 0.3em;
+		}
 
     </style>
 
@@ -82,9 +86,9 @@
     <div class="container">
         <div id="step1-gen-csv" class="row">
             <div class="col-md-8">
-                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0.1</small></h1>
+                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0.2</small></h1>
                 <div class="jumbotron">
-                    <h2>1. 製作詞庫<small> - 擷取出程式碼內的文字成為csv格式的詞庫。</small></h2>
+                    <h2>1. 製作詞庫<small> 擷取出程式碼內的文字成為 csv 格式的詞庫</small></h2>
                     <form id="source-to-csv" data-toggle="validator">
                         <div class="form-group">
                             <label for="source-code-type">選擇要擷取的文字字串類型:</label>
@@ -94,7 +98,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="source-code">貼入lua原始檔內容:</label>
+                            <label for="source-code">貼入 lua 原始檔內容:</label>
                             <textarea class="form-control" id="source-code" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -135,15 +139,15 @@
         <div id="step4-trans-lua" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>4. 翻譯插件<small> - 依據csv詞庫翻譯lua程式碼內的文字。</small></h2>
+                    <h2>4. 翻譯插件<small> 依據csv詞庫翻譯 lua 程式碼內的文字</small></h2>
                     <form id="csv-to-lua" data-toggle="validator">
                         <div class="form-group">
-                            <label for="source-code2">貼入lua原始檔內容:</label>
+                            <label for="source-code2">貼入 lua 原始檔內容:</label>
                             <textarea class="form-control" id="source-code2" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="csv-ready">貼入翻譯後的csv詞庫內容:</label>
+                            <label for="csv-ready">貼入翻譯後的 csv 詞庫內容:</label>
                             <textarea class="form-control" id="csv-ready" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -152,7 +156,7 @@
                         </p>
 
                         <div id="output-content">
-                            <p class="error csv-invalid">csv詞庫格式不正確。</p>
+                            <p class="error csv-invalid">csv 詞庫格式不正確。</p>
                             <p class="error no-result">沒有任何符合的字串可供翻譯。</p>
                             <div class="ready success-result">
                                 <p>翻譯完成，可以下載檔案。</p>
@@ -187,10 +191,10 @@
         <div id="tool1-lua-table" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>小工具1. 轉換成 LUA 表格<small> - 將csv詞庫轉換成lua外部語系檔。</small></h2>
+                    <h2>小工具1. 轉換成 LUA 表格<small> 將 csv 詞庫轉換成 lua 外部語系檔</small></h2>
                     <form id="csv-to-lua-table" data-toggle="validator">
                         <div class="form-group">
-                            <label for="csv-lua-table-ready">貼入翻譯後的csv詞庫內容:</label>
+                            <label for="csv-lua-table-ready">貼入翻譯後的 csv 詞庫內容:</label>
                             <textarea class="form-control" id="csv-lua-table-ready" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -206,7 +210,47 @@
                         <p><a id="download-lua-table" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
                         </p>
                         <div id="output-content">
-                            <p class="error csv-invalid">csv詞庫格式不正確，或沒有可供轉換的內容。</p>
+                            <p class="error csv-invalid">csv 詞庫格式不正確，或沒有可供轉換的內容。</p>
+                            <p class="ready success-result">轉換完成，可以下載檔案。</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+		
+		<div id="tool2-lua-add-l" class="row">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h2>小工具2. 加上 L[ ]<small> 依據外部翻譯檔在 lua 程式碼內幫英文字串加上 L[ ]</small></h2>
+                    <form id="csv-to-lua-table" data-toggle="validator">
+                        <div class="form-group">
+                            <label for="source-code-lua-add-l">貼入 lua 原始檔內容:</label>
+                            <textarea class="form-control" id="source-code-lua-add-l" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+						<div class="form-group">
+                            <label for="array-name-lua-add-l">選擇 lua 原始檔要加上的變數名稱:</label>
+                            <select class="form-control" id="array-name-lua-add-l">
+                                <option value="L" selected>L</option>
+                                <option value="Loc ">Loc </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="local-lua-add-l">貼入外部翻譯檔內容 (通常是 zh-TW.lua 中的部分內容):</label>
+                            <textarea class="form-control" id="local-lua-add-l" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="array-name-local-lua-add-l">選擇外部翻譯檔內容中的變數名稱:</label>
+                            <select class="form-control" id="array-name-local-lua-add-l">
+                                <option value="L" selected>L</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-add-l">開始轉換</button>
+                        <p><a id="download-lua-add-l" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
+                        </p>
+                        <div id="output-content">
+							<p class="error no-result">無法從外部翻譯檔中擷取到任何字串。</p>
                             <p class="ready success-result">轉換完成，可以下載檔案。</p>
                         </div>
                     </form>
@@ -250,7 +294,7 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
 
@@ -560,6 +604,70 @@
                 $("#download-lua-table").show();
                 $("#tool1-lua-table .success-result").show();
                 $("#ok-to-lua-table").hide();
+
+            });
+			
+			//工具2，lua 加上 L[]
+            $("#download-lua-add-l").hide();
+            $("#ok-to-lua-add-l").show();
+
+            $("#ok-to-lua-add-l").click(function() {
+
+                var aEngStrings = "";
+                var sEng = "";
+				var sEngWithAName = "";
+                var sLua = $("#source-code-lua-add-l").val();
+                var sANameOutput = $("#array-name-lua-add-l").val();
+				var sLocal = $("#local-lua-add-l").val();
+                var sANameLocal = $("#array-name-local-lua-add-l").val();
+
+                //隱藏完成後的訊息
+                $("#tool2-lua-add-l .csv-invalid").hide();
+                $("#tool2-lua-add-l .success-result").hide();
+
+                //檢查表單
+                var v = $(this).closest("form").validator('validate');
+
+                if (!sLua || sLua.length <= 0 || !sLocal || sLocal.length <= 0) {
+                    return false;
+                }
+
+                //擷取字串
+                //正規表示法來源 http://blog.stevenlevithan.com/archives/match-quoted-string
+                //單引號
+                aEngStrings = sLocal.match(/L\[(["'])(?:(?=(\\?))\2.)*?\1\]/g);
+				
+				//檢查結果
+                if (!aEngStrings || aEngStrings.length <= 0) {
+                    $("#tool2-lua-add-l .no-result").show();
+                    return false;
+                }
+
+                for (var i = 0; i <= aEngStrings.length; i++) {
+
+                    if (aEngStrings[i] != undefined) {
+
+                        s = aEngStrings[i];
+
+                        //去除掉 L[ ]，只擷取裡面的字串。
+                        s = s.substring(2, s.length - 1);
+
+                        //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
+                        //console.log(s);
+						
+						//加上 L[ ] 用來替換
+                        sEngWithAName = sANameOutput + '[' + s + ']';
+                        sLua = sLua.replaceAll(s, sEngWithAName);
+                    }
+
+                }
+
+                //下載lua
+                $("#download-lua-add-l").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(sLua));
+
+                $("#download-lua-add-l").show();
+                $("#tool2-lua-add-l .success-result").show();
+                $("#ok-to-lua-add-l").hide();
 
             });
         });
