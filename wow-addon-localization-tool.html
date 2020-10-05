@@ -629,6 +629,7 @@
 				var sLocal = $("#local-lua-add-l").val();
                 var sANameLocal = $("#array-name-local-lua-add-l").val();
                 var sANameLocalCustom = $("#array-name-local-custom-lua-add-l").val();
+				var iANameLocalLength = 0
 
                 //隱藏完成後的訊息
                 $("#tool2-lua-add-l .csv-invalid").hide();
@@ -651,7 +652,6 @@
 				}
 
                 //擷取字串
-                //正規表示法來源 http://blog.stevenlevithan.com/archives/match-quoted-string
 				var regexp  = new RegExp(sANameLocal + '\\[([\"\'])(?:(?=(\\\\?))\\2.)*?\\1\\]', 'g');
                 aEngStrings = sLocal.match(regexp);
 				
@@ -660,6 +660,8 @@
                     $("#tool2-lua-add-l .no-result").show();
                     return false;
                 }
+				
+				iANameLocalLength = sANameLocal.length + 1
 
                 for (var i = 0; i <= aEngStrings.length; i++) {
 
@@ -668,7 +670,7 @@
                         s = aEngStrings[i];
 
                         //去除掉 L[ ]，只擷取裡面的字串。
-                        s = s.substring(2, s.length - 1);
+                        s = s.substring(iANameLocalLength, s.length - 1);
 
                         //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
                         //console.log(s);
