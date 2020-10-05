@@ -43,7 +43,7 @@
         }
 		h2 small {
 			display: block;
-			margin-top: 0.3em;
+			line-height: 1.3em;
 		}
 
     </style>
@@ -77,6 +77,8 @@
                     </li>
 					<li><a href="#tool2-lua-add-l">加上 L[ ]</a>
                     </li>
+					<li><a href="#tool3-local-to-enus">產生英文語言檔</a>
+                    </li>
                     <li><a href="#help">說明</a>
                     </li>
                 </ul>
@@ -88,7 +90,7 @@
     <div class="container">
         <div id="step1-gen-csv" class="row">
             <div class="col-md-8">
-                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.0.2</small></h1>
+                <h1>魔獸世界插件 lua 翻譯工具 <small>v2.1</small></h1>
                 <div class="jumbotron">
                     <h2>1. 製作詞庫<small> 擷取出程式碼內的文字成為 csv 格式的詞庫</small></h2>
                     <form id="source-to-csv" data-toggle="validator">
@@ -141,7 +143,7 @@
         <div id="step4-trans-lua" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>4. 翻譯插件<small> 依據csv詞庫翻譯 lua 程式碼內的文字</small></h2>
+                    <h2>4. 翻譯插件<small> 依據 csv 詞庫翻譯 lua 程式碼內的文字</small></h2>
                     <form id="csv-to-lua" data-toggle="validator">
                         <div class="form-group">
                             <label for="source-code2">貼入 lua 原始檔內容:</label>
@@ -193,19 +195,25 @@
         <div id="tool1-lua-table" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>小工具1. 轉換成 LUA 表格<small> 將 csv 詞庫轉換成 lua 外部語系檔</small></h2>
+                    <h2>小工具1. 轉換成外部語言檔<small> 將 csv 詞庫轉換成外部語言檔使用的 Lua table</small></h2>
                     <form id="csv-to-lua-table" data-toggle="validator">
                         <div class="form-group">
                             <label for="csv-lua-table-ready">貼入翻譯後的 csv 詞庫內容:</label>
                             <textarea class="form-control" id="csv-lua-table-ready" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
+						<div class="form-group">
+                            <label for="array-name-csv-lua-table">選擇變數名稱:</label>
+                            <select class="form-control" id="array-name-csv-lua-table">
+                                <option value="L" selected>L</option>
+								<option value="">不要加上變數名稱</option>
+                            </select>
+							<label for="array-name-custom-csv-lua-table">或自行輸入（不要加上 [ ]）:</label>
+							<input class="form-control" type="text" id="array-name-custom-csv-lua-table" name="array-name-custom-csv-lua-table">
+                        </div>
                         <div class="checkbox">
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="csv-lua-table-l" value="1" checked>前面加上 L
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="csv-lua-table-comma" value="1" checked>結尾加上逗號
+                                <input type="checkbox" id="comma-csv-lua-table" value="1">結尾加上逗號
                             </label>
                         </div>
                         <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-table">開始轉換</button>
@@ -223,8 +231,8 @@
 		<div id="tool2-lua-add-l" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>小工具2. 加上 L[ ]<small> 依據外部翻譯檔在 lua 程式碼內幫英文字串加上 L[ ]</small></h2>
-                    <form id="csv-to-lua-table" data-toggle="validator">
+                    <h2>小工具2. 加上 L[ ]<small> 依據外部語言檔在 lua 程式碼內幫要翻譯的英文字串加上 L[ ]</small></h2>
+                    <form id="lua-add-l" data-toggle="validator">
                         <div class="form-group">
                             <label for="source-code-lua-add-l">貼入 lua 原始檔內容:</label>
                             <textarea class="form-control" id="source-code-lua-add-l" required></textarea>
@@ -241,12 +249,12 @@
                         </div>
 						<hr />
                         <div class="form-group">
-                            <label for="local-lua-add-l">貼入外部翻譯檔內容（通常是 zh-TW.lua 中的部分內容）:</label>
+                            <label for="local-lua-add-l">貼入外部語言檔內容（通常是 zh-TW.lua 中的部分內容）:</label>
                             <textarea class="form-control" id="local-lua-add-l" required></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="array-name-local-lua-add-l">選擇外部翻譯檔內容中的變數名稱:</label>
+                            <label for="array-name-local-lua-add-l">選擇外部語言檔內容中的變數名稱:</label>
                             <select class="form-control" id="array-name-local-lua-add-l">
                                 <option value="L" selected>L</option>
                             </select>
@@ -257,7 +265,45 @@
                         <p><a id="download-lua-add-l" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
                         </p>
                         <div id="output-content">
-							<p class="error no-result">無法從外部翻譯檔中擷取到任何字串。</p>
+							<p class="error no-result">無法從外部語言檔中擷取到任何字串。</p>
+                            <p class="ready success-result">轉換完成，可以下載檔案。</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+		
+		<div id="tool3-local-to-enus" class="row">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h2>小工具3. 產生英文語言檔<small> 依據（中文）外部語言檔產生對應的英文語言檔<br />避免使用英文介面的玩家發生錯誤</small></h2>
+                    <form id="local-to-enus" data-toggle="validator">
+                        <div class="form-group">
+                            <label for="source-local-to-enus">貼入外部語言檔內容（通常是 zh-TW.lua 中的部分內容）:</label>
+                            <textarea class="form-control" id="source-local-to-enus" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="array-name-local-to-enus">選擇外部語言檔內容中的變數名稱:</label>
+                            <select class="form-control" id="array-name-local-to-enus">
+                                <option value="L" selected>L</option>
+                            </select>
+							<label for="array-name-custom-local-to-enus">或自行輸入（不要加上 [ ]）:</label>
+							<input class="form-control" type="text" id="array-name-custom-local-to-enus" name="array-name-custom-local-to-enus">
+                        </div>
+						<div class="checkbox">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="sort-local-to-enus" value="1" checked>重新排序並去除重覆
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="comma-local-to-enus" value="1">結尾加上逗號
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-info btn-lg" id="ok-local-to-enus">開始轉換</button>
+                        <p><a id="download-local-to-enus" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
+                        </p>
+                        <div id="output-content">
+							<p class="error no-result">無法從外部語言檔中擷取到任何字串。</p>
                             <p class="ready success-result">轉換完成，可以下載檔案。</p>
                         </div>
                     </form>
@@ -554,15 +600,16 @@
 
             });
 
-            //工具1，轉換成lua table
+            //工具1，轉換成外部語言檔 lua table
             $("#download-lua-table").hide();
             $("#ok-to-lua-table").show();
 
             $("#ok-to-lua-table").click(function() {
 
-                var sPrefix = "",
-                    sSuffix = "";
+                var sSuffix = "";
                 var csv = $("#csv-lua-table-ready").val();
+				var sANameOutput = $("#array-name-csv-lua-table").val();
+                var sANameOutputCustom = $("#array-name-custom-csv-lua-table").val();
 
                 //隱藏完成後的訊息
                 $("#tool1-lua-table .csv-invalid").hide();
@@ -588,19 +635,20 @@
                     return false;
                 }
 
-                //檢查開頭和結尾是否加上文字
-                if ($("#csv-lua-table-l").prop("checked")) {
-                    sPrefix = "L"
-                }
+                //決定變數名稱
+				if (sANameOutputCustom && sANameOutputCustom.trim().length > 0) {
+					sANameOutput = sANameOutputCustom
+				}
 
-                if ($("#csv-lua-table-comma").prop("checked")) {
+                //結尾是否加上逗號
+				if ($("#comma-csv-lua-table").prop("checked")) {
                     sSuffix = ","
                 }
 
                 for (var i = 0; i <= json.length; i++) {
 
                     if (json[i] != undefined && json[i]["tw"] != "") {
-                        sOutput += sPrefix + '["' + json[i]["en"] + '"] = "';
+                        sOutput += sANameOutput + '["' + json[i]["en"] + '"] = "';
                         sOutput += json[i]["tw"] + '"' + sSuffix + "\n";
                     }
                 }
@@ -620,8 +668,8 @@
 
             $("#ok-to-lua-add-l").click(function() {
 
-                var aEngStrings = "";
-                var sEng = "";
+				var aEngStrings = [];
+                var s = "";
 				var sEngWithAName = "";
                 var sLua = $("#source-code-lua-add-l").val();
                 var sANameOutput = $("#array-name-lua-add-l").val();
@@ -688,6 +736,92 @@
                 $("#download-lua-add-l").show();
                 $("#tool2-lua-add-l .success-result").show();
                 $("#ok-to-lua-add-l").hide();
+
+            });
+			
+			//工具3，產生英文語言檔
+            $("#download-local-to-enus").hide();
+            $("#ok-local-to-enus").show();
+
+            $("#ok-local-to-enus").click(function() {
+
+                var aEngStrings = [];
+				var aUniqueEngStrings = [];
+				var sSuffix = "";
+				var s = "";
+				var sOutput = "";
+				var sLocal = $("#source-local-to-enus").val();
+                var sANameLocal = $("#array-name-local-to-enus").val();
+                var sANameLocalCustom = $("#array-name-custom-local-to-enus").val();
+				var iANameLocalLength = 0
+
+                //隱藏完成後的訊息
+                $("#tool3-local-to-enus .csv-invalid").hide();
+                $("#tool3-local-to-enus .success-result").hide();
+
+                //檢查表單
+                var v = $(this).closest("form").validator('validate');
+
+                if (!sLocal || sLocal.length <= 0) {
+                    return false;
+                }
+				
+				//決定變數名稱				
+				if (sANameLocalCustom && sANameLocalCustom.trim().length > 0) {
+					sANameLocal = sANameLocalCustom
+				}
+
+                //擷取字串
+				var regexp  = new RegExp(sANameLocal + '\\[([\"\'])(?:(?=(\\\\?))\\2.)*?\\1\\]', 'g');
+                aEngStrings = sLocal.match(regexp);
+				
+				//檢查結果
+                if (!aEngStrings || aEngStrings.length <= 0) {
+                    $("#tool3-local-to-enus .no-result").show();
+                    return false;
+                }
+				
+				//去除重覆然後排序
+				if ($("#sort-local-to-enus").prop("checked")) {
+                    
+					$.each(aEngStrings, function(i, el){
+				        if($.inArray(el, aUniqueEngStrings) === -1) aUniqueEngStrings.push(el);
+				    });
+				
+				    aEngStrings = aUniqueEngStrings.sort();
+                }
+				
+				//結尾加上逗號
+				if ($("#comma-local-to-enus").prop("checked")) {
+                    sSuffix = ","
+                }
+				
+				iANameLocalLength = sANameLocal.length + 1
+
+                for (var i = 0; i <= aEngStrings.length; i++) {
+
+                    if (aEngStrings[i] != undefined) {
+
+                        s = aEngStrings[i];
+
+                        //去除掉 L[ ]，只擷取裡面的字串。
+                        s = s.substring(iANameLocalLength, s.length - 1);
+
+                        //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
+                        console.log(s);
+						
+						//加上 L[ ] 用來替換
+                        sOutput = sOutput + sANameLocal + '[' + s + '] = ' + s + sSuffix + '\n';
+                    }
+
+                }
+
+                //下載lua
+                $("#download-local-to-enus").attr('href', 'data:text/lua;charset=utf-8,' + encodeURIComponent(sOutput));
+
+                $("#download-local-to-enus").show();
+                $("#tool3-local-to-enus .success-result").show();
+                $("#ok-local-to-enus").hide();
 
             });
         });
