@@ -73,7 +73,7 @@
                     </li>
                     <li><a href="#step4-trans-lua">翻譯插件</a>
                     </li>
-                    <li><a href="#tool1-lua-table">轉換成LUA表格</a>
+                    <li><a href="#tool1-lua-table">轉換成外部語言檔</a>
                     </li>
 					<li><a href="#tool2-lua-add-l">加上 L[ ]</a>
                     </li>
@@ -195,7 +195,7 @@
         <div id="tool1-lua-table" class="row">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h2>小工具1. 轉換成外部語言檔<small> 將 csv 詞庫轉換成外部語言檔使用的 Lua table</small></h2>
+                    <h2>小工具1. 轉換成外部語言檔<small> 將 csv 詞庫轉換成外部語言檔使用的 lua table</small></h2>
                     <form id="csv-to-lua-table" data-toggle="validator">
                         <div class="form-group">
                             <label for="csv-lua-table-ready">貼入翻譯後的 csv 詞庫內容:</label>
@@ -203,13 +203,8 @@
                             <div class="help-block with-errors"></div>
                         </div>
 						<div class="form-group">
-                            <label for="array-name-csv-lua-table">選擇變數名稱:</label>
-                            <select class="form-control" id="array-name-csv-lua-table">
-                                <option value="L" selected>L</option>
-								<option value="">不要加上變數名稱</option>
-                            </select>
-							<label for="array-name-custom-csv-lua-table">或自行輸入（不要加上 [ ]）:</label>
-							<input class="form-control" type="text" id="array-name-custom-csv-lua-table" name="array-name-custom-csv-lua-table">
+							<label for="array-name-custom-csv-lua-table">輸入前面要加上的變數名稱（不需要輸入 [ ]）:</label>
+							<input class="form-control" type="text" value="L" id="array-name-custom-csv-lua-table" name="array-name-custom-csv-lua-table">
                         </div>
                         <div class="checkbox">
                             <label class="checkbox-inline">
@@ -239,13 +234,8 @@
                             <div class="help-block with-errors"></div>
                         </div>
 						<div class="form-group">
-                            <label for="array-name-lua-add-l">選擇 lua 原始檔要加上的變數名稱:</label>
-                            <select class="form-control" id="array-name-lua-add-l">
-                                <option value="L" selected>L</option>
-                                <option value="Loc ">Loc </option>
-                            </select>
-							<label for="array-name-custom-lua-add-l">或自行輸入（不要加上 [ ]）:</label>
-							<input class="form-control" type="text" id="array-name-custom-lua-add-l" name="array-name-custom-lua-add-l">
+							<label for="array-name-custom-lua-add-l">輸入 lua 原始檔要加上的變數名稱（不需要輸入 [ ]）:</label>
+							<input class="form-control" type="text" value="L" id="array-name-custom-lua-add-l" name="array-name-custom-lua-add-l">
                         </div>
 						<hr />
                         <div class="form-group">
@@ -254,12 +244,8 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="array-name-local-lua-add-l">選擇外部語言檔內容中的變數名稱:</label>
-                            <select class="form-control" id="array-name-local-lua-add-l">
-                                <option value="L" selected>L</option>
-                            </select>
-							<label for="array-name-local-custom-lua-add-l">或自行輸入（不要加上 [ ]）:</label>
-							<input class="form-control" type="text" id="array-name-local-custom-lua-add-l" name="array-name-local-custom-lua-add-l">
+							<label for="array-name-local-custom-lua-add-l">輸入外部語言檔內容中的變數名稱（不需要輸入 [ ]）:</label>
+							<input class="form-control" type="text" value="L" id="array-name-local-custom-lua-add-l" name="array-name-local-custom-lua-add-l">
                         </div>
                         <button type="button" class="btn btn-info btn-lg" id="ok-to-lua-add-l">開始轉換</button>
                         <p><a id="download-lua-add-l" download="ui-local.lua" href="" class="btn btn-success btn-lg" role="button">下載lua檔案</a>
@@ -284,12 +270,8 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <label for="array-name-local-to-enus">選擇外部語言檔內容中的變數名稱:</label>
-                            <select class="form-control" id="array-name-local-to-enus">
-                                <option value="L" selected>L</option>
-                            </select>
-							<label for="array-name-custom-local-to-enus">或自行輸入（不要加上 [ ]）:</label>
-							<input class="form-control" type="text" id="array-name-custom-local-to-enus" name="array-name-custom-local-to-enus">
+							<label for="array-name-custom-local-to-enus">輸入外部語言檔內容中的變數名稱（不需要輸入 [ ]）:</label>
+							<input class="form-control" type="text" value="L" id="array-name-custom-local-to-enus" name="array-name-custom-local-to-enus">
                         </div>
 						<div class="checkbox">
                             <label class="checkbox-inline">
@@ -608,8 +590,7 @@
 
                 var sSuffix = "";
                 var csv = $("#csv-lua-table-ready").val();
-				var sANameOutput = $("#array-name-csv-lua-table").val();
-                var sANameOutputCustom = $("#array-name-custom-csv-lua-table").val();
+                var sANameOutput = $("#array-name-custom-csv-lua-table").val();
 
                 //隱藏完成後的訊息
                 $("#tool1-lua-table .csv-invalid").hide();
@@ -634,11 +615,6 @@
                     $("#tool1-lua-table .csv-invalid").show();
                     return false;
                 }
-
-                //決定變數名稱
-				if (sANameOutputCustom && sANameOutputCustom.trim().length > 0) {
-					sANameOutput = sANameOutputCustom
-				}
 
                 //結尾是否加上逗號
 				if ($("#comma-csv-lua-table").prop("checked")) {
@@ -672,11 +648,9 @@
                 var s = "";
 				var sEngWithAName = "";
                 var sLua = $("#source-code-lua-add-l").val();
-                var sANameOutput = $("#array-name-lua-add-l").val();
-                var sANameOutputCustom = $("#array-name-custom-lua-add-l").val();
+                var sANameOutput = $("#array-name-custom-lua-add-l").val();
 				var sLocal = $("#local-lua-add-l").val();
-                var sANameLocal = $("#array-name-local-lua-add-l").val();
-                var sANameLocalCustom = $("#array-name-local-custom-lua-add-l").val();
+                var sANameLocal = $("#array-name-local-custom-lua-add-l").val();
 				var iANameLocalLength = 0
 
                 //隱藏完成後的訊息
@@ -689,15 +663,6 @@
                 if (!sLua || sLua.length <= 0 || !sLocal || sLocal.length <= 0) {
                     return false;
                 }
-				
-				//決定變數名稱
-				if (sANameOutputCustom && sANameOutputCustom.trim().length > 0) {
-					sANameOutput = sANameOutputCustom
-				}
-				
-				if (sANameLocalCustom && sANameLocalCustom.trim().length > 0) {
-					sANameLocal = sANameLocalCustom
-				}
 
                 //擷取字串
 				var regexp  = new RegExp(sANameLocal + '\\[([\"\'])(?:(?=(\\\\?))\\2.)*?\\1\\]', 'g');
@@ -751,8 +716,7 @@
 				var s = "";
 				var sOutput = "";
 				var sLocal = $("#source-local-to-enus").val();
-                var sANameLocal = $("#array-name-local-to-enus").val();
-                var sANameLocalCustom = $("#array-name-custom-local-to-enus").val();
+                var sANameLocal = $("#array-name-custom-local-to-enus").val();
 				var iANameLocalLength = 0
 
                 //隱藏完成後的訊息
@@ -765,11 +729,6 @@
                 if (!sLocal || sLocal.length <= 0) {
                     return false;
                 }
-				
-				//決定變數名稱				
-				if (sANameLocalCustom && sANameLocalCustom.trim().length > 0) {
-					sANameLocal = sANameLocalCustom
-				}
 
                 //擷取字串
 				var regexp  = new RegExp(sANameLocal + '\\[([\"\'])(?:(?=(\\\\?))\\2.)*?\\1\\]', 'g');
@@ -808,7 +767,7 @@
                         s = s.substring(iANameLocalLength, s.length - 1);
 
                         //輸出到瀏覽器的 console 以便事先預覽擷取了那些字串。
-                        console.log(s);
+                        //console.log(s);
 						
 						//加上 L[ ] 用來替換
                         sOutput = sOutput + sANameLocal + '[' + s + '] = ' + s + sSuffix + '\n';
